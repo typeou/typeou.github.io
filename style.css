@@ -6,6 +6,7 @@ body {
     background-color: black;
     min-height: 100%;
     background-attachment: fixed;
+    font-family: Verdana;
 }
 
 .main {
@@ -33,9 +34,9 @@ a {
     color: fuchsia;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
-    color: black;
+    margin: 0;
 }
 
 .block {
@@ -46,4 +47,16 @@ h1 {
 
 .nopad {
     padding: 0 !important;
+}
+
+.title {
+    color: black;
+    display: block;
+    padding: 15px 0 15px 0;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: black;
 }
