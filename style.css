@@ -1,16 +1,18 @@
 body {
     background-image: url("https://cdn.discordapp.com/attachments/634594479549972511/650132664598265887/comm7.png");
     background-size: cover;
-    background-position-y: 25%;
+    background-position: center 25%;
     background-repeat: no-repeat;
     background-color: black;
+    min-height: 100%;
+    background-attachment: fixed;
 }
 
 .main {
     max-width: 80%;
     display: grid;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 15px;
 }
 
@@ -37,7 +39,11 @@ h1 {
 }
 
 .block {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 15px;
     padding: 15px;
+}
+
+.nopad {
+    padding: 0 !important;
 }
