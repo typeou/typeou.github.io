@@ -3,6 +3,36 @@
     <head>
         <title>typeou.dev</title>
         <link rel="stylesheet" href="style.css">
+
+        <script>
+            var arrival = new Date(2019, 11, 16, 15, 14);
+            function countdown(){
+                console.log("run");
+                var now = new Date();
+                var left = arrival - now;
+                if(left < 0){
+                    document.getElementById("countdown").innerHTML = "Arrived!"
+                    clearInterval(t);
+                }
+                else {
+                    var days = left % (1000 * 60 * 60 * 24);
+                    var hours = days % (1000 * 60 * 60);
+                    var minutes = hours % (1000 * 60);
+                    var seconds = Math.floor(minutes / 1000);
+                    minutes = Math.floor(hours / (1000 * 60));
+                    hours = Math.floor(days / (1000 * 60 * 60));
+                    days = Math.floor(left / (1000 * 60 * 60 * 24));
+
+                    days = days + (days == 1 ? " day" : " days");
+                    hours = hours + (hours == 1 ? " hour" : " hours");
+                    minutes = minutes + (minutes == 1 ? " minute" : " minutes");
+                    seconds = seconds + (seconds == 1 ? " second" : " seconds");
+
+                    document.getElementById("countdown").innerHTML = days + "<br />" + hours + "<br />" + minutes + "<br />" + seconds;
+                }
+            }
+            var t = setInterval(countdown, 1000);
+        </script>
     </head>
     <body>
         <div class="main">
@@ -36,6 +66,13 @@
                             <p>
                                 <a href="#">Link 3</a><br />
                             </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Countdown</h2>
+                            <hr />
+                            <p id="countdown"></p>
                         </td>
                     </tr>
                 </table>
