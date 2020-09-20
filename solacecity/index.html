@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.mapping').mouseenter(function(){
+                var index = $(this).index();
+                $(".segment").eq(index).attr("src","district" + (index + 1) + "highlight.png");
+            })
+
+            $('.mapping').mouseleave(function(){
+                var index = $(this).index();
+                $(".segment").eq(index).attr("src","district" + (index + 1) + ".png");
+            })
+        });
+    </script>
+</head>
 <html>
     <head>
         <title>Solace City - Main</title>
@@ -21,15 +37,15 @@
         <img id="text" class="segment" src="text.png" usemap="#solacemap">
 
         <map name="solacemap">
-            <area shape="poly" coords="256,355,355,255,508,255,607,355,607,508,508,607,355,607,256,508" href="district1/" alt="District 1">
-            <area shape="poly" coords="355,255,508,255,618,47,432,4,247,49" href="district2/" alt="District 2">
-            <area shape="poly" coords="508,255,607,355,817,244,730,125,618,47" href="district3/" alt="District 3">
-            <area shape="poly" coords="607,355,607,508,818,619,861,435,817,244" href="district4/" alt="District 4">
-            <area shape="poly" coords="607,508,508,607,619,819,739,732,818,619" href="district5/" alt="District 5">
-            <area shape="poly" coords="508,607,355,607,244,817,433,862,619,819" href="district6/" alt="District 6">
-            <area shape="poly" coords="355,607,256,508,46,618,126,732,244,817" href="district7/" alt="District 7">
-            <area shape="poly" coords="256,508,256,355,48,246,4,432,46,618" href="district8/" alt="District 8">
-            <area shape="poly" coords="256,355,355,255,247,49,136,124,48,246" href="district9/" alt="District 9">
+            <area class="mapping" shape="poly" coords="256,355,355,255,508,255,607,355,607,508,508,607,355,607,256,508" href="district1/" alt="District 1">
+            <area class="mapping" shape="poly" coords="355,255,508,255,618,47,432,4,247,49" href="district2/" alt="District 2">
+            <area class="mapping" shape="poly" coords="508,255,607,355,817,244,730,125,618,47" href="district3/" alt="District 3">
+            <area class="mapping" shape="poly" coords="607,355,607,508,818,619,861,435,817,244" href="district4/" alt="District 4">
+            <area class="mapping" shape="poly" coords="607,508,508,607,619,819,739,732,818,619" href="district5/" alt="District 5">
+            <area class="mapping" shape="poly" coords="508,607,355,607,244,817,433,862,619,819" href="district6/" alt="District 6">
+            <area class="mapping" shape="poly" coords="355,607,256,508,46,618,126,732,244,817" href="district7/" alt="District 7">
+            <area class="mapping" shape="poly" coords="256,508,256,355,48,246,4,432,46,618" href="district8/" alt="District 8">
+            <area class="mapping" shape="poly" coords="256,355,355,255,247,49,136,124,48,246" href="district9/" alt="District 9">
         </map>
     </body>
 </html>
