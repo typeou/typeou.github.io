@@ -54,6 +54,7 @@ body{
     text-align: center;
     color: #8AD3E2;
     -webkit-text-stroke: 2px white;
+    outline: 3px solid #87006F;
 }
 
 #hover p {
@@ -63,4 +64,19 @@ body{
     font-family: "Gameplay";
     color: white;
     font-size: 18px;
+}
+
+#console {
+    font-family: "Inconsolata";
+    font-size: 32px;
+    position: absolute;
+    margin: 16px;
+}
+
+.user {
+    color: #87006F;
+}
+
+.consoleTilde {
+    color: #8AD3E2;
 }
