@@ -3,9 +3,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-        var consoleText = "afa";
+        var consoleText;
         var params = new URLSearchParams(window.location.search);
-        var name = params.get("name");
+        var playerName = params.get("name");
         var execute = params.get("execute");
         var punish = params.get("punish");
 
@@ -16,13 +16,13 @@
 
         window.onload = function()
         {
-            name = name.toLowerCase();
+            playerName = playerName.toLowerCase();
 
-            for(var i = 0; i < name.length; i++)
-                if(i == 0 || name[i - 1] == ' ')
-                    name = name.substr(0, i) + name[i].toUpperCase() + name.substr(i + 1);
+            for(var i = 0; i < playerName.length; i++)
+                if(i == 0 || playerName[i - 1] == ' ')
+                playerName = playerName.substr(0, i) + playerName[i].toUpperCase() + name.substr(i + 1);
 
-            var nameCamel = name;
+            var nameCamel = playerName;
             for(var i = 0; i < nameCamel.length; i++)
                 if(nameCamel[i] == ' ')
                     nameCamel = nameCamel.substr(0, i) + nameCamel.substr(i + 1);
@@ -35,9 +35,9 @@
                 ["python /usr/local/src/HoshizoraAptitude/emergency/execute.py", 2750],
                 ["What is the name of the Subject in question?", 100],
                 ["", 0],
-                [name, 3250],
+                [playerName, 3250],
                 ["", 0],
-                ["Execute: " + name + "?", 100],
+                ["Execute: " + playerName + "?", 100],
                 ["", 0],
             ];
 
@@ -53,7 +53,7 @@
                 script.push(["n", 3750]);
                 script.push(["", 0]);
                 script.push(["Understood.", 100]);
-                script.push(["Was " + name + " condemned?", 100]);
+                script.push(["Was " + playerName + " condemned?", 100]);
                 script.push(["", 0]);
                 if (punish)
                 {
@@ -67,7 +67,7 @@
                     script.push(["n", 3250]);
                     script.push(["", 0]);
                     script.push(["Understood.", 100]);
-                    script.push(["Sparing " + name + ".", 100]);
+                    script.push(["Sparing " + playerName + ".", 100]);
                 }
             }
             
@@ -89,22 +89,24 @@
             {
                 await new Promise(resolve => setTimeout(resolve, script[i][1]));
                 typing = true;
-                if($("#console").html()[$("#console").html().length - 1] == '_')
+                if ($("#console").html()[$("#console").html().length - 1] == '_')
                     $("#console").html($("#console").html().substr(0, $("#console").html().length - 1));
-                for(var j = 0; j < script[i][0].length; j++)
+                for (var j = 0; j < script[i][0].length; j++)
                 {
                     $("#console").html($("#console").html() + script[i][0][j]);
                     await new Promise(resolve => setTimeout(resolve, 50));
                 }
                 $("#console").html($("#console").html() + "<br/>");
-                typing = false;
 
                 if(i == script.length - 1)
                     $("#console").html($("#console").html() + "<a class=\"user\">admin@HoshizoraAptitude</a>:<a class=\"consoleTilde\">~</a>$ ");
+                
+                typing = false;
             }
         }
 
-        setInterval(function(){
+        setInterval(function()
+        {
             if(!typing){
                 if($("#console").html()[$("#console").html().length - 1] != '_')
                     $("#console").html($("#console").html() + '_')
@@ -113,7 +115,8 @@
             }
         }, 500)
 
-        setInterval(function(){
+        setInterval(function()
+        {
             var text = $("#title").html();
             $("#title").html(text.substr(1) + text[0]);
         }, 250)
