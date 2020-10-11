@@ -20,7 +20,7 @@
 
             for(var i = 0; i < playerName.length; i++)
                 if(i == 0 || playerName[i - 1] == ' ')
-                playerName = playerName.substr(0, i) + playerName[i].toUpperCase() + name.substr(i + 1);
+                playerName = playerName.substr(0, i) + playerName[i].toUpperCase() + playerName.substr(i + 1);
 
             var nameCamel = playerName;
             for(var i = 0; i < nameCamel.length; i++)
