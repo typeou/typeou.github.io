@@ -28,7 +28,9 @@
     height: 200%;
     background-repeat: repeat;
     background-image: url("screenEffect.png");
+    -webkit-mask-size: auto 200%;
     mask-size: auto 200%;
+    -webkit-mask-image: linear-gradient(transparent 45%, black 50%, transparent 55%);
     mask-image: linear-gradient(transparent 45%, black 50%, transparent 55%);
 }
 
