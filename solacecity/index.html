@@ -19,7 +19,7 @@
 
             $(".mapping").mousemove(function(event){
                 var hover = $("#hover");
-                hover.offset({top:event.clientY + 5, left:event.clientX + 20});
+                hover.offset({top:event.pageY + 5, left:event.pageX + 20});
                 hover.removeAttr("hidden");
 
                 var index = $(this).index();
