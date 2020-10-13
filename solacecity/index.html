@@ -2,6 +2,8 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
+        var screenEffectPosition = 0;
+
         $(function() {
             $(".mapping").mouseenter(function(){
                 var index = $(this).index();
@@ -58,6 +60,14 @@
             $("#hover").children("h1").html(title);
             $("#hover").children("p").html(desc);
         }
+
+        setInterval(function()
+        {
+            screenEffectPosition++;
+            if(screenEffectPosition >= 200)
+                screenEffectPosition = 0;
+            $("#screenEffect").css("mask-position", "0 " + screenEffectPosition + "%");
+        }, 1000/24)
     </script>
 </head>
 <html>
@@ -86,6 +96,7 @@
             <p>Blurb</p>
         </div>
         <img id="screen">
+        <img id="screenEffect">
 
         <img class="segment" src="districtblank.png" usemap="#solacemap">
 

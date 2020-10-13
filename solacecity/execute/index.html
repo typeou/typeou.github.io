@@ -13,6 +13,8 @@
         var executing = false;
 
         var script;
+        
+        var screenEffectPosition = 0;
 
         window.onload = function()
         {
@@ -120,6 +122,14 @@
             var text = $("#title").html();
             $("#title").html(text.substr(1) + text[0]);
         }, 250)
+
+        setInterval(function()
+        {
+            screenEffectPosition++;
+            if(screenEffectPosition >= 200)
+                screenEffectPosition = 0;
+            $("#screenEffect").css("mask-position", "0 " + screenEffectPosition + "%");
+        }, 1000/24)
     </script>
 </head>
 <html>
@@ -135,5 +145,6 @@
         </p>
 
         <img id="screen">
+        <img id="screenEffect">
     </body>
 </html>
