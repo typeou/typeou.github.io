@@ -8,7 +8,7 @@ var screenEffect = setInterval(function()
     $("#screenEffect").css("mask-position", "0 " + screenEffectPosition + "%");
 }, 1000/24)
 
-window.onload = function()
+document.onload = function()
 {
     if(!CSS.supports("mask-image", "linear-gradient(transparent 45%, black 50%, transparent 55%)") && !CSS.supports("-webkit-mask-image", "linear-gradient(transparent 45%, black 50%, transparent 55%)"))
     {
