@@ -93,3 +93,29 @@ body{
 .consoleTilde {
     color: #8AD3E2;
 }
+
+.input {
+    position: relative;
+    z-index: 1;
+}
+
+input {
+    background-color: transparent;
+    font-family: Inconsolata;
+    font-size: 32px;
+    border: 0px;
+    width: 1.5em;
+    text-align: center;
+}
+
+button {
+    background-color: #B75275;
+    border: 3px solid #87006F;
+    color: #8AD3E2;
+    font-family: Inconsolata;
+    font-size: 32px;
+}
+
+.underline {
+    border-bottom: 2px solid black;
+}
