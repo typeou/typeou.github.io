@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #logo {
+            position: absolute;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var logo, width, height, baseHorizontal = (500 + Math.random() * 1000) * (Math.random < 0.5 ? -1 : 1), baseVertical = (250 + Math.random() * 1000) * (Math.random < 0.5 ? -1 : 1), horizontal, vertical, collide, diff, frameRate = 1 / 60;
+
+        window.onload = function()
+        {
+            logo = $("#logo");
+
+            SizeCheck();
++
+
+            logo.css("left", $(window).width() / 2 - width / 2);
+            logo.css("top", $(window).height() / 2 - height / 2);
+        }
+
+        function SizeCheck()
+        {
+            logo.width(Math.min($(window).width(), $(window).height()) / 2);
+            logo.height(logo.width());
+            width = logo.width();
+            height = logo.height();
+
+            var speedMult = $(window).height() / 1080;
+            horizontal = baseHorizontal * speedMult;
+            vertical = baseVertical * speedMult;
+        }
+
+        function PositionCheck()
+        {
+            collide = false;
+            diff = $(window).width() - width - parseInt(logo.css("left"));
+
+            if (diff < 0)
+            {
+                collide = true;
+                baseHorizontal = -baseHorizontal;
+                horizontal = -horizontal;
+                logo.css("left", parseInt(logo.css("left")) + diff * 2);
+                PositionCheck();
+            }
+            if(!collide){
+                diff = parseInt(logo.css("left"));
+                if(diff < 0)
+                {
+                    baseHorizontal = -baseHorizontal;
+                    horizontal = -horizontal;
+                    logo.css("left", parseInt(logo.css("left")) - diff * 2);
+                    PositionCheck();
+                }
+            }
+
+            collide = false;
+            diff = $(window).height() - height - parseInt(logo.css("top"));
+
+            if(diff < 0)
+            {
+                collide = true;
+                baseVertical = -baseVertical;
+                vertical = -vertical;
+                logo.css("top", parseInt(logo.css("top")) + diff * 2);
+                PositionCheck();
+            }
+            if(!collide){
+                diff = parseInt(logo.css("top"));
+                if(diff < 0)
+                {
+                    baseVertical = -baseVertical;
+                    vertical = -vertical;
+                    logo.css("top", parseInt(logo.css("top")) - diff * 2);
+                    PositionCheck();
+                }
+            }
+        }
+
+        setInterval(function()
+        {
+            SizeCheck();
+
+            logo.css("left", parseInt(logo.css("left")) + horizontal * frameRate);
+            logo.css("top", parseInt(logo.css("top")) + vertical * frameRate);
+
+            PositionCheck();
+        }, frameRate * 1000)
+    </script>
+</head>
+<html>
+    <body>
+        <img id="logo" src="miraiemblemback.png">
+    </body>
+</html>
