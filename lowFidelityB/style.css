@@ -1,0 +1,31 @@
+body
+{
+    background-color: lightskyblue;
+    margin: 0px;
+}
+
+.header
+{
+    text-align: center;
+}
+
+.article
+{
+    background-color: white;
+    padding: 5px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.article p
+{
+    text-align: right;
+    margin: 5px;
+}
+
+#notif
+{
+    color: red;
+    margin: auto;
+    width: 500px;
+}
