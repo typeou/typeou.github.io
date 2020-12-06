@@ -1,0 +1,29 @@
+body
+{
+    background-color: grey;
+    margin: 0px;
+}
+
+.header
+{
+    text-align: center;
+}
+
+.container
+{
+    display: grid;
+}
+
+.folder
+{
+    background-color: palegoldenrod;
+    grid-column: 1;
+    padding: 10px;
+}
+
+.cabinet
+{
+    background-color: darkgray;
+    padding: 10px;
+    outline: 1px solid black;
+}
