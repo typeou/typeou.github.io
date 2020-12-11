@@ -1,0 +1,28 @@
+body
+{
+    background-color: lightskyblue;;
+    margin: 0px;
+}
+
+.header
+{
+    text-align: center;
+}
+
+.folder
+{
+    background-color: palegoldenrod;
+    padding: 10px;
+}
+
+.cabinet
+{
+    background-color: gray;
+    padding: 10px;
+    outline: 1px solid black;
+}
+
+.colourCode
+{
+    float: right;
+}
