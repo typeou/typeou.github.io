@@ -286,6 +286,7 @@ ul > ul > li::marker{
 ul li {
     word-break: normal;
     white-space: normal;
+    word-wrap: break-word;
 }
 
 #features td {
