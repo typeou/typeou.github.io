@@ -3,7 +3,7 @@ body {
     min-height: 100%;
     background-attachment: fixed;
     font-family: Verdana;
-    font-size: 1.5vh;
+    font-size: 2vh;
     margin: 0;
     min-height: calc(100vh - 50px);
     position: relative;
@@ -220,15 +220,15 @@ a {
 }
 
 h1 {
-    font-size: 3vh;
+    font-size: 3.5vh;
 }
 
 h2 {
-    font-size: 2.5vh;
+    font-size: 3vh;
 }
 
 h3 {
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 h1, h2, h3 {
@@ -303,11 +303,11 @@ hr {
 }
 
 #examples h1 {
-    font-size: 3vh;
+    font-size: 3.5vh;
 }
 
 #examples span, #examples p {
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 .cover {
@@ -355,7 +355,7 @@ hr {
 #priceHalf::before, #priceFull::before {
     content: "Starting at ";
     font-weight: normal;
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 #addOns span {
