@@ -38,8 +38,22 @@ body {
     color: black;
 }
 
-#header h1::before {
-    content: "typeou.dev";
+#header div {
+    display: grid;
+    width: max-content;
+    margin: auto;
+}
+
+#typer {
+    grid-column: 2;
+    animation-name: type;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes type {
+    from { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); }
+    to { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
 }
 
 #footer {
@@ -202,7 +216,7 @@ body {
 }
 
 #links span.hover {
-    clip-path: polygon(10% 0, 90% 0, 90% 100%, 10% 100%);
+    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
 }
 
 a {
