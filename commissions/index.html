@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>typeou.dev/commissions</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("#examples > div").mouseenter(function(event){
+                    $(this).children("div").addClass("hover");
+                })
+            
+                $("#examples > div").mouseleave(function(event){
+                    $(this).children("div").removeClass("hover");
+                })
+            });
+
+            var half = 600, full = 725, aeiou = 60, expression = 25, arms = 175, alternate = 225, rate;
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    rate = JSON.parse(this.responseText).observations[0].FXCADUSD.v;
+                    $("#priceHalf").html(Round(Convert(half)));
+                    $("#priceHalf").after("<span>$" + half + " CAD</span>");
+                    $("#priceFull").html(Round(Convert(full)));
+                    $("#priceFull").after("<span>$" + full + " CAD</span>");
+                    $("#priceExpression").html(Round(Convert(expression)) + " ($" + expression + " CAD)");
+                    $("#priceAeiou").html(Round(Convert(aeiou)) + " ($" + aeiou + " CAD)");
+                    $("#priceArms").html(Round(Convert(arms)) + " ($" + arms + " CAD)");
+                    $("#priceAlternate").html(Round(Convert(alternate)) + " ($" + alternate + " CAD)");
+                }
+                else
+                {
+                    $("#priceHalf").html("$" + half + " CAD");
+                    $("#priceFull").html("$" + full + " CAD");
+                    $("#priceExpression").html("$" + expression + " CAD");
+                    $("#priceAeiou").html("$" + aeiou + " CAD");
+                    $("#priceArms").html("$" + arms + " CAD");
+                    $("#priceAlternate").html("$" + alternate + " CAD");
+                }
+            };
+            request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);
+            request.send();
+
+            function Convert(data)
+            {
+                return data * rate;
+            }
+
+            function Round(num)
+            {
+                return "~$" + (num % 5 == 0 ? num : ((num - (num % 5)) + 5)) + " USD";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header" class="block nopad">
+            <a href="../index.html" class="title"><h1>typeou.dev/commissions</h1></a>
+        </div>
+        <div class="main">
+            <div class="grid1-4 block">
+                <h2>typeou's Live2D Rigging Commissions</h2>
+                <hr/>
+                <h3>Commissions are currently: <h2><h>CLOSED</h></h2></h3>
+                <p class="center"><b>Queue:</b> <h>typeou,</h> b00lien (v2)</p>
+                <p>Welcome to my commission page! I do rigging-only commissions for Live2D models intended for use by VTubers/VStreamers.</p>
+                <p>If you are interested, please have a model in ready-to-rig form. The model should be in <h>.psd format</h> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.</a></p>
+                <p>I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.</p>
+                <p class="center">I do <h>humanoid rigs!</h> Large deviation from this (furry, mech, etc) is a no-go, unfortunately.</p>
+            </div>
+            <div id="links" class="grid5 block">
+                <h2>Links</h2>
+                <hr/>
+                <p>
+                    <a href="../index.html">Main Page</a><br />
+                    <a href="tos/index.html">Terms of Service</a><br />
+                    <a href="https://twitter.com/typeou">Twitter</a><br />
+                </p>
+                <h2>Contact</h2>
+                <hr/>
+                <p>
+                    typeou#0001<br/>
+                    <span id="discord">on Discord</span><br/>
+                </p>
+            </div>
+            <div class="grid1-5 block">
+                <h2>Pricing</h2>
+                <hr/>
+                <p class="center">Prices as listed are <h>base prices.</h> Final price may vary depending on complexity.</p>
+                <p class="center">Prices are subject to change.</p>
+                <table id="pricing">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h3>Half-Body</h3>
+                                <hr/>
+                                <h1 id="priceHalf">Converting...</h1>
+                            </td>
+                            <td>
+                                <h3>Full-Body</h3>
+                                <hr/>
+                                <h1 id="priceFull">Converting...</h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr/>
+                <table id="features">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="centerDiv">
+                                    <h3>Includes</h3>
+                                    <ul>
+                                        <li>Standard Face Rigging</li>
+                                        <ul>
+                                            <li>Eye Open/Close</li>
+                                            <li>Eye Smile</li>
+                                            <li>Pupil Movement</li>
+                                            <li>Brow Angle and Y Position</li>
+                                            <li>Mouth Open/Close</li>
+                                            <li>Mouth Neutral/Smile/Frown</li>
+                                        </ul>
+                                        <li>Face X/Y/Z Rotation</li>
+                                        <li>Body X/Y/Z Rotation</li>
+                                        <li>Hair/Clothing/Accessory Physics</li>
+                                        <li>3 Toggleable Expressions</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="separator"></td>
+                            <td>
+                                <div class="centerDiv">
+                                    <h3>Add-ons</h3>
+                                    <ul>
+                                        <li>Additional Toggleable Expressions:</li>
+                                        <ul>
+                                            <li><span id="priceExpression">Converting...</span> each</li>
+                                        </ul>
+                                        <li>AEIOU:</li>
+                                        <ul>
+                                            <li><span id="priceAeiou">Converting...</span></li>
+                                        </ul>
+                                        <li>Arm Animations:</li>
+                                        <ul>
+                                            <li>Starting at <span id="priceArms">Converting...</span></li>
+                                        </ul>
+                                        <li>Alternate Outfits/Hairstyles:</li>
+                                        <ul>
+                                            <li>Starting at <span id="priceAlternate">Converting...</span> each</li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid1-5 block">
+                <h2>Examples</h2>
+                <hr/>
+                <div id="examples">
+                    <div class="grid1-2">
+                        <video autoplay muted loop src="b00.mp4"></video>
+                        <div class="cover">
+                            <div>
+                                <h1><a href="https://twitch.tv/typeou_">b00lien v1</a></h1>
+                                <hr/>
+                                <span>Art by <a href="https://twitter.com/b00lien">@b00lien</a></span>
+                                <p>Full-Body rig.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="block center">
+            <a href="#">Top</a> | <a href="tos/index.html">Terms of Service</a>
+        </div>
+    </body>
+</html>

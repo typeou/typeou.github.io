@@ -1,20 +1,90 @@
 body {
-    background-image: url("https://cdn.discordapp.com/attachments/634594479549972511/650132664598265887/comm7.png");
-    background-size: cover;
-    background-position: center 25%;
-    background-repeat: no-repeat;
-    background-color: black;
+    background-color: rgB(224, 224, 224);
     min-height: 100%;
     background-attachment: fixed;
     font-family: Verdana;
+    font-size: 20px;
+    margin: 0;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    padding-bottom: 50px;
 }
 
 .main {
-    max-width: 80%;
     display: grid;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    grid-template-columns: repeat(4, auto) min-content;
+    min-width: min-content;
     padding: 15px;
+}
+
+#header, #footer {
+    margin: 0;
+    background: initial;
+    background: linear-gradient(90deg, #ff9eec 67%, #9EFFB1 100%);
+    border: none;
+    transition: none;
+}
+
+#header, #header a {
+    color: black;
+}
+
+#footer {
+    height: 20px;
+    padding: 15px 0 15px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer, #footer a {
+    color: white !important;
+}
+
+.title {
+    display: block;
+    padding: 15px 0 15px 0;
+}
+
+.title:hover {
+    color: white !important;
+}
+
+.separator {
+    padding: 0 !important;
+    width: 2px;
+    min-width: 2px;
+    background-color: white;
+}
+
+.block {
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
+    margin: 15px;
+    padding: 15px;
+    box-shadow: 0px 5px 10px 5px rgb(32, 32, 32);
+    border: 1px solid #4F5E80;
+    color: white;
+    transition: border 0.25s;
+}
+
+.block:hover {
+    border: 1px solid #9effb1;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid1 {
+    grid-column: 1 / 2;
+}
+
+.grid2 {
+    grid-column: 2 / 3;
+}
+
+.grid1-2 {
+    grid-column: 1 / 3;
 }
 
 .grid1-5 {
@@ -29,9 +99,25 @@ body {
     grid-column: 5;
 }
 
+#links {
+    white-space: nowrap;
+}
+
 a {
     text-decoration: none;
-    color: fuchsia;
+    color: #ff3cd7;
+}
+
+h1 {
+    font-size: 44px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 h1, h2, h3 {
@@ -39,24 +125,172 @@ h1, h2, h3 {
     margin: 0;
 }
 
-.block {
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 15px;
-    padding: 15px;
-}
-
 .nopad {
     padding: 0 !important;
-}
-
-.title {
-    color: black;
-    display: block;
-    padding: 15px 0 15px 0;
 }
 
 hr {
     border: 0;
     height: 2px;
+    background-color: white;
+}
+
+#examples {
+    padding: 15px;
+    font-size: 0;
+    max-width: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+}
+
+#examples > div {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 7.5px;
+    border: 1px solid #ff3cd7;
+}
+
+#examples > .grid1-2 {
+    width: calc(50% - 15px);
+    margin: 0 auto;
+}
+
+#examples video {
+    width: 100%;
+}
+
+#examples > div > div {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    clip-path: inset(100% 0 0 0);
+}
+
+#examples > div > div > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+#examples > div > div > div > hr {
+    border: 0;
+    height: 2px;
+    background-color: white;
+    margin: 0 15px 0 15px;
+}
+
+#examples p {
+    font-size: 18px;
+}
+
+.cover {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.5s;
+}
+
+.cover.hover {
+    clip-path: inset(0% 0 0 0) !important;
+}
+
+#pricing {
+    text-align: center;
+    width: 100%;
+}
+
+#pricing > tbody > tr > td {
+    padding: 0 100px 0 100px;
+}
+
+#features {
+    text-align: center;
+    width: 100%;
+}
+
+#features > tbody > tr > td {
+    vertical-align: top;
+    padding: 0 100px 0 100px;
+}
+
+#features > tbody > tr > td > div > ul {
+    width: max-content;
+    text-align: left;
+}
+
+#priceHalf::before, #priceFull::before {
+    content: "Starting at ";
+    font-weight: normal;
+    font-size: 36px;
+}
+
+#examples span {
+    font-size: 36px;
+}
+
+#addOns span {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.centerDiv {
+    position: relative;
+    margin: auto;
+    width: max-content;
+}
+
+#discord {
+    text-align: right;
+    width: 100%;
+    display: inline-block;
+}
+
+h1 > a {
+    color: inherit;
+}
+
+h1 > a:hover {
+    color: #ff3cd7;
+}
+
+h {
     background-color: black;
+    color: white;
+    padding: 0 0.1em 0 0.1em;
+    margin: 0 -0.1em 0 -0.1em;
+}
+
+.left {
+    text-align: left;
+}
+
+ul > li::marker {
+    font-weight: bold;
+    content: "> ";
+    color: #ff3cd7;
+}
+
+ul > ul > li::marker{
+    color: #9effb1 !important;
+}
+
+ul li {
+    word-break: break-all;
+}
+
+#features td {
+    padding: 0 !important;
+}
+
+#priceExpression, #priceAeiou, #priceArms, #priceAlternate {
+    font-weight: bold;
 }
