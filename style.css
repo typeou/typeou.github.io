@@ -5,9 +5,9 @@ body {
     font-family: Verdana;
     font-size: 2vh;
     margin: 0;
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - min(2vh, 4vw) - 30px);
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: calc(min(2vh, 4vw) + 30px);
     max-width: 100vw;
 }
 
@@ -63,6 +63,7 @@ body {
     width: 100%;
     position: absolute;
     bottom: 0;
+    font-size: min(2vh, 4vw);
 }
 
 #footer, #footer a {
