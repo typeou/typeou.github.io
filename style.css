@@ -38,26 +38,7 @@ body {
     color: black;
 }
 
-#header div {
-    width: max-content;
-    margin: auto;
-    display: grid;
-}
-
-#typer {
-    grid-column: 2;
-    animation-name: type;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    overflow-x: visible;
-}
-
-@keyframes type {
-    from { width: 0%; overflow-x: hidden; }
-    to { width: 100%; overflow-x: hidden; }
-}
-
-#typer::before {
+#header h1::before {
     content: "typeou.dev";
 }
 
