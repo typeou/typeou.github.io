@@ -201,22 +201,33 @@ hr {
 }
 
 #pricing {
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     width: 100%;
 }
 
-#pricing > tbody > tr > td {
-    padding: 0 100px 0 100px;
+#pricing > div {
+    padding: 0 100px 50px 100px;
+    flex-grow: 1;
 }
 
 #features {
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     width: 100%;
 }
 
-#features > tbody > tr > td {
+#features > div {
     vertical-align: top;
-    padding: 0 100px 0 100px;
+    padding: 25px 100px 0 100px;
+    flex-grow: 1;
+}
+
+#features > div.separator
+{
+    flex-grow: unset;
 }
 
 #features ul {
