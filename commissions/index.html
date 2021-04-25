@@ -15,6 +15,14 @@
                 $("#examples > div").mouseleave(function(event){
                     $(this).children("div").removeClass("hover");
                 })
+
+                $("#links > div").mouseenter(function(event){
+                    $(this).children("span").addClass("hover");
+                })
+            
+                $("#links > div").mouseleave(function(event){
+                    $(this).children("span").removeClass("hover");
+                })
             });
 
             var half = 600, full = 725, aeiou = 60, expression = 25, arms = 175, alternate = 225, rate;
@@ -57,29 +65,29 @@
         </script>
     </head>
     <body>
-        <div id="header" class="block nopad">
-            <a href="../index.html" class="title"><h1>typeou.dev/commissions</h1></a>
-        </div>
-        <div id="links">
-            <div><a href="../index.html">Home</a></div>
-            <div><a href="#">Commissions</a></div>
-            <div><a href="tos/index.html">Terms of Service</a></div>
-            <div><a href="../contact/index.html">Contact</a></div>
+        <div id="header" class="nopad">
+            <a href="../index.html" class="title"><div class="grid"><h1>typeou.dev</h1><h1 id="typer">/commissions</h1></div></a>
         </div>
         <div class="main">
-            <div class="grid1-5 block">
+            <div id="links" class="grid1">
+                <div><span></span><a href="../index.html">Home</a></div>
+                <div><span></span><a href="#">Commissions</a></div>
+                <div><span></span><a href="tos/index.html">Terms of Service</a></div>
+                <div><span></span><a href="../contact/index.html">Contact</a></div>
+            </div>
+            <div class="block grid1 left">
                 <h2>typeou's Live2D Rigging Commissions</h2>
                 <hr/>
                 <h3>Commissions are currently: <h2><h>CLOSED</h></h2></h3>
-                <p class="center"><b>Queue:</b> <h><a href="https://twitter.com/typeou">typeou</a>,</h> <a href="https://twitter.com/b00lien">b00lien</a> (v2)</p>
+                <p class="center"><b>In Progress:</b> None</p>
+                <p class="center"><b>Queue:</b> <a href="https://twitter.com/typeou">typeou</a>, <a href="https://twitter.com/b00lien">b00lien</a> (v2)</p>
                 <hr/>
                 <p>Welcome to my commission page! I do rigging-only commissions for Live2D models intended for use by VTubers/VStreamers.</p>
-                <p>If you are interested, please read the <a href="tos/index.html">Terms of Service</a> and contact me via Discord at <h>typeou#0001</h><br/>
+                <p>If you are interested, please read the <a href="tos/index.html">Terms of Service</a> and then <a href="../contact/index.html">contact</a> me, preferably via Discord at <h>typeou#0001</h><br/>
                     Please have a model in ready-to-rig form. The model should be in <h>.psd format</h> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.<br/>
                     I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.<br/></p>
-                <p>Also, I only do <h>humanoid rigs!</h> Large deviation from this (furry, mech, etc) is a no-go, unfortunately.</p>
             </div>
-            <div class="grid1-5 block">
+            <div class="block grid1 right delay1">
                 <h2>Pricing</h2>
                 <hr/>
                 <p class="center">Prices as listed are <h>base prices.</h> Final price may vary depending on complexity.</p>
@@ -96,56 +104,55 @@
                         <h2 id="priceFull">Converting...</h2>
                     </div>
                 </div>
-                <hr/>
-                <div id="features">
-                        <div>
-                            <div class="centerDiv">
-                                <h3>Includes</h3>
-                                <hr/>
-                                <ul>
-                                    <li>Standard Face Rigging</li>
-                                    <ul>
-                                        <li>Eye Open/Close</li>
-                                        <li>Eye Smile</li>
-                                        <li>Pupil Movement</li>
-                                        <li>Brow Angle and Y Position</li>
-                                        <li>Mouth Open/Close</li>
-                                        <li>Mouth Neutral/Smile/Frown</li>
-                                    </ul>
-                                    <li>Face X/Y/Z Rotation</li>
-                                    <li>Body X/Y/Z Rotation</li>
-                                    <li>Hair/Clothing/Accessory Physics</li>
-                                    <li>3 Toggleable Expressions</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="centerDiv">
-                                <h3>Add-ons</h3>
-                                <hr/>
-                                <ul>
-                                    <li>Additional Toggleable Expressions:</li>
-                                    <ul>
-                                        <li><span id="priceExpression">Converting...</span> each</li>
-                                    </ul>
-                                    <li>AEIOU:</li>
-                                    <ul>
-                                        <li><span id="priceAeiou">Converting...</span></li>
-                                    </ul>
-                                    <li>Arm Animations:</li>
-                                    <ul>
-                                        <li>Starting at <span id="priceArms">Converting...</span></li>
-                                    </ul>
-                                    <li>Alternate Outfits/Hairstyles:</li>
-                                    <ul>
-                                        <li>Starting at <span id="priceAlternate">Converting...</span></li>
-                                    </ul>
-                                </ul>
-                            </div>
-                        </div>
+            </div>
+            <div id="features" class="grid1">
+                <div class="block left delay2">
+                    <div class="centerDiv">
+                        <h3>Includes</h3>
+                        <hr/>
+                        <ul>
+                            <li>Standard Face Rigging</li>
+                            <ul>
+                                <li>Eye Open/Close</li>
+                                <li>Eye Smile</li>
+                                <li>Pupil Movement</li>
+                                <li>Brow Angle and Y Position</li>
+                                <li>Mouth Open/Close</li>
+                                <li>Mouth Neutral/Smile/Frown</li>
+                            </ul>
+                            <li>Face X/Y/Z Rotation</li>
+                            <li>Body X/Y/Z Rotation</li>
+                            <li>Hair/Clothing/Accessory Physics</li>
+                            <li>3 Toggleable Expressions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="block right delay3">
+                    <div class="centerDiv">
+                        <h3>Add-ons</h3>
+                        <hr/>
+                        <ul>
+                            <li>Additional Toggleable Expressions:</li>
+                            <ul>
+                                <li><span id="priceExpression">Converting...</span> each</li>
+                            </ul>
+                            <li>AEIOU:</li>
+                            <ul>
+                                <li><span id="priceAeiou">Converting...</span></li>
+                            </ul>
+                            <li>Arm Animations:</li>
+                            <ul>
+                                <li>Starting at <span id="priceArms">Converting...</span></li>
+                            </ul>
+                            <li>Alternate Outfits/Hairstyles:</li>
+                            <ul>
+                                <li>Starting at <span id="priceAlternate">Converting...</span></li>
+                            </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="grid1-5 block">
+            <div class="block grid1 left delay4">
                 <h2>Examples</h2>
                 <hr/>
                 <div id="examples">
@@ -163,8 +170,8 @@
                 </div>
             </div>
         </div>
-        <div id="footer" class="block center">
-            <a href="#">Top</a> | <a href="tos/index.html">Terms of Service</a>
+        <div id="footer" class="center">
+            <a href="#">Top</a> | <a href="../index.html">Home</a> | <a href="tos/index.html">Terms of Service</a> | <a href="../contact/index.html">Contact</a>
         </div>
     </body>
 </html>

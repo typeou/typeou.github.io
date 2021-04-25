@@ -4,23 +4,36 @@
         <title>typeou.dev/commissions/tos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../../style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("#links > div").mouseenter(function(event){
+                    $(this).children("span").addClass("hover");
+                })
+            
+                $("#links > div").mouseleave(function(event){
+                    $(this).children("span").removeClass("hover");
+                })
+            });
+        </script>
     </head>
     <body>
-        <div id="header" class="block nopad">
-            <a href="../index.html" class="title"><h1>typeou.dev/commissions/tos</h1></a>
-        </div>
-        <div id="links">
-            <div><a href="../../index.html">Home</a></div>
-            <div><a href="../index.html">Commissions</a></div>
-            <div><a href="#">Terms of Service</a></div>
-            <div><a href="../../contact/index.html">Contact</a></div>
+        <div id="header" class="nopad">
+            <a href="../index.html" class="title"><div class="grid"><h1>typeou.dev</h1><h1 id="typer">/commissions/tos</h1></div></a>
         </div>
         <div class="main">
-            <div class="grid1-5 block">
+            <div id="links">
+                <div><span></span><a href="../../index.html">Home</a></div>
+                <div><span></span><a href="../index.html">Commissions</a></div>
+                <div><span></span><a href="#">Terms of Service</a></div>
+                <div><span></span><a href="../../contact/index.html">Contact</a></div>
+            </div>
+            <div class="grid1 block right">
                 <h2>Terms of Service</h2>
                 <hr/>
                 <div class="centerDiv">
-                    <h3 class="left">Pricing</h3>
+                    <h3>Pricing</h3>
                     <ul>
                         <li>Payment will be accepted through Square <h>in Canadian Dollars (CAD).</h></li>
                         <li>USD prices as listed are based on the current CAD-to-USD conversion rounded up to the nearest $5 USD.</li>
@@ -37,7 +50,7 @@
                         <li>Finished model will not be sent until 100% of payment has been received.</li>
                         <li>Prices assume commercial use rights.</li>
                     </ul>
-                    <h3 class="left">Process</h3>
+                    <h3>Process</h3>
                     <ul>
                         <li>Turnaround time will vary depending on complexity and other factors.</li>
                         <ul>
@@ -55,9 +68,31 @@
                     </ul>
                 </div>
             </div>
+            <div class="grid1 flex">
+                <div class="block left delay1">
+                    <div class="centerDiv">
+                        <h3>Can-Do</h3>
+                        <hr/>
+                        <ul>
+                            <li>Humanoids</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="block right delay2">
+                    <div class="centerDiv">
+                        <h3>Can't-Do</h3>
+                        <hr/>
+                        <ul>
+                            <li>Furries</li>
+                            <li>Mechs</li>
+                            <li>Heavy Armour</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="footer" class="block center">
-            <a href="#">Top</a> | <a href="../index.html">Commissions</a>
+        <div id="footer" class="center">
+            <a href="#">Top</a> | <a href="../../index.html">Home</a> | <a href="../index.html">Commissions</a> | <a href="../../contact/index.html">Contact</a>
         </div>
     </body>
 </html>
