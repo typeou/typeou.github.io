@@ -13,7 +13,6 @@ body {
 .main {
     display: grid;
     grid-template-columns: repeat(4, auto) min-content;
-    min-width: min-content;
     padding: 15px;
 }
 
@@ -101,6 +100,7 @@ body {
 
 #links {
     white-space: nowrap;
+    height: max-content;
 }
 
 a {
@@ -219,8 +219,8 @@ hr {
     padding: 0 100px 0 100px;
 }
 
-#features > tbody > tr > td > div > ul {
-    width: max-content;
+#features ul {
+    max-width: max-content;
     text-align: left;
 }
 
@@ -245,7 +245,7 @@ hr {
 .centerDiv {
     position: relative;
     margin: auto;
-    width: max-content;
+    max-width: max-content;
 }
 
 #discord {
@@ -281,12 +281,6 @@ ul > li::marker {
 
 ul > ul > li::marker{
     color: #9effb1 !important;
-}
-
-ul li {
-    word-break: normal;
-    white-space: normal;
-    word-wrap: break-word;
 }
 
 #features td {
