@@ -31,7 +31,8 @@ body {
 }
 
 #header h1 {
-    font-size: min(3.5vh, 4vw);
+    font-size: min(3.5vh, 5vw);
+    min-width: max-content;
 }
 
 #header, #header a {
