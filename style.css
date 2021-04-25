@@ -22,11 +22,16 @@ body {
 }
 
 #header, #footer {
+    text-overflow: ellipsis;
     margin: 0;
     background: initial;
     background-color: #ff9eec;
     border: none;
     transition: none;
+}
+
+#header h1 {
+    font-size: min(3.5vh, 5vw);
 }
 
 #header, #header a {
