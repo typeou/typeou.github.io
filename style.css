@@ -32,7 +32,6 @@ body {
 
 #header h1 {
     font-size: min(3.5vh, 5vw);
-    min-width: max-content;
 }
 
 #header, #header a {
@@ -45,7 +44,7 @@ body {
     display: grid;
 }
 
-#header #typer {
+#typer {
     grid-column: 2;
     animation-name: type;
     animation-duration: 0.5s;
@@ -56,6 +55,10 @@ body {
 @keyframes type {
     from { width: 0%; }
     to { width: 100%; }
+}
+
+#typer::before {
+    content: "typeou.dev";
 }
 
 #footer {
