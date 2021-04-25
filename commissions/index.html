@@ -9,11 +9,11 @@
         <script>
             $(function() {
                 $("#examples > div").mouseenter(function(event){
-                    $(this).children("div").addClass("hover");
+                    $(this).children("div").children("div").addClass("hover");
                 })
             
                 $("#examples > div").mouseleave(function(event){
-                    $(this).children("div").removeClass("hover");
+                    $(this).children("div").children("div").removeClass("hover");
                 })
 
                 $("#links > div").mouseenter(function(event){
@@ -156,14 +156,16 @@
                 <h2>Examples</h2>
                 <hr/>
                 <div id="examples">
-                    <div class="grid1-2">
-                        <video autoplay muted loop src="b00.mp4"></video>
-                        <div class="cover">
-                            <div>
-                                <h1><a href="https://twitch.tv/typeou_">b00lien (v1)</a></h1>
-                                <hr/>
-                                <span>Art by <a href="https://twitter.com/b00lien">@b00lien</a></span>
-                                <p>Full-Body rig.</p>
+                    <div>
+                        <div>
+                            <video autoplay muted loop src="b00.mp4"></video>
+                            <div class="cover">
+                                <div>
+                                    <h1><a href="https://twitch.tv/typeou_">b00lien (v1)</a></h1>
+                                    <hr/>
+                                    <span>Art by <a href="https://twitter.com/b00lien">@b00lien</a></span>
+                                    <p>Full-Body rig.</p>
+                                </div>
                             </div>
                         </div>
                     </div>

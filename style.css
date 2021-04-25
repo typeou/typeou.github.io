@@ -3,7 +3,7 @@ body {
     min-height: 100%;
     background-attachment: fixed;
     font-family: Verdana;
-    font-size: 1.25em;
+    font-size: 1.5vh;
     margin: 0;
     min-height: calc(100vh - 50px);
     position: relative;
@@ -220,15 +220,15 @@ a {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3vh;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5vh;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 2vh;
 }
 
 h1, h2, h3 {
@@ -243,47 +243,36 @@ h1, h2, h3 {
 hr {
     border: 0;
     height: 2px;
+    min-height: 2px;
     background-color: white;
 }
 
 #examples {
     padding: 15px;
-    max-width: 100vh;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #examples > div {
-    position: relative;
-    font-size: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    height: 125vmin;
+    max-height: 75vh;
+    margin: auto;
+    flex-grow: 1;
     margin: 7.5px;
-    border: 1px solid #ff3cd7;
-}
-
-#examples > .grid1-2 {
-    width: calc(50% - 15px);
-    margin: 0 auto;
-}
-
-#examples video {
-    width: 100%;
-}
-
-#examples .cover {
-    font-size: initial;
-}
-
-#examples h1 {
-    font-size: 2.5em;
-}
-
-#examples span, #examples p {
-    font-size: 1.5em;
 }
 
 #examples > div > div {
+    height: 100%;
+    width: max-content;
+    font-size: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    border: 1px solid #ff3cd7;
+    position: relative;
+}
+
+#examples .cover {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     position: absolute;
@@ -293,7 +282,7 @@ hr {
     clip-path: inset(100% 0 0 0);
 }
 
-#examples > div > div > div {
+#examples .cover > div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -302,11 +291,23 @@ hr {
     text-align: center;
 }
 
-#examples > div > div > div > hr {
+#examples .cover > hr {
     border: 0;
     height: 2px;
     background-color: white;
     margin: 0 15px 0 15px;
+}
+
+#examples video {
+    height: 100%;
+}
+
+#examples h1 {
+    font-size: 3vh;
+}
+
+#examples span, #examples p {
+    font-size: 1.5vh;
 }
 
 .cover {
@@ -354,7 +355,7 @@ hr {
 #priceHalf::before, #priceFull::before {
     content: "Starting at ";
     font-weight: normal;
-    font-size: 0.5em;
+    font-size: 2vh;
 }
 
 #addOns span {
