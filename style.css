@@ -222,6 +222,14 @@ body {
     clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
 }
 
+#links .current > span {
+    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%) !important;
+}
+
+#links .current > a {
+    color: #ff3cd7 !important;
+}
+
 a {
     text-decoration: none;
     color: #ff3cd7;
