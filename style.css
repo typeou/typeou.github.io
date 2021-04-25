@@ -3,13 +3,11 @@ body {
     min-height: 100%;
     background-attachment: fixed;
     font-family: Verdana;
-    font-size: 20px;
+    font-size: 1.5em;
     margin: 0;
     min-height: calc(100vh - 50px);
     position: relative;
     padding-bottom: 50px;
-    -webkit-text-size-adjust: 200%;
-    text-size-adjust: 200%;
 }
 
 .main {
@@ -111,15 +109,15 @@ a {
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 2.5em;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 1.5em;
 }
 
 h1, h2, h3 {
@@ -139,7 +137,6 @@ hr {
 
 #examples {
     padding: 15px;
-    font-size: 0;
     max-width: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -148,6 +145,7 @@ hr {
 
 #examples > div {
     position: relative;
+    font-size: 0;
     background-color: rgba(0, 0, 0, 0.4);
     margin: 7.5px;
     border: 1px solid #ff3cd7;
@@ -160,6 +158,22 @@ hr {
 
 #examples video {
     width: 100%;
+}
+
+#examples h1 {
+    font-size: 2.5em;
+}
+
+#examples span {
+    font-size: 2em;
+}
+
+#examples .cover {
+    font-size: initial;
+}
+
+#examples p {
+    font-size: 1.5em
 }
 
 #examples > div > div {
@@ -176,7 +190,6 @@ hr {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 36px;
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
@@ -187,10 +200,6 @@ hr {
     height: 2px;
     background-color: white;
     margin: 0 15px 0 15px;
-}
-
-#examples p {
-    font-size: 18px;
 }
 
 .cover {
@@ -240,11 +249,7 @@ hr {
 #priceHalf::before, #priceFull::before {
     content: "Starting at ";
     font-weight: normal;
-    font-size: 36px;
-}
-
-#examples span {
-    font-size: 36px;
+    font-size: 0.75em;
 }
 
 #addOns span {
