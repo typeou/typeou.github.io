@@ -9,12 +9,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $(function() {
-                $("#examples > div").mouseenter(function(event){
-                    $(this).children("div").children("div").addClass("hover");
+                $("#examples > div > div").mouseenter(function(event){
+                    $(this).children(".cover").addClass("hover");
                 })
             
-                $("#examples > div").mouseleave(function(event){
-                    $(this).children("div").children("div").removeClass("hover");
+                $("#examples > div > div").mouseleave(function(event){
+                    $(this).children(".cover").removeClass("hover");
                 })
 
                 $("#links > div").mouseenter(function(event){
