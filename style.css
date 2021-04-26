@@ -52,6 +52,8 @@ body {
     animation-name: type;
     animation-duration: 0.5s;
     animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
 }
 
 @keyframes type {
@@ -112,13 +114,13 @@ body {
     to { transform: translate(0); opacity: 1; }
 }
 
-.left {
+.slideLeft {
     animation-name: slideLeft;
     animation-duration: 1s;
     animation-fill-mode: both;
 }
 
-.right {
+.slideRight {
     animation-name: slideRight;
     animation-duration: 1s;
     animation-fill-mode: both;
@@ -380,6 +382,14 @@ hr {
 
 .center {
     text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
 }
 
 .centerDiv {
