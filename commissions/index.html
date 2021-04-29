@@ -26,7 +26,7 @@
                 })
             });
 
-            var half = 600, full = 725, aeiou = 60, expression = 25, arms = 175, alternate = 225, rate;
+            var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, rate;
             var request = new XMLHttpRequest();
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200)
@@ -38,6 +38,7 @@
                     $("#priceFull").after("<span>$" + full + " CAD</span>");
                     $("#priceExpression").html(Round(Convert(expression)) + " ($" + expression + " CAD)");
                     $("#priceAeiou").html(Round(Convert(aeiou)) + " ($" + aeiou + " CAD)");
+                    $("#priceAnimated").html(Round(Convert(animated)) + " ($" + animated + " CAD)");
                     $("#priceArms").html(Round(Convert(arms)) + " ($" + arms + " CAD)");
                     $("#priceAlternate").html(Round(Convert(alternate)) + " ($" + alternate + " CAD)");
                 }
@@ -47,6 +48,7 @@
                     $("#priceFull").html("$" + full + " CAD");
                     $("#priceExpression").html("$" + expression + " CAD");
                     $("#priceAeiou").html("$" + aeiou + " CAD");
+                    $("#priceAnimated").html("$" + animated + " CAD");
                     $("#priceArms").html("$" + arms + " CAD");
                     $("#priceAlternate").html("$" + alternate + " CAD");
                 }
@@ -124,7 +126,10 @@
                             <li>Face X/Y/Z Rotation</li>
                             <li>Body X/Y/Z Rotation</li>
                             <li>Hair/Clothing/Accessory Physics</li>
-                            <li>3 Toggleable Expressions</li>
+                            <li>4 Toggle Expressions</li>
+                            <ul>
+                                <li>Happy, Sad, Angry, Scared</li>
+                            </ul>
                         </ul>
                     </div>
                 </div>
@@ -133,7 +138,7 @@
                         <h3>Add-ons</h3>
                         <hr/>
                         <ul>
-                            <li>Additional Toggleable Expressions:</li>
+                            <li>Additional Toggle Expressions:</li>
                             <ul>
                                 <li><span id="priceExpression">Converting...</span> each</li>
                             </ul>
@@ -141,9 +146,10 @@
                             <ul>
                                 <li><span id="priceAeiou">Converting...</span></li>
                             </ul>
-                            <li>Arm Animations:</li>
+                            <li>Animated Expressions:</li>
                             <ul>
-                                <li>Starting at <span id="priceArms">Converting...</span></li>
+                                <li>Standard:<br/>Starting at <span id="priceAnimated">Converting...</span></li>
+                                <li>Animated Arms:<br/>Starting at <span id="priceArms">Converting...</span></li>
                             </ul>
                             <li>Alternate Outfits/Hairstyles:</li>
                             <ul>
