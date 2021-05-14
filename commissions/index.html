@@ -26,7 +26,7 @@
                 })
             });
 
-            var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, rate;
+            var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, ios = 60, rate;
             var request = new XMLHttpRequest();
             request.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200)
@@ -41,6 +41,7 @@
                     $("#priceAnimated").html(Round(Convert(animated)) + " ($" + animated + " CAD)");
                     $("#priceArms").html(Round(Convert(arms)) + " ($" + arms + " CAD)");
                     $("#priceAlternate").html(Round(Convert(alternate)) + " ($" + alternate + " CAD)");
+                    $("#priceIOS").html(Round(Convert(ios)) + " ($" + ios + " CAD)");
                 }
                 else
                 {
@@ -51,6 +52,7 @@
                     $("#priceAnimated").html("$" + animated + " CAD");
                     $("#priceArms").html("$" + arms + " CAD");
                     $("#priceAlternate").html("$" + alternate + " CAD");
+                    $("#priceIOS").html("$" + ios + " CAD");
                 }
             };
             request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);
@@ -145,6 +147,10 @@
                             <li>AEIOU:</li>
                             <ul>
                                 <li><span id="priceAeiou">Converting...</span></li>
+                            </ul>
+                            <li>Mouth X, Cheek Puff, & Tongue Out</li>
+                            <ul>
+                                <li>Starting at <span id="priceIOS">Converting...</span> each</li>
                             </ul>
                             <li>Animated Expressions:</li>
                             <ul>
