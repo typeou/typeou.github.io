@@ -12,7 +12,6 @@ body {
 }
 
 .main {
-    overflow-x: hidden;
     display: grid;
     background-color: white;
     margin: auto;
@@ -98,32 +97,38 @@ body {
     color: white;
     box-shadow: 0px 0px rgba(0, 0, 0, 0);
     transition: box-shadow 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
 }
 
 .block:hover {
     box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
 }
 
-@keyframes slideLeft {
-    from { transform: translate(-50%); opacity: 0; }
-    to { transform: translate(0); opacity: 1; }
+@keyframes open1 {
+    from {
+        clip-path: polygon(0% 50%, 100% 50%, 75% 50%, 25% 50%);
+        margin: 15px calc(-10% + 15px);
+        padding: 15px calc(10% + 15px);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: 15px;
+        padding: 15px;
+    }
 }
 
-@keyframes slideRight {
-    from { transform: translate(50%); opacity: 0; }
-    to { transform: translate(0); opacity: 1; }
-}
-
-.slideLeft {
-    animation-name: slideLeft;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-.slideRight {
-    animation-name: slideRight;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+@keyframes open2 {
+    from {
+        clip-path: polygon(25% 50%, 75% 50%, 100% 50%, 0% 50%);
+        margin: 15px calc(-10% + 15px);
+        padding: 15px calc(10% + 15px);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: 15px;
+        padding: 15px;
+    }
 }
 
 .delay1 {
