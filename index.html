@@ -7,18 +7,6 @@
         <link rel="icon" type="image/png" href="favicon.png"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="blocks.js"></script>
-        <script>
-            $(function() {
-                $("#links > div").mouseenter(function(event){
-                    $(this).children("span").addClass("hover");
-                })
-            
-                $("#links > div").mouseleave(function(event){
-                    $(this).children("span").removeClass("hover");
-                })
-            });
-        </script>
     </head>
     <body>
         <div id="header" class="nopad">
@@ -53,5 +41,8 @@
         <div id="footer" class="center">
             <a href="#">Top</a> | <a href="commissions/index.html">Commissions</a> | <a href="commissions/tos/index.html">Terms of Service</a> | <a href="contact/index.html">Contact</a>
         </div>
+
+        <script src="blocks.js"></script>
+        <script src="hovers.js"></script>
     </body>
 </html>
