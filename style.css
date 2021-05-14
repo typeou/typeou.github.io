@@ -107,9 +107,9 @@ body {
 
 @keyframes open1 {
     from {
-        clip-path: polygon(0% 50%, 100% 50%, 75% 50%, 25% 50%);
-        margin: 15px calc(-10% + 15px);
-        padding: 15px calc(10% + 15px);
+        clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
+        margin: 15px -15px;
+        padding: 15px 45px;
     }
     to {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -120,9 +120,9 @@ body {
 
 @keyframes open2 {
     from {
-        clip-path: polygon(25% 50%, 75% 50%, 100% 50%, 0% 50%);
-        margin: 15px calc(-10% + 15px);
-        padding: 15px calc(10% + 15px);
+        clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
+        margin: 15px -15px;
+        padding: 15px 45px;
     }
     to {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
