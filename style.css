@@ -469,6 +469,6 @@ ul > ul > li::marker{
     padding: 0 !important;
 }
 
-#priceExpression, #priceAeiou, #priceAnimated, #priceArms, #priceAlternate, #priceIOS {
+.prices {
     font-weight: bold;
 }

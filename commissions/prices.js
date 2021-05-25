@@ -1,4 +1,4 @@
-var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, ios = 60, rate;
+var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, ios = 60, bodyY = 100, rate;
 
 function Convert(data)
 {
@@ -25,6 +25,7 @@ request.onreadystatechange = function() {
         $("#priceArms").html(Round(Convert(arms)) + " ($" + arms + " CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + " ($" + alternate + " CAD)");
         $("#priceIOS").html(Round(Convert(ios)) + " ($" + ios + " CAD)");
+        $("#priceBodyY").html(Round(Convert(bodyY)) + " ($" + bodyY + " CAD)");
     }
     else
     {
@@ -36,6 +37,7 @@ request.onreadystatechange = function() {
         $("#priceArms").html("$" + arms + " CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
         $("#priceIOS").html("$" + ios + " CAD");
+        $("#priceBodyY").html("$" + bodyY + " CAD");
     }
 };
 request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);
