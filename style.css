@@ -48,11 +48,21 @@ body {
 }
 
 #header h1:nth-of-type(2) {
+    -webkit-animation-name: type;
     animation-name: type;
+    -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+
+@-webkit-keyframes type {
+    from { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); }
+    to { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
 }
 
 @keyframes type {
@@ -97,7 +107,9 @@ body {
     color: white;
     box-shadow: 0px 0px rgba(0, 0, 0, 0);
     transition: box-shadow 0.5s;
+    -webkit-animation-duration: 0.5s;
     animation-duration: 0.5s;
+    -webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
 }
 
@@ -105,9 +117,35 @@ body {
     box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
 }
 
+@-webkit-keyframes open1 {
+    from {
+        clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
+        margin: 15px -15px;
+        padding: 15px 45px;
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: 15px;
+        padding: 15px;
+    }
+}
+
 @keyframes open1 {
     from {
         clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
+        margin: 15px -15px;
+        padding: 15px 45px;
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        margin: 15px;
+        padding: 15px;
+    }
+}
+
+@-webkit-keyframes open2 {
+    from {
+        clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
         margin: 15px -15px;
         padding: 15px 45px;
     }
@@ -131,9 +169,35 @@ body {
     }
 }
 
+@-webkit-keyframes open3 {
+    from {
+        clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
+        margin: -15px 15px;
+        padding: 45px 15px;
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+        margin: 15px;
+        padding: 15px;
+    }
+}
+
 @keyframes open3 {
     from {
         clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
+        margin: -15px 15px;
+        padding: 45px 15px;
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+        margin: 15px;
+        padding: 15px;
+    }
+}
+
+@-webkit-keyframes open4 {
+    from {
+        clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
         margin: -15px 15px;
         padding: 45px 15px;
     }
@@ -158,18 +222,22 @@ body {
 }
 
 .delay1 {
+    -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
 }
 
 .delay2 {
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
 .delay3 {
+    -webkit-animation-delay: 0.75s;
     animation-delay: 0.75s;
 }
 
 .delay4 {
+    -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 
