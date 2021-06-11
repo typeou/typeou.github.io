@@ -1,4 +1,4 @@
-var half = 600, full = 725, aeiou = 60, expression = 20, animated = 125, arms = 175, alternate = 225, ios = 60, bodyY = 100, rate;
+var half = 600, full = 725, expression = 30, animated = 125, arms = 175, alternate = 225, ios = 60, bodyY = 100, rate;
 
 function Convert(data)
 {
@@ -20,7 +20,6 @@ request.onreadystatechange = function() {
         $("#priceFull").html(Round(Convert(full)));
         $("#priceFull").after("<span>$" + full + " CAD</span>");
         $("#priceExpression").html(Round(Convert(expression)) + " ($" + expression + " CAD)");
-        $("#priceAeiou").html(Round(Convert(aeiou)) + " ($" + aeiou + " CAD)");
         $("#priceAnimated").html(Round(Convert(animated)) + " ($" + animated + " CAD)");
         $("#priceArms").html(Round(Convert(arms)) + " ($" + arms + " CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + " ($" + alternate + " CAD)");
@@ -32,7 +31,6 @@ request.onreadystatechange = function() {
         $("#priceHalf").html("$" + half + " CAD");
         $("#priceFull").html("$" + full + " CAD");
         $("#priceExpression").html("$" + expression + " CAD");
-        $("#priceAeiou").html("$" + aeiou + " CAD");
         $("#priceAnimated").html("$" + animated + " CAD");
         $("#priceArms").html("$" + arms + " CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
