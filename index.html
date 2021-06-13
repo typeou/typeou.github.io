@@ -3,6 +3,8 @@
     <head>
         <title>typeou.dev/</title>
         <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="favicon.png"/>
 
@@ -39,20 +41,23 @@
                     <div class="block">
                         <h2>typeou's Live2D Rigging Commissions</h2>
                         <hr/>
-                        <h3>Commissions are currently: <h2><h>CLOSED</h></h2></h3>
+                        <h3>Commissions are currently: <h1><mark>CLOSED</mark></h1></h3>
                         <p class="center"><b>In Progress:</b> None</p>
                         <p class="center"><b>Queue:</b> <a href="https://twitter.com/typeou">typeou</a>, <a href="https://twitter.com/b00lien">b00lien</a> (v2)</p>
                         <hr/>
-                        <p>Welcome to my commission page! I do rigging-only commissions for Live2D models intended for use by VTubers/VStreamers.</p>
-                        <p>If you are interested, please read the <a href="#tos" onclick="Navigate(event);">Terms of Service</a> and then <a href="#contact" onclick="Navigate(event);">contact</a> me, preferably via Discord at <h>typeou#0001</h></p>
-                        <p>Please have a model in ready-to-rig form. The model should be in <h>.psd format</h> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.</p>
+                        <p>Welcome to my commission page! I do rigging-only commissions for Live2D Vtuber models.</p>
+                        <p>If you are interested please read the <a href="#tos" onclick="Navigate(event);">Terms of Service</a> and then <a href="#contact" onclick="Navigate(event);">contact</a> me, preferably via Discord at <mark>typeou#0001</mark></p>
+                        <p>Please have a model in ready-to-rig form. The model should be in <mark>.psd format</mark> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.</p>
                         <p>I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.<br/></p>
                     </div>
                     <div class="block">
                         <h2>Pricing</h2>
                         <hr/>
-                        <p class="center">Prices as listed are <h>base prices.</h> Final price may vary depending on complexity.</p>
-                        <p class="center">Prices are subject to change.</p>
+                        <p class="center">Prices as listed are <mark>base prices.</mark> Final price may vary depending on complexity.</p>
+                        <p class="center">
+                            Prices are subject to change.<br/>
+                            <small><i>Last updated: 2021 June 13</i></small>
+                        </p>
                         <div id="pricing">
                             <div>
                                 <h3>Half-Body</h3>
@@ -96,26 +101,31 @@
                                 <h3>Add-ons</h3>
                                 <hr/>
                                 <ul>
-                                    <li>Additional Toggle Expressions:</li>
+                                    <li>Additional Expressions:</li>
                                     <ul>
-                                        <li><span id="priceExpression" class="prices">Converting...</span> each</li>
+                                        <li>Toggle: <span id="priceExpression" class="prices">Converting...</span></li>
+                                        <li>Animated: <span id="priceAnimated" class="prices">Converting...</span></li>
+                                    </ul>
+                                    <li>Clothing/Accessory Toggle:</li>
+                                    <ul>
+                                        <li><span id="priceToggle" class="prices">Converting...</span></li>
+                                    </ul>
+                                    <li>Alternate Arms:</li>
+                                    <ul>
+                                        <li>Toggle: <span id="priceArms" class="prices">Converting...</span></li>
+                                        <li>Animated: <span id="priceAnimatedArms" class="prices">Converting...</span></li>
                                     </ul>
                                     <li>Body Y Rotation</li>
                                     <ul>
-                                        <li>Starting at <span id="priceBodyY" class="prices">Converting...</span></li>
+                                        <li><span id="priceBodyY" class="prices">Converting...</span></li>
                                     </ul>
                                     <li>Mouth X, Cheek Puff, & Tongue Out</li>
                                     <ul>
-                                        <li>Starting at <span id="priceIOS" class="prices">Converting...</span> each</li>
-                                    </ul>
-                                    <li>Animated Expressions:</li>
-                                    <ul>
-                                        <li>Standard:<br/>Starting at <span id="priceAnimated" class="prices">Converting...</span></li>
-                                        <li>Animated Arms:<br/>Starting at <span id="priceArms" class="prices">Converting...</span></li>
+                                        <li><span id="priceIOS" class="prices">Converting...</span> each</li>
                                     </ul>
                                     <li>Alternate Outfits/Hairstyles:</li>
                                     <ul>
-                                        <li>Starting at <span id="priceAlternate" class="prices">Converting...</span></li>
+                                        <li><span id="priceAlternate" class="prices">Converting...</span></li>
                                     </ul>
                                 </ul>
                             </div>
@@ -178,18 +188,20 @@
                         <div class="centerDiv">
                             <h3>Pricing</h3>
                             <ul>
-                                <li>Payment will be accepted through Square <h>in Canadian Dollars (CAD).</h></li>
+                                <li>Payment will be accepted through Square <mark>in Canadian Dollars (CAD).</mark></li>
                                 <li>USD prices as listed are based on the current CAD-to-USD conversion rounded up to the nearest $5 USD.</li>
                                 <ul>
                                     <li>This conversion is peformed automatically based on the latest data from the Bank of Canada.</li>
                                 </ul>
                                 <li>After the final price is decided, an invoice will be sent to the client's email through Square.</li>
-                                <li><h>Please note that the price listed on the invoice will be in Canadian Dollars (CAD).</h></li>
-                                <li>Upon receipt of the invoice, the client must pay a deposit of at least 50% of the listed price before work will begin.</li>
+                                <li><mark>Please note that the price listed on the invoice will be in Canadian Dollars (CAD).</mark></li>
+                                <ul>
+                                    <li>The CAD-to-USD (or other relevant currency) conversion, as of the time of sending, will be listed in the invoice notes.</li>
+                                </ul>
+                                <li>Work will not begin until at least 50% of payment has been received.</li>
                                 <ul>
                                     <li>If the client wishes, they may choose to pay 100% of the fee upfront.</li>
                                 </ul>
-                                <li>Work will not begin until at least 50% of payment has been received.</li>
                                 <li>Finished model will not be sent until 100% of payment has been received.</li>
                                 <li>Prices assume commercial use rights.</li>
                             </ul>
@@ -200,7 +212,7 @@
                                     <li>Typical turnaround time is 1-3 weeks from the time work begins on the model.</li>
                                     <li>For rush services, please contact.</li>
                                 </ul>
-                                <li><h>Once work has started, refunds will not be provided.</h></li>
+                                <li><mark>Once work has started, refunds will not be provided.</mark></li>
                                 <ul>
                                     <li>If work does not begin immediately after payment, I will contact you before I start.</li>
                                 </ul>

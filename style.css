@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
     background-attachment: fixed;
-    font-family: Verdana;
+    font-family: 'Noto Sans', sans-serif;
     font-size: max(min(2vh, 2em), 1em);
     margin: 0;
     position: relative;
@@ -9,6 +9,100 @@ body {
     display: flex;
     flex-flow: column;
     min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #ff3cd7;
+}
+
+h1 {
+    font-size: max(min(3.5vh, 3.5em), 1.75em);
+}
+
+h2 {
+    font-size: max(min(3vh, 3em), 1.5em);
+}
+
+h3 {
+    font-size: max(min(2.5vh, 2.5em), 1.25em);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 0;
+}
+
+h1 > a {
+    color: inherit;
+}
+
+h1 > a:hover {
+    color: #ff3cd7;
+}
+
+mark {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 0 0.1em 0 0.1em;
+    margin: 0 -0.1em 0 -0.1em;
+}
+
+ul > li {
+    padding: 0 0 0.5em 0;
+}
+
+ul > li::marker {
+    font-weight: bold;
+    content: "> ";
+    color: #ff3cd7;
+}
+
+ul > ul > li::marker{
+    color: #9effb1 !important;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    min-height: 2px;
+    background-color: white;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex > div {
+    flex-grow: 1;
+}
+
+.grid {
+    display: grid;
+}
+
+.nopad {
+    padding: 0 !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.centerDiv {
+    position: relative;
+    margin: auto;
+    max-width: max-content;
 }
 
 #main {
@@ -30,8 +124,12 @@ body {
 }
 
 #header h1 {
+    font-family: 'Inconsolata', monospace;
+    font-weight: bolder;
     font-size: min(3.5vh, 5vw);
     display: inline-block;
+    margin: auto;
+    pointer-events: none;
 }
 
 #header, #header a {
@@ -40,11 +138,6 @@ body {
 
 #header div {
     width: max-content;
-    margin: auto;
-    pointer-events: none;
-}
-
-#header h1 {
     margin: auto;
     pointer-events: none;
 }
@@ -70,11 +163,73 @@ body {
     color: white !important;
 }
 
-.separator {
-    padding: 0 !important;
-    width: 2px;
-    min-width: 2px;
-    background-color: white;
+#links {
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+#links div {
+    flex-grow: 1;
+    position: relative;
+    margin: 0 auto;
+}
+
+#links a, #links span {
+    display: inline-block;
+    width: 11em;
+}
+
+#links a {
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+    color: black;
+    transition: color 0.5s;
+}
+
+#links a:hover {
+    color: #ff3cd7;
+}
+
+#links span {
+    clip-path: polygon(0% 50%, 100% 50%, 75% 50%, 25% 50%);
+    transition: clip-path 0.5s;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
+    position: absolute;
+    height: 100%;
+}
+
+#links span.hover {
+    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
+}
+
+#links .current > span {
+    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%) !important;
+}
+
+#links .current > a {
+    color: #ff3cd7 !important;
+}
+
+#pages {
+    display: grid;
+}
+
+.page {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    height: max-content;
+}
+
+.page > div {
+    grid-column: 1;
 }
 
 .block {
@@ -95,6 +250,10 @@ body {
 
 .blockInit {
     height: 0;
+}
+
+.block small {
+    color: grey;
 }
 
 .reverse {
@@ -324,128 +483,55 @@ body {
     }
 }
 
-.flex {
+#pricing {
     display: flex;
     flex-wrap: wrap;
-}
-
-.flex > div {
-    flex-grow: 1;
-}
-
-.grid {
-    display: grid;
-}
-
-.grid1 {
-    grid-column: 1;
-}
-
-.grid2 {
-    grid-column: 2;
-}
-
-.grid1-2 {
-    grid-column: 1 / 3;
-}
-
-.grid1-4 {
-    grid-column: 1 / 5;
-}
-
-.grid1-5 {
-    grid-column: 1 / 6;
-}
-
-.grid5 {
-    grid-column: 5;
-}
-
-#links {
-    white-space: nowrap;
+    text-align: center;
     width: 100%;
-    text-align: center;
+}
+
+#pricing > div {
+    padding: 0 25px 25px 25px;
+    flex-grow: 1;
+}
+
+.prices {
+    font-weight: bold;
+}
+
+#features {
     display: flex;
     flex-wrap: wrap;
-    max-width: 100vh;
-    margin: auto;
-    position: relative;
-}
-
-#links div {
-    flex-grow: 1;
-    position: relative;
-    margin: 0 auto;
-}
-
-#links a, #links span {
-    display: inline-block;
-    width: 11em;
-}
-
-#links a {
-    position: relative;
-    z-index: 1;
-    padding: 10px 0;
-    color: black;
-    transition: color 0.5s;
-}
-
-#links a:hover {
-    color: #ff3cd7;
-}
-
-#links span {
-    clip-path: polygon(0% 50%, 100% 50%, 75% 50%, 25% 50%);
-    transition: clip-path 0.5s;
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
-    position: absolute;
-    height: 100%;
-}
-
-#links span.hover {
-    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%);
-}
-
-#links .current > span {
-    clip-path: polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%) !important;
-}
-
-#links .current > a {
-    color: #ff3cd7 !important;
-}
-
-a {
-    text-decoration: none;
-    color: #ff3cd7;
-}
-
-h1 {
-    font-size: max(min(3.5vh, 3.5em), 1.75em);
-}
-
-h2 {
-    font-size: max(min(3vh, 3em), 1.5em);
-}
-
-h3 {
-    font-size: max(min(2.5vh, 2.5em), 1.25em);
-}
-
-h1, h2, h3 {
     text-align: center;
-    margin: 0;
+    width: 100%;
 }
 
-.nopad {
+#features > div {
+    flex-grow: 1;
+}
+
+#features > div.separator
+{
+    flex-grow: unset;
+}
+
+#features ul {
+    max-width: max-content;
+    text-align: left;
+}
+
+#features td {
     padding: 0 !important;
 }
 
-hr {
-    border: 0;
-    height: 2px;
-    min-height: 2px;
-    background-color: white;
+#priceHalf::before, #priceFull::before {
+    content: "Starting at ";
+    font-weight: normal;
+    font-size: max(min(2.5vh, 2.5em), 1.25em);
+}
+
+#addOns span {
+    font-weight: bold;
 }
 
 #examples {
@@ -521,122 +607,8 @@ hr {
     clip-path: inset(0% 0 0 0) !important;
 }
 
-#pricing {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    width: 100%;
-}
-
-#pricing > div {
-    padding: 0 25px 25px 25px;
-    flex-grow: 1;
-}
-
-#features {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    width: 100%;
-}
-
-#features > div {
-    flex-grow: 1;
-}
-
-#features > div.separator
-{
-    flex-grow: unset;
-}
-
-#features ul {
-    max-width: max-content;
-    text-align: left;
-}
-
-#priceHalf::before, #priceFull::before {
-    content: "Starting at ";
-    font-weight: normal;
-    font-size: max(min(2.5vh, 2.5em), 1.25em);
-}
-
-#addOns span {
-    font-weight: bold;
-}
-
-.center {
-    text-align: center;
-}
-
-.right {
-    text-align: right;
-}
-
-.left {
-    text-align: left;
-}
-
-.centerDiv {
-    position: relative;
-    margin: auto;
-    max-width: max-content;
-}
-
 #discord {
     text-align: right;
     width: 100%;
     display: inline-block;
-}
-
-h1 > a {
-    color: inherit;
-}
-
-h1 > a:hover {
-    color: #ff3cd7;
-}
-
-h {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    padding: 0 0.1em 0 0.1em;
-    margin: 0 -0.1em 0 -0.1em;
-}
-
-ul > li {
-    padding: 0 0 0.5em 0;
-}
-
-ul > li::marker {
-    font-weight: bold;
-    content: "> ";
-    color: #ff3cd7;
-}
-
-ul > ul > li::marker{
-    color: #9effb1 !important;
-}
-
-#features td {
-    padding: 0 !important;
-}
-
-.prices {
-    font-weight: bold;
-}
-
-#pages {
-    display: grid;
-}
-
-.page {
-    grid-row: 1;
-    grid-column: 1;
-    display: grid;
-    height: max-content;
-}
-
-.page > div {
-    grid-column: 1;
 }
