@@ -147,19 +147,19 @@ body {
         padding: 15px 45px;
     }
     1%{
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
         margin: 15px -15px;
         padding: 15px 45px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, calc(100% + 15px) 0%, calc(100% + 15px) calc(100% + 15px), 0% calc(100% + 15px));
         margin: 15px;
         padding: 15px;
@@ -174,19 +174,19 @@ body {
         padding: 15px 45px;
     }
     1%{
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
         margin: 15px -15px;
         padding: 15px 45px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, calc(100% + 15px) 0%, calc(100% + 15px) calc(100% + 15px), 0% calc(100% + 15px));
         margin: 15px;
         padding: 15px;
@@ -201,19 +201,19 @@ body {
         padding: 15px 45px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
         margin: 15px -15px;
         padding: 15px 45px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, calc(100% + 15px) 0%, calc(100% + 15px) calc(100% + 15px), 0% calc(100% + 15px));
         margin: 15px;
         padding: 15px;
@@ -228,19 +228,19 @@ body {
         padding: 15px 45px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
         margin: 15px -15px;
         padding: 15px 45px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, calc(100% + 15px) 0%, calc(100% + 15px) calc(100% + 15px), 0% calc(100% + 15px));
         margin: 15px;
         padding: 15px;
@@ -255,19 +255,19 @@ body {
         padding: 45px 15px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
         margin: -15px 15px;
         padding: 45px 15px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% calc(100% + 15px), calc(100% + 15px) calc(100% + 15px), calc(100% + 15px) 0%);
         margin: 15px;
         padding: 15px;
@@ -282,19 +282,19 @@ body {
         padding: 45px 15px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
         margin: -15px 15px;
         padding: 45px 15px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% calc(100% + 15px), calc(100% + 15px) calc(100% + 15px), calc(100% + 15px) 0%);
         margin: 15px;
         padding: 15px;
@@ -309,19 +309,19 @@ body {
         padding: 45px 15px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
         margin: -15px 15px;
         padding: 45px 15px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% calc(100% + 15px), calc(100% + 15px) calc(100% + 15px), calc(100% + 15px) 0%);
         margin: 15px;
         padding: 15px;
@@ -336,19 +336,19 @@ body {
         padding: 45px 15px;
     }
     1% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
         margin: -15px 15px;
         padding: 45px 15px;
     }
     99% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
         margin: 15px;
         padding: 15px;
     }
     100% {
-        height: auto;
+        height: max-content;
         clip-path: polygon(0% 0%, 0% calc(100% + 15px), calc(100% + 15px) calc(100% + 15px), calc(100% + 15px) 0%);
         margin: 15px;
         padding: 15px;
