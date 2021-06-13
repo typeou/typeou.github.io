@@ -41,10 +41,12 @@ body {
 #header div {
     width: max-content;
     margin: auto;
+    pointer-events: none;
 }
 
 #header h1 {
     margin: auto;
+    pointer-events: none;
 }
 
 #directory {

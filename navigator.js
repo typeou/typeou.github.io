@@ -3,7 +3,11 @@ var page;
 $(function()
 {
     if (window.location.href.indexOf("#") != -1)
+    {
         page = window.location.href.substr(window.location.href.indexOf("#") + 1);
+        if (!$("#" + page + "Div").length)
+            page = "home";
+    }
     else
         page = "home";
 
@@ -43,7 +47,7 @@ function Navigate(event)
         page = event.target.href.substr(event.target.href.indexOf("#") + 1);
     
         $("#links .current").removeClass("current");
-        $(event.target).parent().addClass("current");
+        $("#" + page + "Link").addClass("current");
     
         RefreshBlocks(1);
         $("#" + page + "Div .block").removeClass("reverse");
