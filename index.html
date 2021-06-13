@@ -10,39 +10,237 @@
     </head>
     <body>
         <div id="header" class="nopad">
-            <a href="index.html" class="title"><div><h1>typeou.dev</h1></div></a>
-        </div>
-        <div class="main">
-            <div id="links" class="grid1">
-                <div class="current"><span></span><a href="#">Home</a></div>
-                <div><span></span><a href="commissions/index.html">Commissions</a></div>
-                <div><span></span><a href="commissions/tos/index.html">Terms of Service</a></div>
-                <div><span></span><a href="contact/index.html">Contact</a></div>
-            </div>
-            <div class="grid1 block">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h2>Index</h2>
-                                <hr />
-                                <p>Hello, and welcome to my website! For now, its main purpose is to serve as an information hub for my Live2D rigging commissions.</p>
-                                <p>Eventually, I'll probably add a dev blog of sorts for projects I'm working on or have worked on in the past.</p>
-                                <p>In that same vein, I should mention some things about me. I'm a developer, mainly; in the process of finishing up my bachelor's degree in Computer Science. The focus of my studies in CS has leaned towards the creative side of things, given my end goal of being a game dev. I have a lot of personal experience in Unity development as well as some professional experience in full-stack web development.</p>
-                                <p>Other than that, I try to build my other creative skills as well. I can do some half-decent digital art if I try really hard, some okay character design, 3D modelling, Live2D rigging (obviously), writing... I'm pretty useless when it comes to any kind of audio production, though. No idea how to make music at all. I should really get on that.</p>
-                                <p>Anyway, if you're here to inquire about a rigging commission, feel free to check out the <a href="commissions/index.html">commissions page</a>! It should have most of what you need to know. If you're not here for that, I'm honestly not sure what you're here for right now. But, hey! Thanks for visiting. I hope you're having a good day.</p>
-                                <p class="right">Stay safe! -typeou</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="footer" class="center">
-            <a href="#">Top</a> | <a href="commissions/index.html">Commissions</a> | <a href="commissions/tos/index.html">Terms of Service</a> | <a href="contact/index.html">Contact</a>
+            <a href="../index.html" class="title"><div><h1>typeou.dev/</h1><h1 id="directory"></h1></div></a>
         </div>
 
-        <script src="blocks.js"></script>
+        <div id="main">
+            <div id="links">
+                <div id="homeLink"><span></span><a href="#home" onclick="Navigate(event);">Home</a></div>
+                <div id="commissionsLink"><span></span><a href="#commissions" onclick="Navigate(event);">Commissions</a></div>
+                <div id="tosLink"><span></span><a href="#tos" onclick="Navigate(event);">Terms of Service</a></div>
+                <div id="contactLink"><span></span><a href="#contact" onclick="Navigate(event);">Contact</a></div>
+            </div>
+
+            <div id="pages">
+                <div id="homeDiv" class="page">
+                    <div class="block">
+                        <h2>Index</h2>
+                        <hr />
+                        <p>Hello, and welcome to my website! For now, its main purpose is to serve as an information hub for my Live2D rigging commissions.</p>
+                        <p>Eventually, I'll probably add a dev blog of sorts for projects I'm working on or have worked on in the past.</p>
+                        <p>In that same vein, I should mention some things about me. I'm a developer, mainly; in the process of finishing up my bachelor's degree in Computer Science. The focus of my studies in CS has leaned towards the creative side of things, given my end goal of being a game dev. I have a lot of personal experience in Unity development as well as some professional experience in full-stack web development.</p>
+                        <p>Other than that, I try to build my other creative skills as well. I can do some half-decent digital art if I try really hard, some okay character design, 3D modelling, Live2D rigging (obviously), writing... I'm pretty useless when it comes to any kind of audio production, though. No idea how to make music at all. I should really get on that.</p>
+                        <p>Anyway, if you're here to inquire about a rigging commission, feel free to check out the <a href="commissions/index.html">commissions page</a>! It should have most of what you need to know. If you're not here for that, I'm honestly not sure what you're here for right now. But, hey! Thanks for visiting. I hope you're having a good day.</p>
+                        <p class="right">Stay safe! -typeou</p>
+                    </div>
+                </div>
+    
+                <div id="commissionsDiv" class="page">
+                    <div class="block">
+                        <h2>typeou's Live2D Rigging Commissions</h2>
+                        <hr/>
+                        <h3>Commissions are currently: <h2><h>CLOSED</h></h2></h3>
+                        <p class="center"><b>In Progress:</b> None</p>
+                        <p class="center"><b>Queue:</b> <a href="https://twitter.com/typeou">typeou</a>, <a href="https://twitter.com/b00lien">b00lien</a> (v2)</p>
+                        <hr/>
+                        <p>Welcome to my commission page! I do rigging-only commissions for Live2D models intended for use by VTubers/VStreamers.</p>
+                        <p>If you are interested, please read the <a href="tos/index.html">Terms of Service</a> and then <a href="../contact/index.html">contact</a> me, preferably via Discord at <h>typeou#0001</h></p>
+                        <p>Please have a model in ready-to-rig form. The model should be in <h>.psd format</h> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.</p>
+                        <p>I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.<br/></p>
+                    </div>
+                    <div class="block">
+                        <h2>Pricing</h2>
+                        <hr/>
+                        <p class="center">Prices as listed are <h>base prices.</h> Final price may vary depending on complexity.</p>
+                        <p class="center">Prices are subject to change.</p>
+                        <div id="pricing">
+                            <div>
+                                <h3>Half-Body</h3>
+                                <hr/>
+                                <h2 id="priceHalf" class="prices">Converting...</h2>
+                            </div>
+                            <div>
+                                <h3>Full-Body</h3>
+                                <hr/>
+                                <h2 id="priceFull" class="prices">Converting...</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="features">
+                        <div class="block">
+                            <div class="centerDiv">
+                                <h3>Includes</h3>
+                                <hr/>
+                                <ul>
+                                    <li>Standard Face Rigging</li>
+                                    <ul>
+                                        <li>Eye Open/Close</li>
+                                        <li>Eye Smile</li>
+                                        <li>Pupil Movement</li>
+                                        <li>Brow Angle and Y Position</li>
+                                        <li>Mouth Open/Close</li>
+                                        <li>Mouth Neutral/Smile/Frown</li>
+                                    </ul>
+                                    <li>Face X/Y/Z Rotation</li>
+                                    <li>Body X/Z Rotation</li>
+                                    <li>Hair/Clothing/Accessory Physics</li>
+                                    <li>4 Toggle Expressions</li>
+                                    <ul>
+                                        <li>Happy, Sad, Angry, Scared</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <div class="centerDiv">
+                                <h3>Add-ons</h3>
+                                <hr/>
+                                <ul>
+                                    <li>Additional Toggle Expressions:</li>
+                                    <ul>
+                                        <li><span id="priceExpression" class="prices">Converting...</span> each</li>
+                                    </ul>
+                                    <li>Body Y Rotation</li>
+                                    <ul>
+                                        <li>Starting at <span id="priceBodyY" class="prices">Converting...</span></li>
+                                    </ul>
+                                    <li>Mouth X, Cheek Puff, & Tongue Out</li>
+                                    <ul>
+                                        <li>Starting at <span id="priceIOS" class="prices">Converting...</span> each</li>
+                                    </ul>
+                                    <li>Animated Expressions:</li>
+                                    <ul>
+                                        <li>Standard:<br/>Starting at <span id="priceAnimated" class="prices">Converting...</span></li>
+                                        <li>Animated Arms:<br/>Starting at <span id="priceArms" class="prices">Converting...</span></li>
+                                    </ul>
+                                    <li>Alternate Outfits/Hairstyles:</li>
+                                    <ul>
+                                        <li>Starting at <span id="priceAlternate" class="prices">Converting...</span></li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <h2>Examples</h2>
+                        <hr/>
+                        <div id="examples">
+                            <div>
+                                <div>
+                                    <video autoplay muted loop src="b00.mp4"></video>
+                                    <div class="cover">
+                                        <div>
+                                            <h1><a href="https://twitch.tv/typeou_">b00lien (v1)</a></h1>
+                                            <hr/>
+                                            <span>Art by <a href="https://twitter.com/b00lien">@b00lien</a></span>
+                                            <p>Full-Body rig.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="tosDiv" class="page">
+                    <div class="flex">
+                        <div class="block">
+                            <div class="centerDiv">
+                                <h3>Can-Do</h3>
+                                <hr/>
+                                <ul>
+                                    <li>Humanoid rigs</li>
+                                    <ul>
+                                        <li>Animal ears, horns, tails, etc.</li>
+                                    </ul>
+                                    <li>Mild NSFW</li>
+                                    <ul>
+                                        <li>At my discretion. Please contact.</li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <div class="centerDiv">
+                                <h3>Can't-Do</h3>
+                                <hr/>
+                                <ul>
+                                    <li>Model splitting</li>
+                                    <li>Furry rigs</li>
+                                    <li>Mecha rigs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <h2>Terms of Service</h2>
+                        <hr/>
+                        <div class="centerDiv">
+                            <h3>Pricing</h3>
+                            <ul>
+                                <li>Payment will be accepted through Square <h>in Canadian Dollars (CAD).</h></li>
+                                <li>USD prices as listed are based on the current CAD-to-USD conversion rounded up to the nearest $5 USD.</li>
+                                <ul>
+                                    <li>This conversion is peformed automatically based on the latest data from the Bank of Canada.</li>
+                                </ul>
+                                <li>After the final price is decided, an invoice will be sent to the client's email through Square.</li>
+                                <li><h>Please note that the price listed on the invoice will be in Canadian Dollars (CAD).</h></li>
+                                <li>Upon receipt of the invoice, the client must pay a deposit of at least 50% of the listed price before work will begin.</li>
+                                <ul>
+                                    <li>If the client wishes, they may choose to pay 100% of the fee upfront.</li>
+                                </ul>
+                                <li>Work will not begin until at least 50% of payment has been received.</li>
+                                <li>Finished model will not be sent until 100% of payment has been received.</li>
+                                <li>Prices assume commercial use rights.</li>
+                            </ul>
+                            <h3>Process</h3>
+                            <ul>
+                                <li>Turnaround time will vary depending on complexity and other factors.</li>
+                                <ul>
+                                    <li>Typical turnaround time is 1-3 weeks from the time work begins on the model.</li>
+                                    <li>For rush services, please contact.</li>
+                                </ul>
+                                <li><h>Once work has started, refunds will not be provided.</h></li>
+                                <ul>
+                                    <li>If work does not begin immediately after payment, I will contact you before I start.</li>
+                                </ul>
+                                <li>I reserve the right to decline a commission for any reason, at any point in the process.</li>
+                                <ul>
+                                    <li>A full refund, if applicable, will be provided if I cancel a commission at any point in the process.</li>
+                                </ul>
+                                <li>I reserve the right to display the finished model on my page(s). Credit will be given.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="contactDiv" class="page">
+                    <div class="block">
+                        <h2>Contact</h2>
+                        <hr/>
+                        <div class="centerDiv">
+                            <ul>
+                                <li>Discord (Preferred)</li>
+                                <ul>
+                                    <li>typeou#0001</li>
+                                </ul>
+                                <li>Twitter</li>
+                                <ul>
+                                    <li><a href="https://twitter.com/typeou">@typeou</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="center">
+            <a href="#">Top</a> | <a href="#home" onclick="Navigate(event);">Home</a> | <a href="#commissions" onclick="Navigate(event);">Commissions</a> | <a href="#tos" onclick="Navigate(event);">Terms of Service</a> | <a href="#contact"  onclick="Navigate(event);">Contact</a>
+        </div>
+
         <script src="hovers.js"></script>
+        <script src="prices.js"></script>
+        <script src="navigator.js"></script>
     </body>
 </html>
