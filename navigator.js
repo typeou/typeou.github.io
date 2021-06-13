@@ -11,6 +11,7 @@ $(function()
     RefreshBlocks(0);
     $("#" + page + "Link").addClass("current");
     $("#directory").html(page == "home" ? "" : page);
+    $("title").html("typeou.dev/" + (page == "home" ? "" : page));
 });
 
 function RefreshBlocks(wait)
@@ -47,6 +48,7 @@ function Navigate(event)
         RefreshBlocks(1);
         $("#" + page + "Div .block").removeClass("reverse");
         $("#directory").html(page == "home" ? "" : page);
+        $("title").html("typeou.dev/" + (page == "home" ? "" : page));
         var old = $("#directory").css("-webkit-animation-name") != null ? $("#directory").css("-webkit-animation-name") : $("#directory").css("animation-name");
         if (old == "type")
         {
