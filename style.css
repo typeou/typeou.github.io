@@ -664,4 +664,9 @@ ul > ul > li::marker{
 .page {
     grid-row: 1;
     grid-column: 1;
+    display: grid;
+}
+
+.page > div {
+    grid-column: 1;
 }
