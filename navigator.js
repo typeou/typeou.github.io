@@ -1,4 +1,4 @@
-var page;
+var page, typer;
 
 $(function()
 {
@@ -14,8 +14,7 @@ $(function()
     $(".block").addClass("blockInit");
     RefreshBlocks(0);
     $("#" + page + "Link").addClass("current");
-    $("#directory").html(page == "home" ? "" : page);
-    $("title").html("typeou.dev/" + (page == "home" ? "" : page));
+    TypeDirectory();
 });
 
 function RefreshBlocks(wait)
@@ -51,18 +50,33 @@ function Navigate(event)
     
         RefreshBlocks(1);
         $("#" + page + "Div .block").removeClass("reverse");
-        $("#directory").html(page == "home" ? "" : page);
-        $("title").html("typeou.dev/" + (page == "home" ? "" : page));
-        var old = $("#directory").css("-webkit-animation-name") != null ? $("#directory").css("-webkit-animation-name") : $("#directory").css("animation-name");
-        if (old == "type")
+        TypeDirectory();
+    }
+}
+
+function TypeDirectory()
+{
+    clearInterval(typer);
+    typer = setInterval(function()
+    {
+        if ($("#directory").html().length > 0)
         {
-            $("#directory").css("-webkit-animation-name", "type2");
-            $("#directory").css("animation-name", "type2");
+            $("#directory").html($("#directory").html().substr(0, $("#directory").html().length - 1));
+            $("title").html("typeou.dev/" + $("#directory").html());
         }
         else
         {
-            $("#directory").css("-webkit-animation-name", "type");
-            $("#directory").css("animation-name", "type");
+            clearInterval(typer);
+            typer = setInterval(function()
+            {
+                if ($("#directory").html() != (page == "home" ? "" : page))
+                {
+                    $("#directory").html(page.substr(0, $("#directory").html().length + 1));
+                    $("title").html("typeou.dev/" + $("#directory").html());
+                } 
+                else
+                    clearInterval(typer);
+            }, 17);
         }
-    }
+    }, 17);
 }
