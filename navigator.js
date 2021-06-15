@@ -62,7 +62,7 @@ function TypeDirectory()
         if ($("#directory").html().length > 0)
         {
             $("#directory").html($("#directory").html().substr(0, $("#directory").html().length - 1));
-            $("title").html("typeou.dev/" + $("#directory").html());
+            $("title").html("typeou.dev" + $("#directory").html());
         }
         else
         {
@@ -71,8 +71,8 @@ function TypeDirectory()
             {
                 if ($("#directory").html() != (page == "home" ? "" : page))
                 {
-                    $("#directory").html(page.substr(0, $("#directory").html().length + 1));
-                    $("title").html("typeou.dev/" + $("#directory").html());
+                    $("#directory").html("/" + page.substr(0, $("#directory").html().length));
+                    $("title").html("typeou.dev" + $("#directory").html());
                 } 
                 else
                     clearInterval(typer);

@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
+    background: radial-gradient(#3B4868, #25272B);
     background-attachment: fixed;
     font-family: 'Noto Sans', sans-serif;
     font-size: max(min(2vh, 2em), 1em);
@@ -105,6 +105,73 @@ hr {
     max-width: max-content;
 }
 
+#hexapattern {
+    pointer-events: none;
+    position: fixed;
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    background-image: url("hexapattern.png");
+    background-repeat: repeat;
+    background-position-x: center;
+    opacity: 0.67;
+}
+
+#hexagloss {
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-image: url("hexagloss.png");
+    background-repeat: repeat;
+    background-position-x: center;
+    -webkit-mask-image: linear-gradient(195deg, transparent 40%, black 50%, transparent 60%);
+    mask-image: linear-gradient(195deg, transparent 40%, black 50%, transparent 60%);
+    -webkit-mask-size: auto 200%;
+    mask-size: auto 200%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-animation-name: gloss;
+    animation-name: gloss;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes gloss {
+    0% {
+        -webkit-mask-position: 0 -100%;
+        mask-position: 0 -100%;
+    }
+    30% {
+        -webkit-mask-position: 0 200%;
+        mask-position: 0 200%;
+    }
+    100% {
+        -webkit-mask-position: 0 200%;
+        mask-position: 0 200%;
+    }
+}
+
+@keyframes gloss {
+    0% {
+        -webkit-mask-position: 0 -100%;
+        mask-position: 0 -100%;
+    }
+    30% {
+        -webkit-mask-position: 0 200%;
+        mask-position: 0 200%;
+    }
+    100% {
+        -webkit-mask-position: 0 200%;
+        mask-position: 0 200%;
+    }
+}
+
 #main {
     flex: 1;
     background-color: white;
@@ -125,21 +192,45 @@ hr {
 
 #header h1 {
     font-family: 'Inconsolata', monospace;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: min(3.5vh, 5vw);
+    padding-bottom: min(0.35vh, 0.4vw);
     display: inline-block;
     margin: auto;
     pointer-events: none;
+    grid-row: 1;
+    grid-column: 2;
 }
 
 #header, #header a {
-    color: black;
+    color: #25272B;
 }
 
 #header div {
     width: max-content;
     margin: auto;
     pointer-events: none;
+    display: grid;
+}
+
+#header img {
+    grid-row: 1;
+    grid-column: 1;
+    height: min(4vh, 5.75vw);
+    display: inline-block;
+}
+
+#directory {
+    grid-column: 3 !important;
+}
+
+#logo {
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+#logo.hover {
+    opacity: 0 !important;
 }
 
 #footer {
@@ -155,7 +246,7 @@ hr {
 
 .title {
     display: block;
-    padding: 15px 0 15px 0;
+    padding: 5px 0;
     transition: color 0.25s;
 }
 
