@@ -598,6 +598,12 @@ hr {
     font-size: max(min(2vh, 2em), 1em);
 }
 
+.partnerLogo {
+    max-width: 75%;
+    display: block;
+    margin: auto;
+}
+
 .cover {
     clip-path: inset(100% 0 0 0);
     transition: clip-path 0.5s;
