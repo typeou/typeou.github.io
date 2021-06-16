@@ -1,20 +1,30 @@
-var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100, rate;
+// Price data in CAD
+var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100;
+// CAD-USD conversion rate
+var rate;
 
-function Convert(data)
+// Returns the provided CAD price in USD.
+function Convert(cad)
 {
-    return data * rate;
+    return cad * rate;
 }
 
+// Returns the provided price rounded up to the nearest $5.
 function Round(num)
 {
     return "~$" + (num % 5 == 0 ? num : ((num - (num % 5)) + 5));
 }
 
+// Retrieving CAD-USD conversion rate.
 var request = new XMLHttpRequest();
+// This happens once the request receives a response.
 request.onreadystatechange = function() {
+    // If the conversion rate was successfully received, display the converted prices alongside the original.
     if (this.readyState == 4 && this.status == 200)
     {
+        // Pull the CAD-USD conversion rate from the JSON response and store it.
         rate = JSON.parse(this.responseText).observations[0].FXCADUSD.v;
+        // Fill in the price data on the page.
         $("#priceHalf").html(Round(Convert(half)) + " USD");
         $("#priceHalf").after("<span>$" + half + "+ CAD</span>");
         $("#priceFull").html(Round(Convert(full)) + " USD");
@@ -30,6 +40,7 @@ request.onreadystatechange = function() {
         $("#priceStinger").html(Round(Convert(stinger)) + "+ USD ($" + stinger + "+ CAD)");
         $("#priceTrackMatte").html(Round(Convert(trackMatte)) + "+ USD ($" + trackMatte + "+ CAD)");
     }
+    // Otherwise, display only the original CAD price.
     else
     {
         $("#priceHalf").html("$" + half + "+ CAD");
@@ -46,5 +57,6 @@ request.onreadystatechange = function() {
         $("#priceTrackMatte").html("$" + trackMatte + "+ CAD");
     }
 };
+// Open the request and send it.
 request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);
 request.send();
