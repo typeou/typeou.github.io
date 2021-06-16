@@ -39,7 +39,11 @@ function RefreshBlocks(wait)
 
 window.onhashchange = function()
 {
-    var target = window.location.href.substr(window.location.href.indexOf("#") + 1);
+    var target;
+    if (window.location.href.indexOf("#") == -1)
+        target = "home";
+    else
+        target = window.location.href.substr(window.location.href.indexOf("#") + 1);
 
     if (page != target)
     {
