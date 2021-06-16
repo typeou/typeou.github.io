@@ -615,10 +615,15 @@ hr {
     padding: 0 !important;
 }
 
-#priceHalf::before, #priceFull::before {
+#priceHalf::before, #priceFull::before, #priceStinger::before, #priceTrackMatte::before {
     content: "Starting at ";
     font-weight: normal;
     font-size: max(min(2.5vh, 2.5em), 1.25em);
+}
+
+td video {
+    max-width: 25vh;
+    border: 2px solid #ff3cd7;
 }
 
 #addOns span {

@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100;
+var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100, audio = 15;
 // CAD-USD conversion rate
 var rate;
 
@@ -37,8 +37,11 @@ request.onreadystatechange = function() {
         $("#priceBodyY").html(Round(Convert(bodyY)) + "+ USD ($" + bodyY + "+ CAD)");
         $("#priceIOS").html(Round(Convert(ios)) + "+ USD ($" + ios + "+ CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
-        $("#priceStinger").html(Round(Convert(stinger)) + "+ USD ($" + stinger + "+ CAD)");
-        $("#priceTrackMatte").html(Round(Convert(trackMatte)) + "+ USD ($" + trackMatte + "+ CAD)");
+        $("#priceStinger").html(Round(Convert(stinger)) + " USD");
+        $("#priceStinger").after("<span>$" + stinger + "+ CAD</span>");
+        $("#priceTrackMatte").html(Round(Convert(trackMatte)) + " USD");
+        $("#priceTrackMatte").after("<span>$" + trackMatte + "+ CAD</span>");
+        $("#priceAudio").html(Round(Convert(audio)) + "+ USD ($" + audio + "+ CAD)");
     }
     // Otherwise, display only the original CAD price.
     else
@@ -55,6 +58,7 @@ request.onreadystatechange = function() {
         $("#priceAlternate").html("$" + alternate + " CAD");
         $("#priceStinger").html("$" + stinger + "+ CAD");
         $("#priceTrackMatte").html("$" + trackMatte + "+ CAD");
+        $("#priceAudio").html("$" + audio + "+ CAD");
     }
 };
 // Open the request and send it.
