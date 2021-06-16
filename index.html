@@ -21,7 +21,8 @@
         <div id="main">
             <div id="links">
                 <div id="homeLink"><span></span><a href="#home" onclick="Navigate(event);">Home</a></div>
-                <div id="commissionsLink"><span></span><a href="#commissions" onclick="Navigate(event);">Commissions</a></div>
+                <div id="commissionsLive2DLink"><span></span><a href="#commissionsLive2D" onclick="Navigate(event);">Live2D Commissions</a></div>
+                <div id="commissionsStingerLink"><span></span><a href="#commissionsStinger" onclick="Navigate(event);">Stinger Commissions</a></div>
                 <div id="tosLink"><span></span><a href="#tos" onclick="Navigate(event);">Terms of Service</a></div>
                 <div id="contactLink"><span></span><a href="#contact" onclick="Navigate(event);">Contact</a></div>
             </div>
@@ -40,7 +41,7 @@
                     </div>
                 </div>
     
-                <div id="commissionsDiv" class="page">
+                <div id="commissionsLive2DDiv" class="page">
                     <div class="block">
                         <h2>Live2D VTuber Rigging Commissions</h2>
                         <hr/>
@@ -51,7 +52,7 @@
                         <p>Welcome to my commission page! I do rigging-only commissions for Live2D VTuber models.</p>
                         <p>If you are interested please read the <a href="#tos" onclick="Navigate(event);">Terms of Service</a> and then <a href="#contact" onclick="Navigate(event);">contact</a> me, preferably via Discord at <mark>typeou#0001</mark></p>
                         <p>Please have a model in ready-to-rig form. The model should be in <mark>.psd format</mark> and separated in a way similar to that shown in <a href="https://www.youtube.com/watch?v=DiKCdwQrjig">this video</a> by Emma A. from Iron Vertex.</p>
-                        <p>I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.<br/></p>
+                        <p>I can make some minor adjustments to suit my needs if I find it necessary, but I do not offer model splitting services.</p>
                     </div>
                     <div class="block">
                         <h2>Pricing</h2>
@@ -140,7 +141,7 @@
                         <div id="examples">
                             <div>
                                 <div>
-                                    <video autoplay muted loop src="b00_v1.mp4"></video>
+                                    <video  muted loop src="b00_v1.mp4"></video>
                                     <div class="cover">
                                         <div>
                                             <h1><a href="https://twitch.tv/b00lien_">b00lien (v1)</a></h1>
@@ -165,6 +166,96 @@
                         <p>We've worked together ever since my first rig, and are literally feet away from each other, so we'll be able to seamlessly communicate back-and-forth in order to provide you with the smoothest modelling and rigging process possible. We can discuss in real time how the model needs to be split and any changes that need to be made during the process in order to ensure a high quality and timely delivery.</p>
                         <p>Of course, I'm still fully willing to communicate about and work with models from other artists! I'll do my best to provide you with a quality product, no matter what.</p>
                         <a href="https://b00lien.carrd.co/#l2dc"><img src="logo_b00lien.png" class="partnerLogo"></a>
+                    </div>
+                </div>
+
+                <div id="commissionsStingerDiv" class="page">
+                    <div class="block">
+                        <h2>Stinger Transition Commissions</h2>
+                        <hr/>
+                        <h3>Commissions are currently: <h1><mark>CLOSED</mark></h1></h3>
+                        <p class="center"><b>In Progress:</b> None</p>
+                        <p class="center"><b>Queue:</b> None</p>
+                        <hr/>
+                        <p>Welcome to my (other) commission page! I also do stinger transition commissions.</p>
+                        <p>If you are interested please read the <a href="#tos" onclick="Navigate(event);">Terms of Service</a> and then <a href="#contact" onclick="Navigate(event);">contact</a> me, preferably via Discord at <mark>typeou#0001</mark></p>
+                        <p>Depending on the type of stinger, I may be able to create the required assets myself. This primarily applies to geometric-based stinger transitions. More complex art assets must be provided to me.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Options</h2>
+                        <hr/>
+                        <p>There are two types of stinger transitions that I can create: "Classic" Stingers and "Track Matte" Stingers.</p>
+                        <p>A Classic Stinger is probably what you're used to seeing. A graphic covers the entire screen for a moment, during which the scene switches. This hides the transition point, resulting in a clean switch between scenes.</p>
+                        <p>A Track Matte Stinger is more complicated, but more powerful. This type of transition doesn't require the entire screen to be covered for the transition to take place, instead it's able to display both scenes during the transition to create more interesting transition effects.</p>
+                        <p>As of the time of writing, <mark>Track Matte Stingers are only available on OBS Studio.</mark> Streamlabs OBS does not support Track Matte Stingers.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Pricing</h2>
+                        <hr/>
+                        <p class="center">Prices as listed are <mark>base prices.</mark> Final price may vary depending on complexity.</p>
+                        <p class="center">
+                            Prices are subject to change.<br/>
+                            <small><i>Last updated: 2021 June 15</i></small>
+                        </p>
+                        <div id="pricing">
+                            <div>
+                                <h3>Classic Stinger</h3>
+                                <hr/>
+                                <h2 id="priceStinger" class="prices">Converting...</h2>
+                            </div>
+                            <div>
+                                <h3>Track Matte Stinger</h3>
+                                <hr/>
+                                <h2 id="priceTrackMatte" class="prices">Converting...</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <h2>Examples</h2>
+                        <hr/>
+                        <h3>Classic Stinger</h3>
+                        <div id="examples">
+                            <div>
+                                <div>
+                                    <video  muted loop src="stinger_01.mp4"></video>
+                                    <div class="cover">
+                                        <div>
+                                            <h1><a href="https://twitch.tv/typeou_">typeou</a></h1>
+                                            <hr/>
+                                            <p>Classic Stinger</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <video  muted loop src="stinger_02.mp4"></video>
+                                    <div class="cover">
+                                        <div>
+                                            <h1><a href="https://twitch.tv/b00lien_">b00lien</a></h1>
+                                            <hr/>
+                                            <span>Art by <a href="https://twitter.com/b00lien">@b00lien</a></span>
+                                            <p>Classic Stinger</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Track Matte Stinger</h3>
+                        <div id="examples">
+                            <div>
+                                <div>
+                                    <video  muted loop src="trackmatte_01.mp4"></video>
+                                    <div class="cover">
+                                        <div>
+                                            <h1><a href="https://twitch.tv/typeou_">typeou</a></h1>
+                                            <hr/>
+                                            <p>Track Matte Stinger</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
     
@@ -220,7 +311,7 @@
                                 <ul>
                                     <li>If the client wishes, they may choose to pay 100% of the fee upfront.</li>
                                 </ul>
-                                <li>Finished model will not be sent until 100% of payment has been received.</li>
+                                <li>Finished product will not be sent until 100% of payment has been received.</li>
                                 <li>Prices assume commercial use rights.</li>
                             </ul>
                         </div>
@@ -232,7 +323,7 @@
                             <ul>
                                 <li>Turnaround time will vary depending on complexity and other factors.</li>
                                 <ul>
-                                    <li>Typical turnaround time is 1-3 weeks from the time work begins on the model.</li>
+                                    <li>Typical turnaround time is 1-3 weeks from the time work begins.</li>
                                     <li>For rush services, please contact. Please note a surcharge of <mark>50% of the base price.</mark></li>
                                 </ul>
                                 <li><mark>Once work has started, refunds will not be provided.</mark></li>

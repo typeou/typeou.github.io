@@ -1,4 +1,4 @@
-var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, rate;
+var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100, rate;
 
 function Convert(data)
 {
@@ -27,6 +27,8 @@ request.onreadystatechange = function() {
         $("#priceBodyY").html(Round(Convert(bodyY)) + "+ USD ($" + bodyY + "+ CAD)");
         $("#priceIOS").html(Round(Convert(ios)) + "+ USD ($" + ios + "+ CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
+        $("#priceStinger").html(Round(Convert(stinger)) + "+ USD ($" + stinger + "+ CAD)");
+        $("#priceTrackMatte").html(Round(Convert(trackMatte)) + "+ USD ($" + trackMatte + "+ CAD)");
     }
     else
     {
@@ -40,6 +42,8 @@ request.onreadystatechange = function() {
         $("#priceBodyY").html("$" + bodyY + "+ CAD");
         $("#priceIOS").html("$" + ios + "+ CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
+        $("#priceStinger").html("$" + stinger + "+ CAD");
+        $("#priceTrackMatte").html("$" + trackMatte + "+ CAD");
     }
 };
 request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);

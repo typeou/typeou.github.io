@@ -273,7 +273,7 @@ hr {
 
 #links a, #links span {
     display: inline-block;
-    width: 11em;
+    width: 13em;
 }
 
 #links a {
@@ -628,16 +628,26 @@ hr {
 #examples {
     padding: 15px;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 #examples > div {
-    height: 125vmin;
     max-height: 75vh;
     margin: auto;
     flex-grow: 1;
     margin: 7.5px;
+}
+
+#commissionsLive2DDiv #examples{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#commissionsLive2DDiv #examples > div {
+    height: 125vmin;
+}
+
+#commissionsStingerDiv #examples > div {
+    height: 35vmin;
 }
 
 #examples > div > div {
@@ -646,7 +656,7 @@ hr {
     font-size: 0;
     background-color: rgba(0, 0, 0, 0.4);
     margin: auto;
-    border: 1px solid #ff3cd7;
+    border: 2px solid #ff3cd7;
     position: relative;
 }
 

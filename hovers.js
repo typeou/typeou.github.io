@@ -1,28 +1,28 @@
 $(function() {
     // Link hovers
-    $("#links > div").mouseenter(function(event){
-        $(this).children("span").addClass("hover");
+    $("#links a").mouseenter(function(event) {
+        $(this).siblings("span").addClass("hover");
     });
 
-    $("#links > div").mouseleave(function(event){
-        $(this).children("span").removeClass("hover");
+    $("#links a").mouseleave(function(event) {
+        $(this).siblings("span").removeClass("hover");
     });
 
     // Commissions hovers
-    $("#examples > div > div").mouseenter(function(event){
+    $("#examples > div > div").mouseenter(function(event) {
         $(this).children(".cover").addClass("hover");
     });
 
-    $("#examples > div > div").mouseleave(function(event){
+    $("#examples > div > div").mouseleave(function(event) {
         $(this).children(".cover").removeClass("hover");
     });
 
     // Title logo hover
-    $(".title").mouseenter(function(){
+    $(".title").mouseenter(function() {
         $("#logo").addClass("hover");
     });
 
-    $(".title").mouseleave(function(){
+    $(".title").mouseleave(function() {
         $("#logo").removeClass("hover");
     });
 });

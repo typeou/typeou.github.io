@@ -33,6 +33,12 @@ function RefreshBlocks(wait)
         } while (old != null && anim == old);
         $(this).css("-webkit-animation-name", anim);
         $(this).css("animation-name", anim);
+        $("video").each(function() {
+            $(this).get(0).pause();
+        });
+        $("#" + page + "Div video").each(function() {
+            $(this).get(0).play();
+        });
     });
 }
 
