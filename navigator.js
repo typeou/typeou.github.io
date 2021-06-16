@@ -17,6 +17,7 @@ $(function()
     TypeDirectory();
 });
 
+
 function RefreshBlocks(wait)
 {
     $("#" + page + "Div .block").each(function(index)
@@ -33,23 +34,19 @@ function RefreshBlocks(wait)
         } while (old != null && anim == old);
         $(this).css("-webkit-animation-name", anim);
         $(this).css("animation-name", anim);
-        $("video").each(function() {
-            $(this).get(0).pause();
-        });
-        $("#" + page + "Div video").each(function() {
-            $(this).get(0).play();
-        });
     });
 }
 
-function Navigate(event)
+window.onhashchange = function()
 {
-    if (page != event.target.href.substr(event.target.href.indexOf("#") + 1))
+    var target = window.location.href.substr(window.location.href.indexOf("#") + 1);
+
+    if (page != target)
     {
         RefreshBlocks(2);
         $("#" + page + "Div .block").addClass("reverse");
     
-        page = event.target.href.substr(event.target.href.indexOf("#") + 1);
+        page = target;
     
         $("#links .current").removeClass("current");
         $("#" + page + "Link").addClass("current");
