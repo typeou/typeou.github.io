@@ -10,7 +10,7 @@ $(function()
         // Retrieve the directory name.
         page = window.location.href.substr(window.location.href.indexOf("#") + 1);
         // If the directory is not valid, default to the home page.
-        if (page == "commissions")
+        if (page == "commissions" || page == "comms")
             page = "commissionsLive2D";
         else if (!$("#" + page + "Div").length)
             page = "home";
@@ -74,7 +74,7 @@ window.onhashchange = function()
     else
     {
         target = window.location.href.substr(window.location.href.indexOf("#") + 1);
-        if (target == "commissions")
+        if (target == "commissions" || target == "comms")
             target = "commissionsLive2D";
         else if (!$("#" + target + "Div").length)
             target = "home";
