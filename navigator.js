@@ -10,7 +10,9 @@ $(function()
         // Retrieve the directory name.
         page = window.location.href.substr(window.location.href.indexOf("#") + 1);
         // If the directory is not valid, default to the home page.
-        if (!$("#" + page + "Div").length)
+        if (page == "commissions")
+            page = "commissionsLive2D";
+        else if (!$("#" + page + "Div").length)
             page = "home";
     }
     // Otherwise, default to the home page.
@@ -70,7 +72,13 @@ window.onhashchange = function()
     if (window.location.href.indexOf("#") == -1)
         target = "home";
     else
+    {
         target = window.location.href.substr(window.location.href.indexOf("#") + 1);
+        if (target == "commissions")
+            target = "commissionsLive2D";
+        else if (!$("#" + target + "Div").length)
+            target = "home";
+    }
 
     // If the new page is different from the old page.
     if (page != target)
