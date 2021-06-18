@@ -340,7 +340,7 @@ hr {
 }
 
 .blockInit {
-    display: none;
+    height: 0;
 }
 
 .block small {
