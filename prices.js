@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 50, trackMatte = 100, audio = 15;
+var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 45, trackMatte = 75, audio = 10;
 // CAD-USD conversion rate
 var rate;
 
