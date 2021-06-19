@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, ios = 60, alternate = 180, stinger = 45, trackMatte = 75, audio = 10;
+var half = 630, full = 750, expression = 10, animated = 45, toggles = 30, arms = 45, animatedArms = 90, bodyY = 90, mouthX = 90, cheekPuff = 30, tongueOut = 60, alternate = 180, stinger = 45, trackMatte = 75, audio = 10;
 // CAD-USD conversion rate
 var rate;
 
@@ -35,7 +35,9 @@ request.onreadystatechange = function() {
         $("#priceArms").html(Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)");
         $("#priceAnimatedArms").html(Round(Convert(animatedArms)) + "+ USD ($" + animatedArms + "+ CAD)");
         $("#priceBodyY").html(Round(Convert(bodyY)) + "+ USD ($" + bodyY + "+ CAD)");
-        $("#priceIOS").html(Round(Convert(ios)) + "+ USD ($" + ios + "+ CAD)");
+        $("#priceMouth").html(Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)");
+        $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
+        $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
         $("#priceStinger").html(Round(Convert(stinger)) + " USD");
         $("#priceStinger").after("<span>$" + stinger + "+ CAD</span>");
@@ -54,7 +56,9 @@ request.onreadystatechange = function() {
         $("#priceArms").html("$" + arms + "+ CAD");
         $("#priceAnimatedArms").html("$" + animatedArms + "+ CAD");
         $("#priceBodyY").html("$" + bodyY + "+ CAD");
-        $("#priceIOS").html("$" + ios + "+ CAD");
+        $("#priceMouth").html("$" + mouthX + "+ CAD");
+        $("#priceCheek").html("$" + cheekPuff + "+ CAD");
+        $("#priceTongue").html("$" + tongueOut + "+ CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
         $("#priceStinger").html("$" + stinger + "+ CAD");
         $("#priceTrackMatte").html("$" + trackMatte + "+ CAD");
