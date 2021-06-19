@@ -217,6 +217,7 @@ hr {
     grid-row: 1;
     grid-column: 1;
     height: min(4vh, 5.75vw);
+    padding-right: min(0.2vh, 0.2875vw);
     display: inline-block;
 }
 
@@ -224,13 +225,12 @@ hr {
     grid-column: 3 !important;
 }
 
-#logo {
-    opacity: 1;
-    transition: opacity 0.25s;
+#logoSides {
+    transition: filter 0.25s;
 }
 
-#logo.hover {
-    opacity: 0 !important;
+#logoSides.hover {
+    filter: brightness(0) invert(1);
 }
 
 #footer {

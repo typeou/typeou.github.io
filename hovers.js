@@ -2,11 +2,11 @@
 $(function() {
     // Title logo hover
     $(".title").mouseenter(function() {
-        $("#logo").addClass("hover");
+        $("#logoSides").addClass("hover");
     });
 
     $(".title").mouseleave(function() {
-        $("#logo").removeClass("hover");
+        $("#logoSides").removeClass("hover");
     });
 
     // Link hovers
