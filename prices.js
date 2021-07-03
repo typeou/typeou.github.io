@@ -34,7 +34,6 @@ request.onreadystatechange = function() {
         $("#priceToggle").html(Round(Convert(toggles)) + "+ USD ($" + toggles + "+ CAD)");
         $("#priceArms").html(Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)");
         $("#priceAnimatedArms").html(Round(Convert(animatedArms)) + "+ USD ($" + animatedArms + "+ CAD)");
-        $("#priceBodyY").html(Round(Convert(bodyY)) + "+ USD ($" + bodyY + "+ CAD)");
         $("#priceMouth").html(Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)");
         $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
         $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
@@ -55,7 +54,6 @@ request.onreadystatechange = function() {
         $("#priceToggle").html("$" + toggles + " CAD");
         $("#priceArms").html("$" + arms + "+ CAD");
         $("#priceAnimatedArms").html("$" + animatedArms + "+ CAD");
-        $("#priceBodyY").html("$" + bodyY + "+ CAD");
         $("#priceMouth").html("$" + mouthX + "+ CAD");
         $("#priceCheek").html("$" + cheekPuff + "+ CAD");
         $("#priceTongue").html("$" + tongueOut + "+ CAD");
