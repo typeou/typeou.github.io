@@ -254,6 +254,10 @@ hr {
     color: white !important;
 }
 
+.outdated {
+    filter: saturate(0.25);
+}
+
 #links {
     white-space: nowrap;
     width: 100%;
@@ -648,7 +652,7 @@ td video {
 }
 
 #commissionsLive2DDiv #examples > div {
-    height: 125vmin;
+    max-height: 125vmin;
 }
 
 #commissionsStingerDiv #examples > div {
@@ -656,13 +660,16 @@ td video {
 }
 
 #examples > div > div {
-    height: 100%;
     width: max-content;
     font-size: 0;
     background-color: rgba(0, 0, 0, 0.4);
     margin: auto;
     border: 2px solid #ff3cd7;
     position: relative;
+}
+
+#commissionsStingerDiv #examples > div > div {
+    height: 100%;
 }
 
 #examples .cover {
@@ -693,6 +700,7 @@ td video {
 }
 
 #examples video {
+    max-width: 70vmin;
     height: 100%;
 }
 
