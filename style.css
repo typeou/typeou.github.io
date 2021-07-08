@@ -619,7 +619,7 @@ hr {
     padding: 0 !important;
 }
 
-#priceHalf::before, #priceFull::before, #priceStinger::before, #priceTrackMatte::before {
+#priceHalf::before, #priceFull::before, #priceStinger::before, #priceTrackMatte::before, #priceChibi::before {
     content: "Starting at ";
     font-weight: normal;
     font-size: max(min(2.5vh, 2.5em), 1.25em);
