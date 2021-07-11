@@ -37,6 +37,10 @@ function RefreshBlocks(wait)
     // Performs these actions on each block element on the current page.
     $("#" + page + "Div .block").each(function(index)
     {
+        $("#" + page + "Div video").each(function(){
+            $(this).attr("autoplay", true);
+        });
+
         // Remove the starting class, since the animator will handle showing and hiding it now.
         $(this).removeClass("blockInit");
 
