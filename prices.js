@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 675, full = 800, chibi = 250, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, mouthX = 60, cheekPuff = 60, tongueOut = 60, alternate = 180, stinger = 60, trackMatte = 90, audio = 15;
+var half = 725, full = 850, chibi = 250, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, mouthX = 60, cheekPuff = 60, tongueOut = 60, alternate = 180;
 // CAD-USD conversion rate
 var rate;
 
@@ -40,11 +40,6 @@ request.onreadystatechange = function() {
         $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
         $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
-        $("#priceStinger").html(Round(Convert(stinger)) + " USD");
-        $("#priceStinger").after("<span>$" + stinger + "+ CAD</span>");
-        $("#priceTrackMatte").html(Round(Convert(trackMatte)) + " USD");
-        $("#priceTrackMatte").after("<span>$" + trackMatte + "+ CAD</span>");
-        $("#priceAudio").html(Round(Convert(audio)) + "+ USD ($" + audio + "+ CAD)");
     }
     // Otherwise, display only the original CAD price.
     else
@@ -61,9 +56,6 @@ request.onreadystatechange = function() {
         $("#priceCheek").html("$" + cheekPuff + "+ CAD");
         $("#priceTongue").html("$" + tongueOut + "+ CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
-        $("#priceStinger").html("$" + stinger + "+ CAD");
-        $("#priceTrackMatte").html("$" + trackMatte + "+ CAD");
-        $("#priceAudio").html("$" + audio + "+ CAD");
     }
 };
 // Open the request and send it.
