@@ -37,10 +37,6 @@ function RefreshBlocks(wait)
     // Performs these actions on each block element on the current page.
     $("#" + page + "Div .block").each(function(index)
     {
-        $("#" + page + "Div video").each(function(){
-            $(this).attr("autoplay", true);
-        });
-
         // Remove the starting class, since the animator will handle showing and hiding it now.
         $(this).removeClass("blockInit");
 
@@ -152,3 +148,15 @@ function TypeDirectory()
         }
     }, 17);
 }
+
+// Only play videos at least halfway visibble.
+$(window).scroll(function()
+{
+    $("#" + page + "Div video").each(function(){
+        var rect = this.getBoundingClientRect();
+        if ((rect.bottom - rect.height) - $(window).height() < rect.height / -2 && rect.bottom > rect.height / 2)
+            $(this).trigger("play");
+        else
+            $(this).trigger("pause");
+    });
+});
