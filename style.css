@@ -46,7 +46,6 @@ mark {
     color: black;
     font-weight: bold;
     padding: 0 0.1em 0 0.1em;
-    margin: 0 -0.1em 0 -0.1em;
 }
 
 ul > li {
@@ -577,14 +576,14 @@ hr {
     }
 }
 
-#pricing {
+.pricing {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     width: 100%;
 }
 
-#pricing > div {
+.pricing > div {
     padding: 0 25px 25px 25px;
     flex-grow: 1;
 }

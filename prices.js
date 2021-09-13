@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 725, full = 850, chibi = 250, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, mouthX = 60, cheekPuff = 60, tongueOut = 60, alternate = 180;
+var half = 725, full = 850, chibi = 210, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, mouthX = 60, cheekPuff = 60, tongueOut = 60, alternate = 180, chibiHead = 90;
 // CAD-USD conversion rate
 var rate;
 
@@ -40,6 +40,7 @@ request.onreadystatechange = function() {
         $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
         $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
         $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
+        $("#priceChibiHead").html(Round(Convert(chibiHead)) + "+ USD ($" + chibiHead + "+ CAD)");
     }
     // Otherwise, display only the original CAD price.
     else
@@ -56,6 +57,7 @@ request.onreadystatechange = function() {
         $("#priceCheek").html("$" + cheekPuff + "+ CAD");
         $("#priceTongue").html("$" + tongueOut + "+ CAD");
         $("#priceAlternate").html("$" + alternate + " CAD");
+        $("#priceChibiHead").html("$" + chibiHead + " CAD");
     }
 };
 // Open the request and send it.
