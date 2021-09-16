@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 725, full = 850, chibi = 210, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, mouthX = 60, cheekPuff = 60, tongueOut = 60, alternate = 180, chibiHead = 90;
+var half = 725, full = 850, chibi = 210, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, headPosZ = 90, mouthX = 60, cheekPuff = 30, tongueOut = 60, alternate = 180, chibiHead = 90;
 // CAD-USD conversion rate
 var rate;
 
@@ -36,6 +36,7 @@ request.onreadystatechange = function() {
         $("#priceToggle").html(Round(Convert(toggles)) + "+ USD ($" + toggles + "+ CAD)");
         $("#priceArms").html(Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)");
         $("#priceAnimatedArms").html(Round(Convert(animatedArms)) + "+ USD ($" + animatedArms + "+ CAD)");
+        $("#priceHeadPosZ").html(Round(Convert(headPosZ)) + "+ USD ($" + headPosZ + "+ CAD)");
         $("#priceMouth").html(Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)");
         $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
         $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
@@ -53,6 +54,7 @@ request.onreadystatechange = function() {
         $("#priceToggle").html("$" + toggles + " CAD");
         $("#priceArms").html("$" + arms + "+ CAD");
         $("#priceAnimatedArms").html("$" + animatedArms + "+ CAD");
+        $("#priceHeadPosZ").html("$" + headPosZ + "+ CAD");
         $("#priceMouth").html("$" + mouthX + "+ CAD");
         $("#priceCheek").html("$" + cheekPuff + "+ CAD");
         $("#priceTongue").html("$" + tongueOut + "+ CAD");

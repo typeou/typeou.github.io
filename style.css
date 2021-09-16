@@ -632,6 +632,22 @@ td video {
     font-weight: bold;
 }
 
+.angleZ {
+    position: relative;
+}
+
+.angleZ > span {
+    position: absolute;
+}
+
+.angleZ > span:first-of-type {
+    top: -0.2em;
+}
+
+.angleZ > span:last-of-type {
+    bottom: -0.2em;
+}
+
 #examples {
     padding: 15px;
     margin: auto;
