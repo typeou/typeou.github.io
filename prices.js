@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 725, full = 850, chibi = 210, expression = 15, animated = 45, toggles = 15, arms = 45, animatedArms = 90, headPosZ = 90, mouthX = 60, cheekPuff = 30, tongueOut = 60, alternate = 180, chibiHead = 90;
+var half = 725, full = 850, chibi = 210, expression = 15, animated = 45, toggles = 15, arms = 60, animatedArms = 90, headPosZ = 60, mouthX = 60, cheekPuff = 30, tongueOut = 90, alternate = 180, chibiHead = 90;
 // CAD-USD conversion rate
 var rate;
 
