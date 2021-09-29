@@ -1,5 +1,5 @@
 body {
-    background: radial-gradient(#3B4868, #25272B);
+    background: radial-gradient(#232938, #131416);
     background-attachment: fixed;
     font-family: 'Noto Sans', sans-serif;
     font-size: max(min(2vh, 2em), 1em);
@@ -202,7 +202,7 @@ hr {
 }
 
 #header, #header a {
-    color: #25272B;
+    color: #131416;
 }
 
 #header div {
