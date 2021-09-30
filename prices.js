@@ -25,41 +25,41 @@ request.onreadystatechange = function() {
         // Pull the CAD-USD conversion rate from the JSON response and store it.
         rate = JSON.parse(this.responseText).observations[0].FXCADUSD.v;
         // Fill in the price data on the page.
-        $("#priceHalf").html(Round(Convert(half)) + " USD");
-        $("#priceHalf").after("<span>$" + half + "+ CAD</span>");
-        $("#priceFull").html(Round(Convert(full)) + " USD");
-        $("#priceFull").after("<span>$" + full + "+ CAD</span>");
-        $("#priceChibi").html(Round(Convert(chibi)) + " USD");
-        $("#priceChibi").after("<span>$" + chibi + "+ CAD</span>");
-        $("#priceExpression").html(Round(Convert(expression)) + "+ USD ($" + expression + "+ CAD)");
-        $("#priceAnimated").html(Round(Convert(animated)) + "+ USD ($" + animated + "+ CAD)");
-        $("#priceToggle").html(Round(Convert(toggles)) + "+ USD ($" + toggles + "+ CAD)");
-        $("#priceArms").html(Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)");
-        $("#priceAnimatedArms").html(Round(Convert(animatedArms)) + "+ USD ($" + animatedArms + "+ CAD)");
-        $("#priceHeadPosZ").html(Round(Convert(headPosZ)) + "+ USD ($" + headPosZ + "+ CAD)");
-        $("#priceMouth").html(Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)");
-        $("#priceCheek").html(Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)");
-        $("#priceTongue").html(Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)");
-        $("#priceAlternate").html(Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)");
-        $("#priceChibiHead").html(Round(Convert(chibiHead)) + "+ USD ($" + chibiHead + "+ CAD)");
+        document.querySelector("#priceHalf").innerHTML = Round(Convert(half)) + " USD";
+        document.querySelector("#priceHalf").after(document.createElement("span").innerHTML = "$" + half + "+ CAD");
+        document.querySelector("#priceFull").innerHTML = Round(Convert(full)) + " USD";
+        document.querySelector("#priceFull").after(document.createElement("span").innerHTML = "$" + full + "+ CAD");
+        document.querySelector("#priceChibi").innerHTML = Round(Convert(chibi)) + " USD";
+        document.querySelector("#priceChibi").after(document.createElement("span").innerHTML = "$" + chibi + "+ CAD");
+        document.querySelector("#priceExpression").innerHTML = Round(Convert(expression)) + "+ USD ($" + expression + "+ CAD)";
+        document.querySelector("#priceAnimated").innerHTML = Round(Convert(animated)) + "+ USD ($" + animated + "+ CAD)";
+        document.querySelector("#priceToggle").innerHTML = Round(Convert(toggles)) + "+ USD ($" + toggles + "+ CAD)";
+        document.querySelector("#priceArms").innerHTML = Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)";
+        document.querySelector("#priceAnimatedArms").innerHTML = Round(Convert(animatedArms)) + "+ USD ($" + animatedArms + "+ CAD)";
+        document.querySelector("#priceHeadPosZ").innerHTML = Round(Convert(headPosZ)) + "+ USD ($" + headPosZ + "+ CAD)";
+        document.querySelector("#priceMouth").innerHTML = Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)";
+        document.querySelector("#priceCheek").innerHTML = Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)";
+        document.querySelector("#priceTongue").innerHTML = Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)";
+        document.querySelector("#priceAlternate").innerHTML = Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)";
+        document.querySelector("#priceChibiHead").innerHTML = Round(Convert(chibiHead)) + "+ USD ($" + chibiHead + "+ CAD)";
     }
     // Otherwise, display only the original CAD price.
     else
     {
-        $("#priceHalf").html("$" + half + "+ CAD");
-        $("#priceFull").html("$" + full + "+ CAD");
-        $("#priceFull").html("$" + chibi + "+ CAD");
-        $("#priceExpression").html("$" + expression + "+ CAD");
-        $("#priceAnimated").html("$" + animated + " CAD");
-        $("#priceToggle").html("$" + toggles + " CAD");
-        $("#priceArms").html("$" + arms + "+ CAD");
-        $("#priceAnimatedArms").html("$" + animatedArms + "+ CAD");
-        $("#priceHeadPosZ").html("$" + headPosZ + "+ CAD");
-        $("#priceMouth").html("$" + mouthX + "+ CAD");
-        $("#priceCheek").html("$" + cheekPuff + "+ CAD");
-        $("#priceTongue").html("$" + tongueOut + "+ CAD");
-        $("#priceAlternate").html("$" + alternate + " CAD");
-        $("#priceChibiHead").html("$" + chibiHead + " CAD");
+        document.querySelector("#priceHalf").innerHTML = "$" + half + "+ CAD";
+        document.querySelector("#priceFull").innerHTML = "$" + full + "+ CAD";
+        document.querySelector("#priceFull").innerHTML = "$" + chibi + "+ CAD";
+        document.querySelector("#priceExpression").innerHTML = "$" + expression + "+ CAD";
+        document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
+        document.querySelector("#priceToggle").innerHTML = "$" + toggles + " CAD";
+        document.querySelector("#priceArms").innerHTML = "$" + arms + "+ CAD";
+        document.querySelector("#priceAnimatedArms").innerHTML = "$" + animatedArms + "+ CAD";
+        document.querySelector("#priceHeadPosZ").innerHTML = "$" + headPosZ + "+ CAD";
+        document.querySelector("#priceMouth").innerHTML = "$" + mouthX + "+ CAD";
+        document.querySelector("#priceCheek").innerHTML = "$" + cheekPuff + "+ CAD";
+        document.querySelector("#priceTongue").innerHTML = "$" + tongueOut + "+ CAD";
+        document.querySelector("#priceAlternate").innerHTML = "$" + alternate + " CAD";
+        document.querySelector("#priceChibiHead").innerHTML = "$" + chibiHead + " CAD";
     }
 };
 // Open the request and send it.
