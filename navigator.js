@@ -10,8 +10,8 @@ function NavigatorLoad()
         // Retrieve the directory name.
         page = window.location.href.substr(window.location.href.indexOf("#") + 1);
         // If the directory is not valid, default to the home page.
-        if (page == "commissions" || page == "comms")
-            page = "commissionsLive2D";
+        if (page == "commissionsLive2D" || page == "comms")
+            page = "commissions";
         else if (document.querySelector("#" + page + "Div") == null)
             page = "home";
     }
@@ -31,7 +31,6 @@ function NavigatorLoad()
     document.querySelector("#" + page + "Link").classList.add("current");
     // Type out the directory into the header and window title.
     TypeDirectory();
-    CheckVideos();
 };
 
 // Hide the last page's blocks and show the current page's.
@@ -61,6 +60,7 @@ function RefreshBlocks(wait)
         } while (old != null && anim == old);
         // Applies the animation to the block.
         element.style.animationName = anim;
+        CheckVideos();
     });
 }
 
@@ -74,8 +74,8 @@ window.onhashchange = function()
     else
     {
         target = window.location.href.substr(window.location.href.indexOf("#") + 1);
-        if (target == "commissions" || target == "comms")
-            target = "commissionsLive2D";
+        if (target == "commissionsLive2D" || target == "comms")
+            target = "commissions";
         else if (document.querySelector("#" + target + "Div") == null)
             target = "home";
     }
@@ -155,7 +155,7 @@ function TypeDirectory()
     }, 17);
 }
 
-// Only play videos at least halfway visibble.
+// Only play videos at least halfway visible.
 function CheckVideos()
 {
     document.querySelectorAll("#" + page + "Div video").forEach(element => {
