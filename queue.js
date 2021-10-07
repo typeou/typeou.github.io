@@ -22,8 +22,8 @@ trelloRequest.onreadystatechange = function() {
             }
         }
 
-        document.querySelector("#inProgress").innerHTML = progressHTML;
-        document.querySelector("#inQueue").innerHTML = queueHTML;
+        document.querySelector("#inProgress").innerHTML = progressHTML == "" ? "None" : progressHTML;
+        document.querySelector("#inQueue").innerHTML = queueHTML == "" ? "None" : queueHTML;
     }
     // Otherwise, display error.
     else
