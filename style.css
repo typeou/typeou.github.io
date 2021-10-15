@@ -345,7 +345,7 @@ hr {
     height: 0;
 }
 
-.block small {
+.block small, #player small {
     color: grey;
 }
 
@@ -354,7 +354,7 @@ hr {
     animation-direction: reverse !important;
 }
 
-.block:hover {
+.block:hover, #player > div > *:hover {
     -webkit-box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
     -moz-box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
     box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
@@ -669,43 +669,8 @@ td video {
     position: relative;
 }
 
-#examples .cover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    clip-path: inset(100% 0 0 0);
-    font-size: initial;
-}
-
-#examples .cover > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-}
-
-#examples .cover > hr {
-    border: 0;
-    height: 2px;
-    background-color: white;
-    margin: 0 15px 0 15px;
-}
-
 #examples video {
-    max-height: 75vh;
-}
-
-#examples h1 {
-    font-size: max(min(3.5vh, 3.5em), 1.75em);
-}
-
-#examples span, #examples p {
-    font-size: max(min(2vh, 2em), 1em);
+    max-height: 20vh;
 }
 
 .partnerLogo {
@@ -727,4 +692,150 @@ td video {
     text-align: right;
     width: 100%;
     display: inline-block;
+}
+
+#player {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
+}
+
+#player > div {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80vw;
+    max-height: 80vh;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: scroll;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+}
+
+#player > div > div:first-of-type {
+    margin: 15px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
+    height: 60vmin;
+    flex-grow: 1;
+    transition: box-shadow 0.5s;
+    padding: 15px;
+}
+
+#player video {
+    height: 100%;
+    border: 2px solid #ff3cd7;
+}
+
+#player > div > div:last-of-type {
+    margin: 15px;
+    color: white;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.95) 100%);
+    flex-grow: 1;
+    width: max-content;
+    padding: 15px;
+    transition: box-shadow 0.5s;
+}
+
+#player > div > div:last-of-type > div > small {
+    position: relative;
+    width: max-content;
+    margin: auto;
+    display: block;
+}
+
+#player > div > div:last-of-type > div > small > ul {
+    text-align: left;
+    padding-left: max(min(2vh, 2em), 1em);
+}
+
+#player > div > div:last-of-type > div > small > ul > li::marker {
+    content: "+ ";
+}
+
+.videoBody > div:last-of-type {
+    display: none;
+}
+
+@-webkit-keyframes openPlayer1 {
+    from {
+        clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes openPlayer1 {
+    from {
+        clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@-webkit-keyframes openPlayer2 {
+    from {
+        clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes openPlayer2 {
+    from {
+        clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@-webkit-keyframes openPlayer3 {
+    fromfrom {
+        clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+@keyframes openPlayer3 {
+    from {
+        clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+@-webkit-keyframes openPlayer4 {
+    from {
+        clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+@keyframes openPlayer4 {
+    from {
+        clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
+    }
+    to {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
 }

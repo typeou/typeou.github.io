@@ -4,9 +4,6 @@ function HoverEvents() {
         element.addEventListener("mouseenter", function() {
             document.querySelector("#logoSides").classList.add("hover");
         });
-    });
-
-    document.querySelectorAll(".title").forEach(element => {
         element.addEventListener("mouseleave", function() {
             document.querySelector("#logoSides").classList.remove("hover");
         });
@@ -17,24 +14,25 @@ function HoverEvents() {
         element.addEventListener("mouseenter", function(event) {
             this.parentNode.querySelector("span").classList.add("hover");
         });
-    });
-
-    document.querySelectorAll("#links a").forEach(element => {
         element.addEventListener("mouseleave", function(event) {
             this.parentNode.querySelector("span").classList.remove("hover");
         });
     });
 
-    // Commission example hovers
-    document.querySelectorAll("#examples > div > div").forEach(element => {
+    // Rig thumbnails autoplay on hover
+    document.querySelectorAll("#examples video").forEach(element => {
         element.addEventListener("mouseenter", function(event) {
-            this.parentNode.querySelector(".cover").classList.add("hover");
+            this.play();
+        });
+        element.addEventListener("mouseleave", function(event) {
+            this.pause();
+        });
+        element.addEventListener("click", function(event) {
+            ShowVideo(this.parentNode.parentNode.innerHTML);
         });
     });
 
-    document.querySelectorAll("#examples > div > div").forEach(element => {
-        element.addEventListener("mouseleave", function(event) {
-            this.parentNode.querySelector(".cover").classList.remove("hover");
-        });
-    });
+    // Close video player
+    document.querySelector("#player").addEventListener("click", CloseVideo);
+    document.addEventListener("keydown", CloseVideo);
 };

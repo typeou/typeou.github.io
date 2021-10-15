@@ -60,7 +60,6 @@ function RefreshBlocks(wait)
         } while (old != null && anim == old);
         // Applies the animation to the block.
         element.style.animationName = anim;
-        CheckVideos();
     });
 }
 
@@ -155,17 +154,49 @@ function TypeDirectory()
     }, 17);
 }
 
-// Only play videos at least halfway visible.
-function CheckVideos()
+function ShowVideo(html)
 {
-    document.querySelectorAll("#" + page + "Div video").forEach(element => {
-        var rect = element.getBoundingClientRect();
-        if ((rect.bottom - rect.height) - window.innerHeight < rect.height / -2 && rect.bottom > rect.height / 2)
-            element.play();
-        else
-            element.pause();
-    });
+    document.querySelector("#playerBody").innerHTML = html;
+
+    var element = document.querySelector("#player");
+    // Retrieve the last animation played on this block.
+    // We need to tell it to play a different one or else it won't animate a second time.
+    var old = element.style.animationName;
+    // New animation to play
+    var anim;
+    do
+    {
+        // Select a random animation.
+        anim = "openPlayer" + (Math.floor(Math.random() * 4) + 1);
+    // Loop until a new animation is selected.
+    } while (old != null && anim == old);
+    // Applies the animation to the block.
+    element.style.animationName = anim;
+    element.classList.remove("reverse");
+    element.querySelector("video").play();
 }
 
-window.addEventListener("scroll", CheckVideos);
+function CloseVideo()
+{
+    var element = document.querySelector("#player");
+    if (!element.classList.contains("reverse"))
+    {
+        // Retrieve the last animation played on this block.
+        // We need to tell it to play a different one or else it won't animate a second time.
+        var old = element.style.animationName;
+        // New animation to play
+        var anim;
+        do
+        {
+            // Select a random animation.
+            anim = "openPlayer" + (Math.floor(Math.random() * 4) + 1);
+        // Loop until a new animation is selected.
+        } while (old != null && anim == old);
+        // Applies the animation to the block.
+        element.style.animationName = anim;
+        element.classList.add("reverse");
+        element.querySelector("video").pause();
+    }
+}
+
 window.onload = function(){ HoverEvents(); NavigatorLoad(); }
