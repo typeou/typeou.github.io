@@ -1,4 +1,4 @@
-const queueId = "615cc9624645c91026aa0587", doneId = "615cc9624645c91026aa0589";
+const queueId = "615cc9624645c91026aa0587", queueId2 = "6168f351645d6a122c62ece1", doneId = "615cc9624645c91026aa0589";
 
 // Retrieving card list from Trello
 var trelloRequest = new XMLHttpRequest();
@@ -15,7 +15,7 @@ trelloRequest.onreadystatechange = function() {
             // If the card isn't in the "Done" list
             if (cards[i]["idList"] != doneId)
             {
-                if (cards[i]["idList"] == queueId)
+                if (cards[i]["idList"] == queueId || cards[i]["idList"] == queueId2)
                     queueHTML = formatLink(queueHTML, cards[i]["name"]);
                 else
                     progressHTML = formatLink(progressHTML, cards[i]["name"]);
