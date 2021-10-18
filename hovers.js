@@ -34,5 +34,6 @@ function HoverEvents() {
 
     // Close video player
     document.querySelector("#player").addEventListener("click", CloseVideo);
+    document.querySelector("#player").addEventListener("touchstart", CloseVideo);
     document.addEventListener("keydown", CloseVideo);
 };

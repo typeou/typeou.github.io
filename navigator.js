@@ -178,7 +178,7 @@ function ShowVideo(html)
 
 function CloseVideo(event)
 {
-    if (event.target.id == "player" || event.key == "Escape")
+    if (event.target.id == "player" || event.target.id == "playerX" || event.key == "Escape")
     {
         var element = document.querySelector("#player");
         if (!element.classList.contains("reverse"))

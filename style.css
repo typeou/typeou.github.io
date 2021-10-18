@@ -719,8 +719,8 @@ td video {
 #player > div {
     display: flex;
     flex-wrap: wrap;
-    max-width: 80vw;
-    max-height: 80vh;
+    max-width: 70vw;
+    max-height: 70vh;
     width: max-content;
     height: max-content;
     position: relative;
@@ -775,6 +775,33 @@ td video {
 
 ul.addons > li::marker {
     content: "+ ";
+}
+
+#playerX {
+    position: fixed;
+    font-size: 10vmin;
+    color: white;
+    width: 10vmin;
+    line-height: 10vmin;
+    padding: 0;
+    margin: 2.5vmin;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transition: color 0.25s;
+}
+
+#playerX:hover {
+    color: #ff3cd7;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @-webkit-keyframes openPlayer1 {
