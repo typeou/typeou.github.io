@@ -781,14 +781,14 @@ ul.addons > li::marker {
     position: fixed;
     font-size: 7.5vmin;
     color: white;
-    width: 5vmin;
+    width: 7.5vmin;
     line-height: 7.5vmin;
     padding: 0;
-    margin: 3.75vmin;
-    top: 0;
-    left: 0;
+    top: 3.75vmin;
+    left: 3.75vmin;
     text-align: center;
     transition: color 0.25s;
+    transform: rotate(45deg);
 }
 
 #playerX:hover {
