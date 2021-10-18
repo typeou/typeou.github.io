@@ -37,6 +37,10 @@ h1 > a {
     color: inherit;
 }
 
+#playerBody h1 > a {
+    color: #ff3cd7 !important;
+}
+
 h1 > a:hover {
     color: #ff3cd7;
 }
