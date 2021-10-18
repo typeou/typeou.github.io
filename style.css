@@ -719,8 +719,8 @@ td video {
 #player > div {
     display: flex;
     flex-wrap: wrap;
-    max-width: 70vw;
-    max-height: 70vh;
+    max-width: 80vw;
+    max-height: 80vh;
     width: max-content;
     height: max-content;
     position: relative;
@@ -779,12 +779,12 @@ ul.addons > li::marker {
 
 #playerX {
     position: fixed;
-    font-size: 10vmin;
+    font-size: 7.5vmin;
     color: white;
-    width: 10vmin;
-    line-height: 10vmin;
+    width: 5vmin;
+    line-height: 7.5vmin;
     padding: 0;
-    margin: 2.5vmin;
+    margin: 3.75vmin;
     top: 0;
     left: 0;
     text-align: center;
