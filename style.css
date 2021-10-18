@@ -779,13 +779,13 @@ ul.addons > li::marker {
 
 #playerX {
     position: fixed;
-    font-size: 7.5vmin;
     color: white;
-    width: 7.5vmin;
-    line-height: 7.5vmin;
+    font-size: 10vmin;
+    width: 10vmin;
+    line-height: 10vmin;
     padding: 0;
-    top: 3.75vmin;
-    left: 3.75vmin;
+    top: 2.5vmin;
+    left: 2.5vmin;
     text-align: center;
     transition: color 0.25s;
     transform: rotate(45deg);
