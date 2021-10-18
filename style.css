@@ -658,6 +658,7 @@ td video {
 #examples > div {
     flex-grow: 1;
     margin: 7.5px;
+    min-width: calc(33% - 15px);
 }
 
 #examples > div > div {
@@ -671,6 +672,10 @@ td video {
 
 #examples video {
     max-height: 20vh;
+}
+
+#examples > div > p {
+    margin: 0;
 }
 
 .partnerLogo {
@@ -748,24 +753,24 @@ td video {
     transition: box-shadow 0.5s;
 }
 
-#player > div > div:last-of-type > div > small {
+#player > div > div:last-of-type > div > small, #player > div > div:last-of-type > div > ul {
     position: relative;
     width: max-content;
     margin: auto;
     display: block;
 }
 
-#player > div > div:last-of-type > div > small > ul {
+#player > div > div:last-of-type > div ul {
     text-align: left;
     padding-left: max(min(2vh, 2em), 1em);
 }
 
-#player > div > div:last-of-type > div > small > ul > li::marker {
-    content: "+ ";
-}
-
 .videoBody > div:last-of-type {
     display: none;
+}
+
+ul.addons > li::marker {
+    content: "+ ";
 }
 
 @-webkit-keyframes openPlayer1 {

@@ -176,26 +176,29 @@ function ShowVideo(html)
     element.querySelector("video").play();
 }
 
-function CloseVideo()
+function CloseVideo(event)
 {
-    var element = document.querySelector("#player");
-    if (!element.classList.contains("reverse"))
+    if (event.target.id == "player" || event.key == "Escape")
     {
-        // Retrieve the last animation played on this block.
-        // We need to tell it to play a different one or else it won't animate a second time.
-        var old = element.style.animationName;
-        // New animation to play
-        var anim;
-        do
+        var element = document.querySelector("#player");
+        if (!element.classList.contains("reverse"))
         {
-            // Select a random animation.
-            anim = "openPlayer" + (Math.floor(Math.random() * 4) + 1);
-        // Loop until a new animation is selected.
-        } while (old != null && anim == old);
-        // Applies the animation to the block.
-        element.style.animationName = anim;
-        element.classList.add("reverse");
-        element.querySelector("video").pause();
+            // Retrieve the last animation played on this block.
+            // We need to tell it to play a different one or else it won't animate a second time.
+            var old = element.style.animationName;
+            // New animation to play
+            var anim;
+            do
+            {
+                // Select a random animation.
+                anim = "openPlayer" + (Math.floor(Math.random() * 4) + 1);
+            // Loop until a new animation is selected.
+            } while (old != null && anim == old);
+            // Applies the animation to the block.
+            element.style.animationName = anim;
+            element.classList.add("reverse");
+            element.querySelector("video").pause();
+        }
     }
 }
 
