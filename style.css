@@ -784,8 +784,8 @@ ul.addons > li::marker {
     width: 10vmin;
     line-height: 10vmin;
     padding: 0;
-    top: 2.5vmin;
-    left: 2.5vmin;
+    top: 0;
+    left: 0;
     text-align: center;
     transition: color 0.25s;
     transform: rotate(45deg);
