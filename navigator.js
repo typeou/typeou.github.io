@@ -25,8 +25,13 @@ function NavigatorLoad()
     document.querySelectorAll(".block").forEach(element => {
         element.classList.add("blockInit");
     });
+    document.querySelectorAll("#" + page + "Div .block").forEach((element) => {
+        // Remove the starting class, since the animator will handle showing and hiding it now.
+        element.classList.remove("blockInit");
+        element.classList.add("blockLoad");
+    });
+    document.querySelector("#main").classList.remove("maininit");
     // Display the current page's blocks with no delay.
-    RefreshBlocks(0);
     // Highlight the current page link.
     document.querySelector("#" + page + "Link").classList.add("current");
     // Type out the directory into the header and window title.
@@ -40,26 +45,29 @@ function RefreshBlocks(wait)
     document.querySelectorAll("#" + page + "Div .block").forEach((element, index) => {
         // Remove the starting class, since the animator will handle showing and hiding it now.
         element.classList.remove("blockInit");
-
-        // Delay before the animation starts.
-        // Depending on the value passed into this function, the delay can vary.
-        var delay = ((wait == 1 ? 0.5 : 0) + (index * 0.25)) * (wait == 2 ? 0 : 1);
-        // Applies the delay to the block.
-        element.style.animationDelay = delay + "s";
-
-        // Retrieve the last animation played on this block.
-        // We need to tell it to play a different one or else it won't animate a second time.
-        var old = element.style.animationName;
-        // New animation to play.
-        var anim;
-        do
+        element.classList.remove("blockLoad");
+        if (wait != 0)
         {
-            // Select a random animation.
-            anim = "open" + (Math.floor(Math.random() * 4) + 1);
-        // Loop until a new animation is selected.
-        } while (old != null && anim == old);
-        // Applies the animation to the block.
-        element.style.animationName = anim;
+            // Delay before the animation starts.
+            // Depending on the value passed into this function, the delay can vary.
+            var delay = ((wait == 1 ? 0.5 : 0) + (index * 0.25)) * (wait == 2 ? 0 : 1);
+            // Applies the delay to the block.
+            element.style.animationDelay = delay + "s";
+    
+            // Retrieve the last animation played on this block.
+            // We need to tell it to play a different one or else it won't animate a second time.
+            var old = element.style.animationName;
+            // New animation to play.
+            var anim;
+            do
+            {
+                // Select a random animation.
+                anim = "open" + (Math.floor(Math.random() * 4) + 1);
+            // Loop until a new animation is selected.
+            } while (old != null && anim == old);
+            // Applies the animation to the block.
+            element.style.animationName = anim;
+        }
     });
 }
 
