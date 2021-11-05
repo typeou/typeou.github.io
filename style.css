@@ -592,7 +592,9 @@ hr {
 }
 
 .blockInit {
-    height: 0;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .blockLoad {
@@ -618,8 +620,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
-        margin: 15px -15px;
-        padding: 15px 45px;
+        margin: 0;
+        padding: 0;
     }
     1%{
         height: auto;
@@ -645,8 +647,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(0% 50%, 100% 50%, calc(100% - 60px) 50%, 60px 50%);
-        margin: 15px -15px;
-        padding: 15px 45px;
+        margin: 0;
+        padding: 0;
     }
     1%{
         height: auto;
@@ -672,8 +674,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
-        margin: 15px -15px;
-        padding: 15px 45px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
@@ -699,8 +701,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(60px 50%, calc(100% - 60px) 50%, 100% 50%, 0% 50%);
-        margin: 15px -15px;
-        padding: 15px 45px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
@@ -726,8 +728,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
-        margin: -15px 15px;
-        padding: 45px 15px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
@@ -753,8 +755,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(50% 60px, 50% calc(100% - 60px), 50% 100%, 50% 0%);
-        margin: -15px 15px;
-        padding: 45px 15px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
@@ -780,8 +782,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
-        margin: -15px 15px;
-        padding: 45px 15px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
@@ -807,8 +809,8 @@ hr {
     0% {
         height: 0;
         clip-path: polygon(50% 0%, 50% 100%, 50% calc(100% - 60px), 50% 60px);
-        margin: -15px 15px;
-        padding: 45px 15px;
+        margin: 0;
+        padding: 0;
     }
     1% {
         height: auto;
