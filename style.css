@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Cascadia Mono';
-    src: url(CascadiaMono.woff2);
+    font-display: swap;
+    unicode-range: U+000-5FF;
+    src: local('Cascadia Mono') format('woff2'), url('CascadiaMono.woff2') format('woff2');
 }
 
 body {
