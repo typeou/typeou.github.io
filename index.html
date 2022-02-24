@@ -34,6 +34,7 @@
                 <div id="commissionsLink"><span></span><a href="#commissions">Live2D Commissions</a></div>
                 <div id="tosLink"><span></span><a href="#tos">Terms of Service</a></div>
                 <div id="contactLink"><span></span><a href="#contact">Contact</a></div>
+                <div id="kbonkHelpLink"><span></span><a href="#kbonkHelp">KBonk Help</a></div>
             </div>
 
             <div id="pages">
@@ -865,11 +866,114 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="kbonkHelpDiv" class="page">
+                    <div class="block">
+                        <h2>KBonk Help</h2>
+                        <hr/>
+                        <p>This is a help page for <a href="https://typeou.itch.io/karasubonk">KBonk</a>, a tool I created to allow viewers to interact with streaming VTubers by throwing items at their model!</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 1: Authentication</h2>
+                        <hr/>
+                        <p>As of version 1.10, KBonk now uses in-app authentication for convenience and reliability. Shortly after opening the program for the first time, you should be greeted with a Twitch login window:</p>
+                        <div class="centerDiv"><img src="kbonk/auth.png"></div>
+                        <p>Simply log in and the program will handle things from there!</p>
+                        <p>If you encounter issues or need to switch users, click the "Log out" button at the bottom of the page, which will allow the window to appear again.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 2: The Browser Source</h2>
+                        <hr/>
+                        <p>After successfully logging in, the status message at the top of the page should change to something regarding the browser source.</p>
+                        <p>Reminder: you can click the status bar at the top for more info!</p>
+                        <div class="centerDiv"><img src="kbonk/browserSource.png"></div>
+                        <p>KBonk is browser-based, so to get it working you need to add a Browser Source to your OBS scenes!</p>
+                        <p>To add KBonk as a browser source, create a new Browser Source...</p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceLocation.png"></div>
+                        <p>...and check the "Local file" option to allow you to choose an .html file.</p>
+                        <p>Navigate to the folder you stored KBonk, then into resources/app and select <mark>bonker.html</mark> as the file.</p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceProperties.png"></div>
+                        <p>The main program should automatically connect! That status message regarding the Browser Source should disappear shortly.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 2.5: Additional Info</h2>
+                        <hr/>
+                        <p>You should <mark>set the width and height of the Browser Source to match your VTube Studio Source!</mark></p>
+                        <p>You can find the width and height of your VTube Studio Source by <mark>right-clicking on your VTube Studio source</mark> and navigating to <mark>Transform, Edit Transform</mark></p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceSize.png"></div>
+                        <div class="centerDiv"><img src="kbonk/browserSourceVtubeSize.png"></div>
+                        <p class="center"><small>These values should be the same.</small></p>
+                        <p>If you tend to move your VTube Studio Source, it may be helpful to make a group for KBonk and your VTube Studio source so they always move together.</p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceGroup.png"></div>
+                        <p>If you encounter issues, the first thing you usually want to try is refreshing the Browser Source.</p>
+                        <p>There are two locations to do this: the properties of the Browser Source...</p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceRefreshProperties.png"></div>
+                        <p>...and the quick actions bar just below your preview window.</p>
+                        <div class="centerDiv"><img src="kbonk/browserSourceRefreshMain.png"></div>
+                    </div>
+                    <div class="block">
+                        <h2>Part 3: VTube Studio API</h2>
+                        <hr/>
+                        <p>KBonk relies on the VTube Studio API, so make sure it's enabled!</p>
+                        <div class="centerDiv"><img src="kbonk/vtubeAPI.png"></div>
+                        <p>The VTube Studio Port setting in KBonk should match the Port displayed in VTube Studio!</p>
+                        <p>If properly configued, you should automatically receive a prompt for KBonk's connection with VTube Studio.</p>
+                        <div class="centerDiv"><img src="kbonk/vtubeAccess.png"></div>
+                        <p>Click Allow to continue.</p>
+                        <p>The program should now be capable of throwing objects!</p>
+                        <p>However, the position is likely to be incorrect. A quick calibration process is required to fix that.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 4: Calibration</h2>
+                        <hr/>
+                        <p>Click the "Calibrate" button at the top of the window to start the calibration process.</p>
+                        <div class="centerDiv"><img src="kbonk/calibration1.png"></div>
+                        <p>After starting calibration, your model in VTube Studio should become very small!</p>
+                        <p>Please do not resize it or you will be required to repeat this step!</p>
+                        <p>A guide will be displayed in OBS. Please move the model in VTube Studio while looking at your OBS preview in order to align your model's head with the guide!</p>
+                        <div class="centerDiv"><img src="kbonk/calibration2.png"></div>
+                        <p>After you are satisfied, click the "Continue Calibration" button in the main program window and repeat the process!</p>
+                        <div class="centerDiv"><img src="kbonk/calibration3.png"></div>
+                        <p>After you are satisfied, click the "Confirm Calibration" button in the main program window!</p>
+                        <p>If successful, the calibration process will complete. Thrown objects should now properly align with your model's head!</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 5: Channel Point Redeems</h2>
+                        <hr/>
+                        <p>Next, we'll configure channel point redeems to trigger bonks!</p>
+                        <p>The program comes with a few redeems pre-set. You can always add more for different types of bonks!</p>
+                        <p>Navigate to the "Events" menu and click the "Listen" button for one of the types of events.</p>
+                        <div class="centerDiv"><img src="kbonk/redeem1.png"></div>
+                        <p>The program will then wait for a channel point redeem! Simply use the redeem you wish to associate with the event.</p>
+                        <div class="centerDiv"><img src="kbonk/redeem2.png"></div>
+                        <p>That redeem should now trigger the relevant event!</p>
+                    </div>
+                    <div class="block">
+                        <h2>Part 6: Custom Images and Sounds</h2>
+                        <hr/>
+                        <p>Finally, loading custom images and sounds!</p>
+                        <p>For this example, I'll refer to images; but the process is the same for sounds and all other types of uploads!</p>
+                        <p>This process uses a normal file selection window. Just navigate to the Images or Sounds gallery and click the "ADD IMAGES" button!</p>
+                        <div class="centerDiv"><img src="kbonk/add.png"></div>
+                        <p>Select whichever images you'd like and click "Open" to add them to the list!</p>
+                        <p>The new image is now active! You can leave it at that, or click the cogwheel to access the image details.</p>
+                        <div class="centerDiv"><img src="kbonk/details.png"></div>
+                        <p>Here, you can adjust various settings like weight, size, volume, and add or remove sound overrides for this image!</p>
+                    </div>
+                    <div class="block">
+                        <h2>Afterword</h2>
+                        <hr/>
+                        <p>That's it for the basics of KBonk! There's lots of customization to be had, so go wild and experiment!</p>
+                        <p>Custom Bonks give you a lot of control, and KBonk includes one by default (Hydrate) that only throws the two drink images!</p>
+                        <p>Windup settings let you do some funny things (like a Gamecube startup sound!) and impact decals let you add things like hitmarkers when an item hits you!</p>
+                        <p>Please have fun customizing and using KBonk, and thank you for using it!</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="footer" class="center">
-            <a href="#">Top</a> | <a href="#home">Home</a> | <a href="#commissions">Live2D Commissions</a> |<a href="#tos">Terms of Service</a> | <a href="#contact">Contact</a>
+            <a href="#">Top</a> | <a href="#home">Home</a> | <a href="#commissions">Live2D Commissions</a> |<a href="#tos">Terms of Service</a> | <a href="#contact">Contact | <a href="#kbonkHelp">KBonk Help</a>
         </div>
 
         <div id="player" class="reverse">
