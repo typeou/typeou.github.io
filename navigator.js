@@ -22,14 +22,15 @@ function NavigatorLoad()
     // Class initially added to all block elements.
     // It hides the elements so they don't affect the page layout.
     // After they're viewed once, the animator will take care of this so this class will be removed.
-    document.querySelectorAll(".block").forEach(element => {
-        element.classList.add("blockInit");
-    });
-    document.querySelectorAll("#" + page + "Div .block").forEach((element) => {
-        // Remove the starting class, since the animator will handle showing and hiding it now.
-        element.classList.remove("blockInit");
-        element.classList.add("blockLoad");
-    });
+    var blocks = document.querySelectorAll(".block");
+    for (var i = 0; i < blocks.length; i++)
+        blocks[i].classList.add("blockInit");
+    blocks = document.querySelectorAll("#" + page + "Div .block");
+    for (var i = 0; i < blocks.length; i++)
+    {
+        blocks[i].classList.remove("blockInit");
+        blocks[i].classList.add("blockLoad");
+    }
     document.querySelector("#main").classList.remove("maininit");
     // Display the current page's blocks with no delay.
     // Highlight the current page link.
@@ -42,21 +43,23 @@ function NavigatorLoad()
 function RefreshBlocks(wait)
 {
     // Performs these actions on each block element on the current page.
-    document.querySelectorAll("#" + page + "Div .block").forEach((element, index) => {
+    var blocks = document.querySelectorAll("#" + page + "Div .block");
+    for (var i = 0; i < blocks.length; i++)
+    {
         // Remove the starting class, since the animator will handle showing and hiding it now.
-        element.classList.remove("blockInit");
-        element.classList.remove("blockLoad");
+        blocks[i].classList.remove("blockInit");
+        blocks[i].classList.remove("blockLoad");
         if (wait != 0)
         {
             // Delay before the animation starts.
             // Depending on the value passed into this function, the delay can vary.
-            var delay = ((wait == 1 ? 0.5 : 0) + (index * 0.25)) * (wait == 2 ? 0 : 1);
+            var delay = ((wait == 1 ? 0.5 : 0) + (i * 0.25)) * (wait == 2 ? 0 : 1);
             // Applies the delay to the block.
-            element.style.animationDelay = delay + "s";
+            blocks[i].style.animationDelay = delay + "s";
     
             // Retrieve the last animation played on this block.
             // We need to tell it to play a different one or else it won't animate a second time.
-            var old = element.style.animationName;
+            var old = blocks[i].style.animationName;
             // New animation to play.
             var anim;
             do
@@ -66,9 +69,9 @@ function RefreshBlocks(wait)
             // Loop until a new animation is selected.
             } while (old != null && anim == old);
             // Applies the animation to the block.
-            element.style.animationName = anim;
+            blocks[i].style.animationName = anim;
         }
-    });
+    }
 }
 
 // Whenever an on-site link is clicked.
@@ -94,26 +97,26 @@ window.onhashchange = function()
         RefreshBlocks(2);
         // Tells the old page's blocks to play their animation in reverse.
         // This will hide them from view.
-        document.querySelectorAll("#" + page + "Div .block").forEach(element => {
-            element.classList.add("reverse");
-        });
+        var blocks = document.querySelectorAll("#" + page + "Div .block");
+        for (var i = 0; i < blocks.length; i++)
+            blocks[i].classList.add("reverse");
     
         // Set the current page to the target page.
         page = target;
     
         // Remove the highlight on the old link.
-        document.querySelectorAll("#links .current").forEach(element => {
-            element.classList.remove("current");
-        });
+        blocks = document.querySelectorAll("#links .current");
+        for (var i = 0; i < blocks.length; i++)
+            blocks[i].classList.remove("current");
         // Highlight the new link.
         document.querySelector("#" + page + "Link").classList.add("current");
     
         // Display the new page's blocks with a small delay to wait for the old page's blocks to hide.
         RefreshBlocks(1);
         // Make sure the animations for the new page play forwards.
-        document.querySelectorAll("#" + page + "Div .block").forEach(element => {
-            element.classList.remove("reverse");
-        });
+        blocks = document.querySelectorAll("#" + page + "Div .block");
+        for (var i = 0; i < blocks.length; i++)
+            blocks[i].classList.remove("reverse");
         // Type out the directory into the header and window title.
         TypeDirectory();
     }
