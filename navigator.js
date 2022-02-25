@@ -8,7 +8,7 @@ function NavigatorLoad()
     if (window.location.href.indexOf("#") != -1)
     {
         // Retrieve the directory name.
-        page = window.location.href.substr(window.location.href.indexOf("#") + 1);
+        page = window.location.href.substring(window.location.href.indexOf("#") + 1);
         // If the directory is not valid, default to the home page.
         if (page == "commissionsLive2D" || page == "comms")
             page = "commissions";
@@ -80,7 +80,7 @@ window.onhashchange = function()
         target = "home";
     else
     {
-        target = window.location.href.substr(window.location.href.indexOf("#") + 1);
+        target = window.location.href.substring(window.location.href.indexOf("#") + 1);
         if (target == "commissionsLive2D" || target == "comms")
             target = "commissions";
         else if (document.querySelector("#" + target + "Div") == null)
@@ -133,7 +133,7 @@ function TypeDirectory()
         if (document.querySelector("#directory").innerHTML.length > 0)
         {
             // Set the directory text to the directory text with the last character removed.
-            document.querySelector("#directory").innerHTML = document.querySelector("#directory").innerHTML.substr(0, document.querySelector("#directory").innerHTML.length - 1);
+            document.querySelector("#directory").innerHTML = document.querySelector("#directory").innerHTML.substring(0, document.querySelector("#directory").innerHTML.length - 1);
             // Copy the directory text to the window title.
             document.querySelector("title").innerHTML = "typeou.dev" + document.querySelector("#directory").innerHTML;
         }
@@ -150,7 +150,7 @@ function TypeDirectory()
                 if (document.querySelector("#directory").innerHTML != (page == "home" ? "" : page))
                 {
                     // Type out the page name one character at a name.
-                    document.querySelector("#directory").innerHTML = "/" + page.substr(0, document.querySelector("#directory").innerHTML.length);
+                    document.querySelector("#directory").innerHTML = "/" + page.substring(0, document.querySelector("#directory").innerHTML.length);
                     // Copy the directory text to the window title.
                     document.querySelector("title").innerHTML = "typeou.dev" + document.querySelector("#directory").innerHTML;
                 }
