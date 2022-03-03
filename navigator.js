@@ -41,6 +41,17 @@ function NavigatorLoad()
 // Hide the last page's blocks and show the current page's.
 function RefreshBlocks(wait)
 {
+    if (wait == 1)
+    {
+        document.querySelector("#" + page + "Div").classList.remove("blockInit");
+        setTimeout(() => {
+            document.querySelectorAll(".page").forEach(element => {
+                if (element.id != page + "Div")
+                    element.classList.add("blockInit");
+            });
+        }, 500);
+    }
+
     // Performs these actions on each block element on the current page.
     document.querySelectorAll("#" + page + "Div .block").forEach((element, index) => {
         // Remove the starting class, since the animator will handle showing and hiding it now.
