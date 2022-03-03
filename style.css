@@ -603,7 +603,7 @@ img {
 }
 
 .blockInit {
-    display: none !important !important;
+    display: none !important;
 }
 
 .blockLoad {
