@@ -221,4 +221,16 @@ function CloseVideo(event)
     }
 }
 
-window.onload = function(){ HoverEvents(); NavigatorLoad(); }
+window.onload = function()
+{
+    HoverEvents();
+    NavigatorLoad();
+
+    document.querySelector("#logoSides").classList.remove("hover");
+    document.querySelectorAll("#links span").forEach(element => {
+        element.classList.remove("hover");
+    });
+    document.querySelectorAll("#examples video").forEach(element => {
+        element.pause();
+    });
+}
