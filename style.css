@@ -6,7 +6,7 @@
 }
 
 body {
-    background: radial-gradient(#2E4E75, #222223);
+    background: radial-gradient(#2E4E75, #17273A);
     background-attachment: fixed;
     font-family: 'Noto Sans', sans-serif;
     font-size: max(min(2vh, 2em), 1em);
