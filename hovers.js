@@ -1,14 +1,14 @@
-function HoverEvents() {
-    // Title logo hover
-    document.querySelectorAll(".title").forEach(element => {
-        element.addEventListener("mouseenter", function() {
-            document.querySelector("#logoSides").classList.add("hover");
-        });
-        element.addEventListener("mouseleave", function() {
-            document.querySelector("#logoSides").classList.remove("hover");
-        });
+// Title logo hover
+document.querySelectorAll(".title").forEach(element => {
+    element.addEventListener("mouseenter", function() {
+        document.querySelector("#logoSides").classList.add("hover");
     });
+    element.addEventListener("mouseleave", function() {
+        document.querySelector("#logoSides").classList.remove("hover");
+    });
+});
 
+function HoverEvents() {
     // Link hovers
     document.querySelectorAll("#links a").forEach(element => {
         element.addEventListener("mouseenter", function(event) {
