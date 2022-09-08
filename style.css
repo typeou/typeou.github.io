@@ -6,7 +6,7 @@
 }
 
 body {
-    background: radial-gradient(#232938, #131416);
+    background: radial-gradient(#2E4E75, #222223);
     background-attachment: fixed;
     font-family: 'Noto Sans', sans-serif;
     font-size: max(min(2vh, 2em), 1em);
@@ -20,7 +20,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #ff3cd7;
+    color: #e10098;
 }
 
 h1 {
@@ -29,7 +29,7 @@ h1 {
 
 h1.commStatus {
     font-size: max(min(5vh, 5em), 2.5em);
-    color: #3DFF64;
+    color: #1de000;
 }
 
 h2 {
@@ -50,11 +50,11 @@ h1 > a {
 }
 
 #playerBody h1 > a {
-    color: #ff3cd7 !important;
+    color: #e10098 !important;
 }
 
 h1 > a:hover {
-    color: #ff3cd7;
+    color: #e10098;
 }
 
 mark {
@@ -71,11 +71,11 @@ ul > li {
 ul > li::marker {
     font-weight: bold;
     content: "> ";
-    color: #ff3cd7;
+    color: #e10098;
 }
 
 ul > ul > li::marker{
-    color: #9effb1 !important;
+    color: #7fe170 !important;
 }
 
 hr {
@@ -209,7 +209,7 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ff3cd7;
+    background: #e10098;
     clip-path: polygon(50% 88%, 50% 100%, 77% 85%, 77% 54%, 50% 0%, 23% 54%, 23% 85%, 50% 100%, 50% 88%, 33% 79%, 33% 60%, 50% 50%, 50% 38%, 39% 45%, 50% 23%, 61% 45%, 50% 38%, 50% 50%, 67% 60%, 67% 79%);
     -webkit-animation-name: loadCenter;
     -webkit-animation-duration: 4s;
@@ -223,7 +223,7 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #131416;
+    background: #222223;
     clip-path: polygon(16% 80%, 16% 73%, 13% 71%, 13% 54%, 6% 50%, 13% 45%, 13% 28%, 35% 15%, 39% 6%, 7% 24%, 7% 42%, 0% 46%, 0% 53%, 7% 58%, 7% 75%);
     -webkit-animation-name: loadLeft;
     -webkit-animation-duration: 4s;
@@ -237,7 +237,7 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #131416;
+    background: #222223;
     clip-path: polygon(84% 80%, 84% 73%, 87% 71%, 87% 54%, 94% 50%, 87% 45%, 87% 28%, 65% 15%, 61% 6%, 93% 24%, 93% 42%, 100% 46%, 100% 53%, 93% 58%, 93% 75%);
     -webkit-animation-name: loadRight;
     -webkit-animation-duration: 4s;
@@ -446,7 +446,7 @@ hr {
 #header, #footer {
     margin: 0;
     background: initial;
-    background-color: #ff9eec;
+    background-color: #e170bd;
     border: none;
     transition: none;
 }
@@ -464,7 +464,7 @@ hr {
 }
 
 #header, #header a {
-    color: #131416;
+    color: #222223;
 }
 
 #header div {
@@ -549,7 +549,7 @@ hr {
 }
 
 #links a:hover {
-    color: #ff3cd7;
+    color: #e10098;
 }
 
 #links span {
@@ -569,7 +569,7 @@ hr {
 }
 
 #links .current > a {
-    color: #ff3cd7 !important;
+    color: #e10098 !important;
 }
 
 #pages {
@@ -625,9 +625,9 @@ img {
 }
 
 .block:hover, #player > div > *:hover {
-    -webkit-box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
-    -moz-box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
-    box-shadow: 10px 10px rgba(255, 60, 215, 0.4);
+    -webkit-box-shadow: 10px 10px rgba(225, 0, 152, 0.4);
+    -moz-box-shadow: 10px 10px rgba(225, 0, 152, 0.4);
+    box-shadow: 10px 10px rgba(225, 0, 152, 0.4);
 }
 
 @-webkit-keyframes open1 {
@@ -879,7 +879,7 @@ img {
 
 td video {
     max-width: 25vh;
-    border: 2px solid #ff3cd7;
+    border: 2px solid #e10098;
 }
 
 #addOns span {
@@ -920,7 +920,7 @@ td video {
     font-size: 0;
     background-color: rgba(0, 0, 0, 0.4);
     margin: auto;
-    border: 2px solid #ff3cd7;
+    border: 2px solid #e10098;
     position: relative;
 }
 
@@ -994,7 +994,7 @@ td video {
 
 #player video {
     height: 100%;
-    border: 2px solid #ff3cd7;
+    border: 2px solid #e10098;
 }
 
 #player > div > div:last-of-type {
@@ -1042,7 +1042,7 @@ ul.addons > li::marker {
 }
 
 #playerX:hover {
-    color: #ff3cd7;
+    color: #e10098;
 }
 
 .noSelect {
