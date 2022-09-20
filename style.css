@@ -20,7 +20,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #e10098;
+    color: #E10098;
 }
 
 h1 {
@@ -50,11 +50,11 @@ h1 > a {
 }
 
 #playerBody h1 > a {
-    color: #e10098 !important;
+    color: #E10098 !important;
 }
 
 h1 > a:hover {
-    color: #e10098;
+    color: #E10098;
 }
 
 mark {
@@ -71,11 +71,11 @@ ul > li {
 ul > li::marker {
     font-weight: bold;
     content: "> ";
-    color: #e10098;
+    color: #E10098;
 }
 
 ul > ul > li::marker{
-    color: #7fe170 !important;
+    color: #5BFF8F !important;
 }
 
 hr {
@@ -213,7 +213,7 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #e10098;
+    background: #E10098;
     clip-path: polygon(50% 88%, 50% 100%, 77% 85%, 77% 54%, 50% 0%, 23% 54%, 23% 85%, 50% 100%, 50% 88%, 33% 79%, 33% 60%, 50% 50%, 50% 38%, 39% 45%, 50% 23%, 61% 45%, 50% 38%, 50% 50%, 67% 60%, 67% 79%);
     -webkit-animation-name: loadCenter;
     -webkit-animation-duration: 4s;
@@ -450,7 +450,7 @@ hr {
 #header, #footer {
     margin: 0;
     background: initial;
-    background-color: #e170bd;
+    background-color: #FF5BCE;
     border: none;
     transition: none;
 }
@@ -553,7 +553,7 @@ hr {
 }
 
 #links a:hover {
-    color: #e10098;
+    color: #E10098;
 }
 
 #links span {
@@ -573,7 +573,7 @@ hr {
 }
 
 #links .current > a {
-    color: #e10098 !important;
+    color: #E10098 !important;
 }
 
 #pages {
@@ -883,7 +883,7 @@ img {
 
 td video {
     max-width: 25vh;
-    border: 2px solid #e10098;
+    border: 2px solid #E10098;
 }
 
 #addOns span {
@@ -924,7 +924,7 @@ td video {
     font-size: 0;
     background-color: rgba(0, 0, 0, 0.4);
     margin: auto;
-    border: 2px solid #e10098;
+    border: 2px solid #E10098;
     position: relative;
 }
 
@@ -998,7 +998,7 @@ td video {
 
 #player video {
     height: 100%;
-    border: 2px solid #e10098;
+    border: 2px solid #E10098;
 }
 
 #player > div > div:last-of-type {
@@ -1046,7 +1046,7 @@ ul.addons > li::marker {
 }
 
 #playerX:hover {
-    color: #e10098;
+    color: #E10098;
 }
 
 .noSelect {
