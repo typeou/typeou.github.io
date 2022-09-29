@@ -30,7 +30,7 @@ function NavigatorLoad()
         element.classList.remove("blockInit");
         element.classList.add("blockLoad");
     });
-    document.querySelector("#main").classList.remove("maininit");
+    //document.querySelector("#main").classList.remove("maininit");
     // Display the current page's blocks with no delay.
     // Highlight the current page link.
     document.querySelector("#" + page + "Link").classList.add("current");
