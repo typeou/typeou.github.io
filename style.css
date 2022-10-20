@@ -33,6 +33,10 @@ body {
     margin-top: var(--headerHeight);
 }
 
+a {
+    color: var(--brandBlue) !important;
+}
+
 h1 {
     padding: 0;
     margin: 0;
@@ -47,6 +51,7 @@ h1 {
     border-bottom: calc(var(--headerHeight) * 0.05) solid var(--brandPink);
     display: grid;
     grid-template-columns: max-content max-content max-content max-content auto max-content;
+    z-index: 2;
 }
 
 .logo {
@@ -121,16 +126,14 @@ h1 {
 }
 
 #menuButton {
-    z-index: 20;
     position: relative;
     width: calc(var(--headerHeight) * 0.67);
     height: calc(var(--headerHeight) * 0.67);
     margin: calc(var(--headerHeight) * 0.167);
-    cursor: pointer;
 }
 
 #menuButton::before {
-    z-index: 20;
+    z-index: 30;
     position: absolute;
     content: '';
     width: 100%;
@@ -139,10 +142,19 @@ h1 {
     clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%, 0% 40%, 100% 40%, 100% 60%, 0% 60%, 0% 80%, 100% 80%, 100% 100%, 0% 100%);
 }
 
+#menuButton::after {
+    z-index: 30;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 #menu {
     position: fixed;
     height: 100vh;
-    z-index: 10;
+    z-index: 20;
     border-left: calc(var(--headerHeight) * 0.05) solid var(--brandPink);
     background: var(--menuBackground);
     top: 0;
@@ -151,9 +163,12 @@ h1 {
     cursor: auto;
 }
 
-#menu::before {
+#body > div::before, #menu::before {
     content: '';
     position: absolute;
+    z-index: inherit;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background-image: url("hexapattern.png");
@@ -163,6 +178,45 @@ h1 {
     -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 100%);
     mask-image: linear-gradient(180deg, transparent 0%, black 100%);
     opacity: 0.15;
+}
+
+#body > div::after, #menu::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background-image: url("hexagloss.png");
+    background-repeat: repeat;
+    background-position-x: center;
+    background-size: calc(var(--headerHeight) * 1.33);
+    -webkit-mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
+    mask-size: auto 200%;
+    mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
+    mask-repeat: no-repeat;
+    opacity: 0.15;
+
+    animation: gloss 10s linear infinite;
+}
+
+@keyframes gloss {
+    0% {
+        -webkit-mask-position: 0 -100%;
+        mask-position: 0 -100%;
+        opacity: 0.3;
+    }
+    50% {
+        -webkit-mask-position: 0 100%;
+        mask-position: 0 100%;
+        opacity: 0;
+    }
+    100% {
+        -webkit-mask-position: 0 100%;
+        mask-position: 0 100%;
+        opacity: 0;
+    }
 }
 
 #menuButton:hover #menu, #menu:hover, #menuButton:active #menu, #menu:active {
@@ -176,6 +230,7 @@ h1 {
 }
 
 #menuLinks > * {
+    z-index: 25;
     grid-column: 1;
     height: var(--headerHeight);
     line-height: var(--headerHeight);
@@ -201,14 +256,39 @@ h1 {
 }
 
 #body {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: var(--headerHeight);
-    max-width: min(100vw, 150vh);
+    
+    width: min(100vw, 150vh);
     margin: auto;
-    padding: var(--headerHeight);
+    padding: var(--headerHeight) 0;
+}
+
+#body > * {
+    min-width: min(100vw, 50vh);
+    max-width: calc(100vw - var(--headerHeight) * 2);
+    flex-basis: 0;
+    flex-grow: 1;
+    position: relative;
+    background-color: var(--blackBackground);
 }
 
 #body > div {
-    position: relative;
-    background-color: var(--brandBlack);
+    padding: calc(var(--headerHeight) / 2);
+}
+
+#vein {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+#vein > polyline {
+    stroke-width: calc(var(--headerHeight) * 0.1);
+    stroke: var(--brandPink);
+    fill: none;
 }
