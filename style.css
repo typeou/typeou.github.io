@@ -15,7 +15,7 @@
     --blackBackground: #171718;
     --menuBackground: #363638;
 
-    --headerHeight: min(7.5vw, 7.5vh);
+    --headerHeight: min(9vw, 6vh);
 }
 
 @font-face {
@@ -38,8 +38,13 @@ a {
 }
 
 h1 {
+    font-size: calc(var(--headerHeight) * 0.67);
     padding: 0;
     margin: 0;
+}
+
+p {
+    font-size: calc(var(--headerHeight) * 0.33);
 }
 
 #header {
@@ -52,6 +57,7 @@ h1 {
     display: grid;
     grid-template-columns: max-content max-content max-content max-content auto max-content;
     z-index: 2;
+    overflow: hidden;
 }
 
 .logo {
@@ -102,16 +108,19 @@ h1 {
 }
 
 #header > h1 {
-    font-size: calc(var(--headerHeight) * 0.67);
     grid-column: 2;
 }
 
 #header > .divider {
-    background: var(--brandPink);
     height: 100%;
     width: calc(var(--headerHeight) * 0.577 + calc(var(--headerHeight) * 0.1));
     grid-column: 3;
-    clip-path: polygon(0% 100%, calc(var(--headerHeight) * 0.1) 100%, 100% 0%, calc(100% - var(--headerHeight) * 0.1) 0%);
+    overflow: visible;
+}
+
+#header > .divider > line {
+    stroke: var(--brandPink);
+    stroke-width: calc(var(--headerHeight) * 0.1);
 }
 
 #currentPage {
@@ -274,10 +283,6 @@ h1 {
     flex-grow: 1;
     position: relative;
     background-color: var(--blackBackground);
-}
-
-#body > div {
-    padding: calc(var(--headerHeight) / 2);
 }
 
 #vein {
