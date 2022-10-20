@@ -27,7 +27,7 @@
 
 body {
     background-color: var(--mainBackground);
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', Verdana, sans-serif;
     margin: 0;
     color: var(--brandWhite);
     margin-top: var(--headerHeight);
@@ -109,6 +109,9 @@ p {
 
 #header > h1 {
     grid-column: 2;
+    font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    line-height: var(--headerHeight);
 }
 
 #header > .divider {
@@ -202,12 +205,12 @@ p {
     background-position-x: center;
     background-size: calc(var(--headerHeight) * 1.33);
     -webkit-mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
-    mask-size: auto 200%;
+    mask-size: auto 400%;
     mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
     mask-repeat: no-repeat;
     opacity: 0.15;
 
-    animation: gloss 10s linear infinite;
+    animation: gloss 15s linear infinite;
 }
 
 @-webkit-keyframes gloss {
@@ -304,6 +307,10 @@ p {
     background-color: var(--blackBackground);
 }
 
+#body > div {
+    padding: calc(var(--headerHeight) * 0.5);
+}
+
 @-webkit-keyframes beat {
     0%
     {
@@ -332,18 +339,10 @@ p {
     }
 }
 
-#body > * > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
 #veins {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100% + var(--headerHeight));
     top: 0;
 }
 
