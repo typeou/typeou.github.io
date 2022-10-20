@@ -11,11 +11,11 @@
     --brandBlueRGB: 46, 78, 117;
     --brandWhiteRGB: 221, 221, 20;
 
-    --mainBackground: #2B2B2D;
-    --blackBackground: #171718;
+    --blackBackground: #2B2B2D;
+    --mainBackground: #171718;
     --menuBackground: #363638;
 
-    --headerHeight: min(9vw, 6vh);
+    --headerHeight: min(8vw, 6vh);
 }
 
 @font-face {
@@ -34,18 +34,50 @@ body {
 }
 
 a {
-    color: var(--brandBlue) !important;
+    color: var(--brandGreen);
+    text-decoration: inherit;
+}
+
+#menuLinks > a, #header a {
+    color: inherit;
 }
 
 h1 {
-    font-size: calc(var(--headerHeight) * 0.67);
-    padding: 0;
-    margin: 0;
+    font-size: var(--headerHeight);
+}
+
+h2 {
+    font-size: calc(var(--headerHeight) * 0.8);
+}
+
+h3 {
+    font-size: calc(var(--headerHeight) * 0.6);
 }
 
 p {
-    font-size: calc(var(--headerHeight) * 0.33);
+    font-size: calc(var(--headerHeight) * 0.4);
 }
+
+.center {
+    text-align: center;
+}
+
+.nopad {
+    padding: 0 !important;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
 
 #header {
     position: fixed;
@@ -58,6 +90,11 @@ p {
     grid-template-columns: max-content max-content max-content max-content auto max-content;
     z-index: 2;
     overflow: hidden;
+}
+
+#headerLogo {
+    grid-column: 1;
+    display: grid;
 }
 
 .logo {
@@ -92,26 +129,29 @@ p {
     clip-path: polygon(84% 80%, 84% 73%, 87% 71%, 87% 54%, 94% 50%, 87% 45%, 87% 28%, 65% 15%, 61% 6%, 93% 24%, 93% 42%, 100% 46%, 100% 53%, 93% 58%, 93% 75%);
 }
 
-.logo:hover .logoCenter, .logo:active .logoCenter {
+#headerLogo:hover .logoCenter, .logo:active .logoCenter {
     transform: scale(1.1);
     transition-duration: 0.5s;
 }
 
-.logo:hover .logoLeft, .logo:active .logoLeft {
+#headerLogo:hover .logoLeft, .logo:active .logoLeft {
     transform: translateX(-15%);
     transition-duration: 0.5s;
 }
 
-.logo:hover .logoRight, .logo:active .logoRight {
+#headerLogo:hover .logoRight, .logo:active .logoRight {
     transform: translateX(15%);
     transition-duration: 0.5s;
 }
 
-#header > h1 {
+#headerLogo h1 {
+    padding: 0;
+    margin: 0;
     grid-column: 2;
     font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
     font-weight: normal;
     line-height: var(--headerHeight);
+    font-size: calc(var(--headerHeight) * 0.67);
 }
 
 #header > .divider {
@@ -178,7 +218,6 @@ p {
 #body > div::before, #menu::before {
     content: '';
     position: absolute;
-    z-index: inherit;
     top: 0;
     left: 0;
     height: 100%;
@@ -190,6 +229,7 @@ p {
     -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 100%);
     mask-image: linear-gradient(180deg, transparent 0%, black 100%);
     opacity: 0.15;
+    pointer-events: none;
 }
 
 #body > div::after, #menu::after {
@@ -199,7 +239,6 @@ p {
     width: 100%;
     top: 0;
     left: 0;
-
     background-image: url("hexagloss.png");
     background-repeat: repeat;
     background-position-x: center;
@@ -209,8 +248,8 @@ p {
     mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
     mask-repeat: no-repeat;
     opacity: 0.15;
-
     animation: gloss 15s linear infinite;
+    pointer-events: none;
 }
 
 @-webkit-keyframes gloss {
@@ -269,6 +308,7 @@ p {
     font-size: calc(var(--headerHeight) * 0.5);
     margin: calc(var(--headerHeight) * 0.167) 0;
     margin-right: calc(var(--headerHeight) * -1);
+    padding-right: calc(var(--headerHeight) * 1.5);
     transition: background-color 0.5s, transform 0.5s;
     cursor: pointer;
 }
@@ -295,6 +335,7 @@ p {
     width: min(100vw, 150vh);
     margin: auto;
     padding: var(--headerHeight) 0;
+    max-width: 100%;
 }
 
 #body > * {
@@ -307,7 +348,9 @@ p {
     background-color: var(--blackBackground);
 }
 
-#body > div {
+#body > * > div {
+    position: relative;
+    z-index: 1;
     padding: calc(var(--headerHeight) * 0.5);
 }
 
@@ -342,7 +385,6 @@ p {
 #veins {
     position: absolute;
     width: 100%;
-    height: calc(100% + var(--headerHeight));
     top: 0;
 }
 
@@ -391,4 +433,18 @@ p {
 .pulseVein {
     animation-duration: 0.67s !important;
     animation-delay: 0.33s !important;
+}
+
+.commStatus {
+    color: var(--brandPink);
+    font-size: var(--headerHeight);
+    padding: 0;
+    margin: 0;
+}
+
+.centerV {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

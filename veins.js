@@ -1,20 +1,19 @@
 addEventListener("resize", () => { connect() });
-addEventListener("scroll", () => { connect() });
 addEventListener("load", () => { bodyHovers() })
 
-var divs, veins = [], page;
+var divs, vein, veins = [], page;
 
 function connect()
 {
     if (divs.length > 0)
     {
         var rect = page.getBoundingClientRect();
-        veins[0][0].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][0].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
-        veins[0][1].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][1].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
-        veins[0][2].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][2].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+        veins[0][0].setAttribute("x1", (rect.left + rect.right) / 2);
+        veins[0][0].setAttribute("y1", (rect.top + rect.bottom) / 2);
+        veins[0][1].setAttribute("x1", (rect.left + rect.right) / 2);
+        veins[0][1].setAttribute("y1", (rect.top + rect.bottom) / 2);
+        veins[0][2].setAttribute("x1", (rect.left + rect.right) / 2);
+        veins[0][2].setAttribute("y1", (rect.top + rect.bottom) / 2);
         rect = divs[0].getBoundingClientRect();
         veins[0][0].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
         veins[0][0].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
@@ -39,24 +38,24 @@ function connect()
             veins[i][1].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
             veins[i][2].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
             veins[i][2].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
-            console.log(veins);
         }
     }
+
+    vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
 }
 
 function bodyHovers()
 {
     divs = document.querySelector("#body").children;
     page = document.querySelector("#currentPage");
-
-    var vein = document.querySelector("#veins");
+    vein = document.querySelector("#veins");
 
     var rect = page.getBoundingClientRect();
     if (divs.length > 0)
     {
         var line1 = document.createElementNS("http://www.w3.org/2000/svg","line");
-        line1.setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-        line1.setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+        line1.setAttribute("x1", (rect.left + rect.right) / 2);
+        line1.setAttribute("y1", (rect.top + rect.bottom) / 2);
         rect = divs[0].getBoundingClientRect();
         line1.setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
         line1.setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
@@ -107,4 +106,6 @@ function bodyHovers()
             pulses[1].classList.remove("beatPlay");
         });
     }
+
+    vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
 }

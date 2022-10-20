@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Live2D Commissions</title>
         <meta charset="UTF-8">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -23,13 +23,13 @@
             <svg class="divider">
                 <line x1="-5%" y1="105%" x2="105%" y2="-5%"></line>
             </svg>
-            <a href="index.html"><div id="currentPage">Home</div></a>
+            <a href="comms.html"><div id="currentPage">Live2D Comms</div></a>
             <div></div>
             <div id="menuButton">
                 <div id="menu">
                     <div id="menuLinks">
-                        <a href="index.html" class="currentLink"><div>Home</div></a>
-                        <a href="comms.html"><div>Live2D Commissions</div></a>
+                        <a href="index.html"><div>Home</div></a>
+                        <a href="comms.html" class="currentLink"><div>Live2D Commissions</div></a>
                         <a href="pricing.html"><div>Pricing</div></a>
                         <a href="rigs.html"><div>Finished Rigs</div></a>
                         <a href="tos.html"><div>Terms of Service</div></a>
@@ -43,11 +43,19 @@
         </svg>
         <div id="body">
             <video muted loop src="live2d/kou_karasu.mp4" autoplay></video>
-            <div>
+            <div class="centerV">
                 <div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                    <h2>Live2D VTuber Rigging Commissions</h2>
+
+                    <h3 class="nomargin">
+                        Commission status: <h1 class="commStatus">CLOSED</h1>
+                        <p class="nomargin"><small><i>Estimated re-opening: December</i></small></p>
+                    </h3>
+                    <!--<h2><a href="https://docs.google.com/forms/d/e/1FAIpQLSc7VVzfrO5smuPuT8w8Bqfl-f2L5FdNUW6PoCX442lESDK6JA/viewform?usp=sf_link">Order Form</a></h2>-->
+                    
+                    <p><b>In Progress:</b> <span id="inProgress">Retrieving...</span></p>
+                    <p><b>Queue:</b> <span id="inQueue">Retrieving...</span></p>
+                    <p><small>For details, see <a href="https://trello.com/b/S1Esq1jw/">Trello</a>.</small></p>
                 </div>
             </div>
             <div>
@@ -60,5 +68,6 @@
         </div>
 
         <script src="veins.js"></script>
+        <script src="queue.js"></script>
     </body>
 </html>
