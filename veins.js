@@ -1,5 +1,5 @@
 addEventListener("resize", () => { connect() });
-addEventListener("load", () => { bodyHovers() })
+addEventListener("load", () => { bodyHovers() });
 
 var divs, vein, veins = [], page;
 

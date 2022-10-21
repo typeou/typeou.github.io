@@ -31,6 +31,8 @@ trelloRequest.onreadystatechange = function() {
         document.querySelector("#inProgress").innerHTML = "Error retrieving data";
         document.querySelector("#inQueue").innerHTML = "Error retrieving data";
     }
+
+    connect();
 };
 // Open the request and send it.
 trelloRequest.open("GET", "https://api.trello.com/1/boards/S1Esq1jw/cards", true);
