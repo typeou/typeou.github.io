@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pricing</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="favicon.png"/>
+    </head>
+    <body>
+        <div id="header">
+            <div id="headerLogo">
+                <a href="index.html">
+                    <div class="logo">
+                        <span class="logoCenter"></span>
+                        <span class="logoLeft"></span>
+                        <span class="logoRight"></span>
+                    </div>
+                </a>
+                <h1><a href="index.html">typeou.dev</a></h1>
+            </div>
+            <svg class="divider">
+                <line x1="-5%" y1="105%" x2="105%" y2="-5%"></line>
+            </svg>
+            <a href="index.html"><div id="currentPage">Pricing</div></a>
+            <div></div>
+            <div id="menuButton">
+                <div id="menu">
+                    <div id="menuLinks">
+                        <a href="index.html"><div>Home</div></a>
+                        <a href="comms.html"><div>Live2D Commissions</div></a>
+                        <a href="pricing.html" class="currentLink"><div>Pricing</div></a>
+                        <a href="rigs.html"><div>Finished Rigs</div></a>
+                        <a href="tos.html"><div>Terms of Service</div></a>
+                        <a href="contact.html"><div>Contact</div></a>
+                        <a href="kbonk.html"><div>KBonk Help</div></a>
+                    </div>
+                    <p class="credit"><small>© 2022 Typeou.dev Technologies</small></p>
+                </div>
+            </div>
+        </div>
+
+        <svg id="veins">
+        </svg>
+        <div id="body">
+            <div class="wide">
+                <div class="pricing">
+                    <div>
+                        <h3 class="nomargin">Full-Body</h3>
+                        <h1 id="priceFull" class="prices nomargin">Converting...</h2>
+                    </div>
+                    <div>
+                        <h3 class="nomargin">Half-Body</h3>
+                        <h1 id="priceHalf" class="prices nomargin">Converting...</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="center">
+                    <p class="nomargin">
+                        Prices as listed are <mark>base prices.</mark><br/>Final price may very depending on complexity.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="center">
+                    <p class="nomargin">
+                        Prices are subject to change.<br/>
+                        <small>Last updated: 2022 September 13</small>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="centerDiv">
+                    <h3 class="center nomargin">Includes</h3>
+                    <ul>
+                        <li>Standard Face Rigging</li>
+                        <ul>
+                            <li><small>Eye Close/Widen/Squint</small></li>
+                            <li><small>Iris Movement</small></li>
+                            <li><small>Eyebrow Sad/Angry</small></li>
+                            <li><small>Mouth Open/Close, Smile/Frown</small></li>
+                            <li><small>Mouth X</small></li>
+                        </ul>
+                        <li>Head X/Y/Z Rotation</li>
+                        <ul>
+                            <li><small>⇄/⇅/<span class="angleZ"><span>⤺</span><span>⤻</span></span></small></li>
+                        </ul>
+                        <li>Body X/Y/Z Rotation</li>
+                        <ul>
+                            <li><small>⇄/⇅/<span class="angleZ"><span>⤺</span><span>⤻</span></span></small></li>
+                        </ul>
+                        <li>Breathing</li>
+                        <li>Hair/Clothing/Body Physics</li>
+                        <li>Up to 5 Toggle Expressions</li>
+                        <ul>
+                            <li><small>Blush, Tears, Sweat, etc.</small></li>
+                            <li><small>Art must be provided</small></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="centerDiv">
+                    <h3 class="center nomargin">Standard Add-ons</h3>
+                    <ul>
+                        <li>Additional Expressions:</li>
+                        <ul>
+                            <li>Toggle: <span id="priceExpression" class="prices">Converting...</span></li>
+                            <li>Animated: <span id="priceAnimated" class="prices">Converting...</span></li>
+                        </ul>
+                        <br/>
+                        <li>Clothing/Accessory Toggle:</li>
+                        <ul>
+                            <li><span id="priceToggle" class="prices">Converting...</span></li>
+                        </ul>
+                        <br/>
+                        <li>Alternate Arms:</li>
+                        <ul>
+                            <li><span id="priceArms" class="prices">Converting...</span></li>
+                        </ul>
+                        <br/>
+                        <li>Alternate Outfits/Hairstyles:</li>
+                        <ul>
+                            <li><span id="priceAlternate" class="prices">Converting...</span></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="centerDiv">
+                    <h3 class="center nomargin">iOS Mouth Add-ons</h3>
+                    <p class="center nomargin"><mark>Face ID Tracking Required</mark></p>
+                    <ul>
+                        <li>Cheek Puff: <span id="priceCheek" class="prices">Converting...</span></li>
+                        <br/>
+                        <li>Tongue Out: <span id="priceTongue" class="prices">Converting...</span></li>
+                        <ul>
+                            <li><small>Art must be provided</small></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <div class="centerDiv">
+                    <h3 class="center nomargin">VBridger Add-ons</h3>
+                    <p class="center nomargin"><mark>Face ID Tracking and <a href="https://store.steampowered.com/app/1898830/VBridger/">VBridger</a> Required</mark></p>
+                    <ul>
+                        <li>Advanced Mouth:</li>
+                        <ul>
+                            <li><small>Mouth Shrug, Pucker/Widen, Funnel, Press/Open, Jaw Open</small></li>
+                            <li><span id="priceBridgerCore" class="prices">Converting...</span></li>
+                        </ul>
+                        <br/>
+                        <li>VBridger Plus:</li>
+                        <ul>
+                            <li><small>Eyebrow Inner Up, Outer Up, Down, Nose Sneer, Jaw X</small></li>
+                            <li><span id="priceBridgerPlus" class="prices">Converting...</span></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="veins.js"></script>
+        <script src="prices.js"></script>
+    </body>
+</html>
