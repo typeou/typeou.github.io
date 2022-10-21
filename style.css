@@ -126,17 +126,17 @@ h3 {
     clip-path: polygon(84% 80%, 84% 73%, 87% 71%, 87% 54%, 94% 50%, 87% 45%, 87% 28%, 65% 15%, 61% 6%, 93% 24%, 93% 42%, 100% 46%, 100% 53%, 93% 58%, 93% 75%);
 }
 
-#headerLogo:hover .logoCenter, .logo:active .logoCenter {
+#headerLogo:hover .logoCenter, #headerLogo:active .logoCenter {
     transform: scale(1.1);
     transition-duration: 0.5s;
 }
 
-#headerLogo:hover .logoLeft, .logo:active .logoLeft {
+#headerLogo:hover .logoLeft, #headerLogo:active .logoLeft {
     transform: translateX(-15%);
     transition-duration: 0.5s;
 }
 
-#headerLogo:hover .logoRight, .logo:active .logoRight {
+#headerLogo:hover .logoRight, #headerLogo:active .logoRight {
     transform: translateX(15%);
     transition-duration: 0.5s;
 }
@@ -386,7 +386,17 @@ h3 {
     position: absolute;
     width: 100%;
     top: 0;
-    animation: fadeIn 0.5s ease-out 1;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.5s 1 forwards;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
