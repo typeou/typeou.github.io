@@ -59,11 +59,11 @@ h3 {
     text-align: center;
 }
 
-.nopad {
+h1, h2, h3, .nopad {
     padding: 0 !important;
 }
 
-.nomargin {
+h1, h2, h3, .nomargin {
     margin: 0 !important;
 }
 
@@ -333,7 +333,7 @@ h3 {
     width: min(calc(100vw - var(--headerHeight)), 150vh);
     margin: auto;
     padding: var(--headerHeight) calc(var(--headerHeight) / 4);
-    max-width: 90vw;
+    max-width: 70vw;
 }
 
 #body > * {
@@ -347,7 +347,7 @@ h3 {
 #body > * > div {
     position: relative;
     z-index: 1;
-    padding: calc(var(--headerHeight) * 0.5);
+    padding: calc(var(--headerHeight) * 0.5) var(--headerHeight);
 }
 
 #body > .wide {
