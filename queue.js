@@ -1,4 +1,4 @@
-const queueId = "615cc9624645c91026aa0587", progressId = "615cc9624645c91026aa0586";
+const queueId = "615cc9624645c91026aa0587", progressId = "615ccb9de59a7e65e145fdb3";
 
 // Retrieving card list from Trello
 var trelloRequest = new XMLHttpRequest();
