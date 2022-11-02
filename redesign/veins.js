@@ -1,4 +1,3 @@
-addEventListener("resize", () => { connect() });
 addEventListener("load", () => { bodyHovers() });
 
 var divs, vein, veins = [], page;
@@ -108,4 +107,6 @@ function bodyHovers()
     }
 
     vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
+
+    addEventListener("resize", () => { connect() });
 }

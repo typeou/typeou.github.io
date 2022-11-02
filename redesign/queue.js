@@ -1,4 +1,4 @@
-const queueId = "615cc9624645c91026aa0587", queueId2 = "6168f351645d6a122c62ece1", doneId = "615cc9624645c91026aa0589";
+const queueId = "615cc9624645c91026aa0587", progressId = "615ccb9de59a7e65e145fdb3";
 
 // Retrieving card list from Trello
 var trelloRequest = new XMLHttpRequest();
@@ -12,14 +12,10 @@ trelloRequest.onreadystatechange = function() {
 
         for (var i = 0; cards[i] != null; i++)
         {
-            // If the card isn't in the "Done" list
-            if (cards[i]["idList"] != doneId)
-            {
-                if (cards[i]["idList"] == queueId || cards[i]["idList"] == queueId2)
-                    queueHTML = formatLink(queueHTML, cards[i]["name"]);
-                else
-                    progressHTML = formatLink(progressHTML, cards[i]["name"]);
-            }
+            if (cards[i]["idList"] == queueId)
+                queueHTML = formatLink(queueHTML, cards[i]["name"]);
+            else if (cards[i]["idList"] == progressId)
+                progressHTML = formatLink(progressHTML, cards[i]["name"]);
         }
 
         document.querySelector("#inProgress").innerHTML = progressHTML == "" ? "None" : progressHTML;
@@ -31,8 +27,6 @@ trelloRequest.onreadystatechange = function() {
         document.querySelector("#inProgress").innerHTML = "Error retrieving data";
         document.querySelector("#inQueue").innerHTML = "Error retrieving data";
     }
-
-    connect();
 };
 // Open the request and send it.
 trelloRequest.open("GET", "https://api.trello.com/1/boards/S1Esq1jw/cards", true);
