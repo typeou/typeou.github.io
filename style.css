@@ -387,6 +387,7 @@ h1, h2, h3, .nomargin {
 
 #veins {
     position: absolute;
+    z-index: -1;
     width: 100%;
     top: 0;
     opacity: 0;
