@@ -1,18 +1,18 @@
 :root {
     --brandPink: #E10098;
     --brandBlack: #222223;
-    --brandGreen: #1DE000;
-    --brandBlue: #2E4E75;
+    --brandGreen: #31E016;
+    --brandBlue: #438AE0;
     --brandWhite: #DDDDDC;
 
     --brandPinkRGB: 225, 0, 152;
     --brandBlackRGB: 34, 34, 35;
-    --brandGreenRGB: 29, 224, 0;
-    --brandBlueRGB: 46, 78, 117;
+    --brandGreenRGB: 49, 224, 22;
+    --brandBlueRGB: 67, 138, 224;
     --brandWhiteRGB: 221, 221, 220;
 
-    --blackBackground: #2B2B2D;
     --mainBackground: #171718;
+    --blackBackground: #2B2B2D;
     --menuBackground: #363638;
 
     --headerHeight: min(8vw, 6vh);
@@ -391,8 +391,11 @@ h1, h2, h3, .nomargin {
     width: 100%;
     top: 0;
     opacity: 0;
-    -webkit-animation: fadeIn 0.5s ease-out 0.5s 1 forwards;
-    animation: fadeIn 0.5s ease-out 0.5s 1 forwards;
+}
+
+#veins.load {
+    -webkit-animation: fadeIn 0.5s ease-out 0.25s 1 forwards;
+    animation: fadeIn 0.5s ease-out 0.25s 1 forwards;
 }
 
 @-webkit-keyframes fadeIn {
@@ -490,7 +493,6 @@ h1, h2, h3, .nomargin {
 .prices {
     font-weight: bold;
     color: var(--brandBlue);
-    filter: brightness(1.92);
 }
 
 .pricing > div {

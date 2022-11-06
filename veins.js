@@ -108,5 +108,7 @@ function bodyHovers()
 
     vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
 
+    vein.classList.add("load");
+
     addEventListener("resize", () => { connect() });
 }
