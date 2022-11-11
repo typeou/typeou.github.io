@@ -1,21 +1,20 @@
 :root {
     --brandPink: #E10098;
     --brandBlack: #222223;
-    --brandGreen: #31E016;
-    --brandBlue: #438AE0;
-    --brandWhite: #DDDDDC;
+    --brandGreen: #1DE000;
+    --brandWhite: #D7D7DE;
 
     --brandPinkRGB: 225, 0, 152;
     --brandBlackRGB: 34, 34, 35;
-    --brandGreenRGB: 49, 224, 22;
-    --brandBlueRGB: 67, 138, 224;
-    --brandWhiteRGB: 221, 221, 220;
+    --brandGreenRGB: 29, 224, 0;
+    --brandWhiteRGB: 215, 215, 222;
 
     --mainBackground: #171718;
     --blackBackground: #2B2B2D;
     --menuBackground: #363638;
 
     --headerHeight: min(8vw, 6vh);
+    --fontSize: 3.5rem;
 }
 
 @font-face {
@@ -31,7 +30,7 @@ body {
     margin: 0;
     color: var(--brandWhite);
     margin-top: var(--headerHeight);
-    font-size: calc(var(--headerHeight) * 0.4);
+    font-size: calc(var(--fontSize) * 0.4);
 }
 
 a {
@@ -44,15 +43,15 @@ a {
 }
 
 h1 {
-    font-size: var(--headerHeight);
+    font-size: var(--fontSize);
 }
 
 h2 {
-    font-size: calc(var(--headerHeight) * 0.8);
+    font-size: calc(var(--fontSize) * 0.8);
 }
 
 h3 {
-    font-size: calc(var(--headerHeight) * 0.6);
+    font-size: calc(var(--fontSize) * 0.6);
 }
 
 .center {
@@ -106,7 +105,8 @@ h1, h2, h3, .nomargin {
     margin: 12.5%;
     width: 75%;
     height: 75%;
-    transition: transform 0.25s;
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.5, 1.75)
 }
 
 .logoCenter {
@@ -128,17 +128,14 @@ h1, h2, h3, .nomargin {
 
 #headerLogo:hover .logoCenter, #headerLogo:active .logoCenter {
     transform: scale(1.1);
-    transition-duration: 0.5s;
 }
 
 #headerLogo:hover .logoLeft, #headerLogo:active .logoLeft {
     transform: translateX(-15%);
-    transition-duration: 0.5s;
 }
 
 #headerLogo:hover .logoRight, #headerLogo:active .logoRight {
     transform: translateX(15%);
-    transition-duration: 0.5s;
 }
 
 #headerLogo h1 {
@@ -306,7 +303,7 @@ h1, h2, h3, .nomargin {
     line-height: var(--headerHeight);
     clip-path: polygon(0% 100%, 100% 100%, 100% 0%, calc(var(--headerHeight) * 0.577) 0%);
     padding: 0 calc(var(--headerHeight) * 0.5);
-    font-size: calc(var(--headerHeight) * 0.5);
+    font-size: calc(var(--fontSize) * 0.5);
     margin: calc(var(--headerHeight) * 0.167) 0;
     margin-right: calc(var(--headerHeight) * -1);
     padding-right: calc(var(--headerHeight) * 1.5);
@@ -471,7 +468,7 @@ h1, h2, h3, .nomargin {
 
 .commStatus {
     color: var(--brandPink);
-    font-size: var(--headerHeight);
+    font-size: var(--fontSize);
     padding: 0;
     margin: 0;
 }
@@ -492,7 +489,7 @@ h1, h2, h3, .nomargin {
 
 .prices {
     font-weight: bold;
-    color: var(--brandBlue);
+    color: var(--brandPink);
 }
 
 .pricing > div {
@@ -522,9 +519,15 @@ ul.addons > li::marker {
 }
 
 ul > li::marker {
-    font-weight: bold;
-    content: "> ";
-    color: var(--brandPink);
+    color: rgba(var(--brandWhiteRGB), 0.5);
+}
+
+ul > li::marker {
+    content: "⬢ ";
+}
+
+ul > ul > li::marker {
+    content: "⬡ ";
 }
 
 .angleZ {

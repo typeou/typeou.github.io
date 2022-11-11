@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 1000, full = 1250, expression = 15, animated = 45, toggles = 15, arms = 60, headPosZ = 60, cheekPuff = 30, tongueOut = 60, bridgerCore = 180, bridgerPlus = 90, alternate = 200;
+var half = 1000, full = 1250, expression = 15, animated = 45, toggles = 15, arms = 60, headPosZ = 60, cheekPuff = 30, tongueOut = 60, bridger = 210, alternate = 200;
 // CAD-USD conversion rate
 var rate;
 
@@ -62,14 +62,10 @@ request.onreadystatechange = function() {
         n = document.createElement("small");
         n.innerText = " ($" + tongueOut + "+ CAD)";
         document.querySelector("#priceTongue").after(n);
-        document.querySelector("#priceBridgerCore").innerHTML = Round(Convert(bridgerCore)) + "+ USD";
+        document.querySelector("#priceBridger").innerHTML = Round(Convert(bridger)) + "+ USD";
         n = document.createElement("small");
-        n.innerText = " ($" + bridgerCore + "+ CAD)";
-        document.querySelector("#priceBridgerCore").after(n);
-        document.querySelector("#priceBridgerPlus").innerHTML = Round(Convert(bridgerPlus)) + "+ USD";
-        n = document.createElement("small");
-        n.innerText = " ($" + bridgerPlus + "+ CAD)";
-        document.querySelector("#priceBridgerPlus").after(n);
+        n.innerText = " ($" + bridger + "+ CAD)";
+        document.querySelector("#priceBridger").after(n);
     }
     // Otherwise, display only the original CAD price.
     else
@@ -83,8 +79,7 @@ request.onreadystatechange = function() {
         document.querySelector("#priceAlternate").innerHTML = "$" + alternate + "+ CAD";
         document.querySelector("#priceCheek").innerHTML = "$" + cheekPuff + "+ CAD";
         document.querySelector("#priceTongue").innerHTML = "$" + tongueOut + "+ CAD";
-        document.querySelector("#priceBridgerCore").innerHTML = "$" + bridgerCore + "+ CAD";
-        document.querySelector("#priceBridgerPlus").innerHTML = "$" + bridgerPlus + "+ CAD";
+        document.querySelector("#priceBridger").innerHTML = "$" + bridger + "+ CAD";
     }
     connect();
 };
