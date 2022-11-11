@@ -14,7 +14,7 @@
     --menuBackground: #363638;
 
     --headerHeight: min(8vw, 6vh);
-    --fontSize: calc(var(--headerHeight) * 0.85 + 0.5rem);
+    --fontSize: calc(var(--headerHeight) * 0.7 + 1rem);
 }
 
 @font-face {
@@ -333,7 +333,7 @@ h1, h2, h3, .nomargin {
     width: min(calc(100vw - var(--headerHeight)), 150vh);
     margin: auto;
     padding: var(--headerHeight) calc(var(--headerHeight) / 4);
-    max-width: 70vw;
+    max-width: 70vmax;
 }
 
 #body > * {
@@ -346,6 +346,7 @@ h1, h2, h3, .nomargin {
 
 #body > * > div {
     position: relative;
+    max-width: calc(100% - var(--headerHeight) * 2);
     z-index: 1;
     padding: calc(var(--headerHeight) * 0.5) var(--headerHeight);
 }
@@ -528,22 +529,6 @@ ul > li::marker {
 
 ul > ul > li::marker {
     content: "⬡ ";
-}
-
-.angleZ {
-    position: relative;
-}
-
-.angleZ > span {
-    position: absolute;
-}
-
-.angleZ > span:first-of-type {
-    top: -0.2em;
-}
-
-.angleZ > span:last-of-type {
-    bottom: -0.2em;
 }
 
 .centerDiv {
