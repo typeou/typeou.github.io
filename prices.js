@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 1000, full = 1250, expression = 15, animated = 45, toggles = 15, arms = 60, headPosZ = 60, cheekPuff = 30, tongueOut = 60, bridger = 210, alternate = 200;
+var half = 1000, full = 1350, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 90, bridger = 210, outfit = 300, hair = 120;
 // CAD-USD conversion rate
 var rate;
 
@@ -33,27 +33,30 @@ request.onreadystatechange = function() {
         n = document.createElement("small");
         n.innerText = "$" + half + "+ CAD";
         document.querySelector("#priceHalf").after(n);
-
-        document.querySelector("#priceExpression").innerHTML = Round(Convert(expression)) + "+ USD";
-        n = document.createElement("small");
-        n.innerText = " ($" + expression + "+ CAD)";
-        document.querySelector("#priceExpression").after(n);
-        document.querySelector("#priceAnimated").innerHTML = Round(Convert(animated)) + "+ USD";
-        n = document.createElement("small");
-        n.innerText = " ($" + animated + "+ CAD)";
-        document.querySelector("#priceAnimated").after(n);
         document.querySelector("#priceToggle").innerHTML = Round(Convert(toggles)) + "+ USD";
         n = document.createElement("small");
         n.innerText = " ($" + toggles + "+ CAD)";
         document.querySelector("#priceToggle").after(n);
+        document.querySelector("#priceAnimated").innerHTML = Round(Convert(animated)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + animated + "+ CAD)";
+        document.querySelector("#priceAnimated").after(n);
         document.querySelector("#priceArms").innerHTML = Round(Convert(arms)) + "+ USD";
         n = document.createElement("small");
         n.innerText = " ($" + arms + "+ CAD)";
         document.querySelector("#priceArms").after(n);
-        document.querySelector("#priceAlternate").innerHTML = Round(Convert(alternate)) + "+ USD";
+        document.querySelector("#priceArmSingle").innerHTML = Round(Convert(armSingle)) + "+ USD";
         n = document.createElement("small");
-        n.innerText = " ($" + alternate + "+ CAD)";
-        document.querySelector("#priceAlternate").after(n);
+        n.innerText = " ($" + armSingle + "+ CAD)";
+        document.querySelector("#priceArmSingle").after(n);
+        document.querySelector("#priceOutfit").innerHTML = Round(Convert(outfit)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + outfit + "+ CAD)";
+        document.querySelector("#priceOutfit").after(n);
+        document.querySelector("#priceHair").innerHTML = Round(Convert(hair)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + hair + "+ CAD)";
+        document.querySelector("#priceHair").after(n);
         document.querySelector("#priceCheek").innerHTML = Round(Convert(cheekPuff)) + "+ USD";
         n = document.createElement("small");
         n.innerText = " ($" + cheekPuff + "+ CAD)";
@@ -72,9 +75,8 @@ request.onreadystatechange = function() {
     {
         document.querySelector("#priceHalf").innerHTML = "$" + half + "+ CAD";
         document.querySelector("#priceFull").innerHTML = "$" + full + "+ CAD";
-        document.querySelector("#priceExpression").innerHTML = "$" + expression + "+ CAD";
-        document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceToggle").innerHTML = "$" + toggles + " CAD";
+        document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceArms").innerHTML = "$" + arms + "+ CAD";
         document.querySelector("#priceAlternate").innerHTML = "$" + alternate + "+ CAD";
         document.querySelector("#priceCheek").innerHTML = "$" + cheekPuff + "+ CAD";
