@@ -14,7 +14,7 @@
     --menuBackground: #363638;
 
     --headerHeight: min(8vw, 6vh);
-    --fontSize: 3.5rem;
+    --fontSize: calc(var(--headerHeight) * 0.85 + 0.5rem);
 }
 
 @font-face {
