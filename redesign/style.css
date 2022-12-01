@@ -106,7 +106,7 @@ h1, h2, h3, .nomargin {
     width: 75%;
     height: 75%;
     transition: transform 0.5s;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.5, 1.75)
+    transition-timing-function: cubic-bezier(0.5, 1, 0.5, 1.75);
 }
 
 .logoCenter {
@@ -246,7 +246,7 @@ h1, h2, h3, .nomargin {
     mask-repeat: no-repeat;
     -webkit-animation: gloss 15s linear infinite;
     animation: gloss 15s linear infinite;
-    opacity: 0.15;
+    opacity: 0.5;
     pointer-events: none;
 }
 
@@ -254,7 +254,7 @@ h1, h2, h3, .nomargin {
     0% {
         -webkit-mask-position: 0 -100%;
         mask-position: 0 -100%;
-        opacity: 0.3;
+        opacity: 0.5;
     }
     50% {
         -webkit-mask-position: 0 100%;
@@ -272,7 +272,7 @@ h1, h2, h3, .nomargin {
     0% {
         -webkit-mask-position: 0 -100%;
         mask-position: 0 -100%;
-        opacity: 0.3;
+        opacity: 0.5;
     }
     50% {
         -webkit-mask-position: 0 100%;
@@ -505,7 +505,7 @@ mark {
 
 small {
     font-size: calc(var(--headerHeight) * 0.3);
-    color: rgba(var(--brandWhiteRGB), 0.5);
+    color: rgba(var(--brandWhiteRGB), 0.69);
 }
 
 .credit {

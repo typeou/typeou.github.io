@@ -1,6 +1,5 @@
 // Price data in CAD
-var half = 950, full = 1100, expression = 15, animated = 45, toggles = 15, arms = 60, headPosZ = 60, cheekPuff = 30, mouthX = 30, tongueOut = 60, shrug = 30, puckerWiden = 30, pressLipOpen = 60, funnel = 60, alternate = 200;
-var chibi = 300, headChibi = 120, expressionChibi = 10, animatedChibi = 30, togglesChibi = 10, armsChibi = 15, tongueOutChibi = 30;
+var half = 1000, full = 1350, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 90, bridger = 210, outfit = 300, hair = 120;
 // CAD-USD conversion rate
 var rate;
 
@@ -26,71 +25,65 @@ request.onreadystatechange = function() {
         // Pull the CAD-USD conversion rate from the JSON response and store it.
         rate = JSON.parse(this.responseText).observations[0].FXCADUSD.v;
         // Fill in the price data on the page.
-        document.querySelector("#priceHalf").innerHTML = Round(Convert(half)) + " USD";
-        document.querySelector("#priceHalf").after(document.createElement("span").innerHTML = "$" + half + "+ CAD");
-        document.querySelector("#priceFull").innerHTML = Round(Convert(full)) + " USD";
-        document.querySelector("#priceFull").after(document.createElement("span").innerHTML = "$" + full + "+ CAD");
-        document.querySelector("#priceChibi").innerHTML = Round(Convert(chibi)) + " USD";
-        document.querySelector("#priceChibi").after(document.createElement("span").innerHTML = "$" + chibi + "+ CAD");
-        document.querySelector("#priceExpression").innerHTML = Round(Convert(expression)) + "+ USD ($" + expression + "+ CAD)";
-        document.querySelector("#priceAnimated").innerHTML = Round(Convert(animated)) + "+ USD ($" + animated + "+ CAD)";
-        document.querySelector("#priceToggle").innerHTML = Round(Convert(toggles)) + "+ USD ($" + toggles + "+ CAD)";
-        document.querySelector("#priceArms").innerHTML = Round(Convert(arms)) + "+ USD ($" + arms + "+ CAD)";
-        document.querySelector("#priceHeadPosZ").innerHTML = Round(Convert(headPosZ)) + "+ USD ($" + headPosZ + "+ CAD)";
-        document.querySelector("#priceCheek").innerHTML = Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)";
-        document.querySelector("#priceMouth").innerHTML = Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)";
-        document.querySelector("#priceTongue").innerHTML = Round(Convert(tongueOut)) + "+ USD ($" + tongueOut + "+ CAD)";
-        document.querySelector("#priceShrug").innerHTML = Round(Convert(shrug)) + "+ USD ($" + shrug + "+ CAD)";
-        document.querySelector("#pricePuckerWiden").innerHTML = Round(Convert(puckerWiden)) + "+ USD ($" + puckerWiden + "+ CAD)";
-        document.querySelector("#pricePressLipOpen").innerHTML = Round(Convert(pressLipOpen)) + "+ USD ($" + pressLipOpen + "+ CAD)";
-        document.querySelector("#priceFunnel").innerHTML = Round(Convert(funnel)) + "+ USD ($" + funnel + "+ CAD)";
-        document.querySelector("#priceAlternate").innerHTML = Round(Convert(alternate)) + "+ USD ($" + alternate + "+ CAD)";
-
-        document.querySelector("#priceHeadChibi").innerHTML = Round(Convert(headChibi)) + "+ USD ($" + headChibi + "+ CAD)";
-        document.querySelector("#priceExpressionChibi").innerHTML = Round(Convert(expressionChibi)) + "+ USD ($" + expressionChibi + "+ CAD)";
-        document.querySelector("#priceAnimatedChibi").innerHTML = Round(Convert(animatedChibi)) + "+ USD ($" + animatedChibi + "+ CAD)";
-        document.querySelector("#priceToggleChibi").innerHTML = Round(Convert(togglesChibi)) + "+ USD ($" + togglesChibi + "+ CAD)";
-        document.querySelector("#priceArmsChibi").innerHTML = Round(Convert(armsChibi)) + "+ USD ($" + armsChibi + "+ CAD)";
-        document.querySelector("#priceCheekChibi").innerHTML = Round(Convert(cheekPuff)) + "+ USD ($" + cheekPuff + "+ CAD)";
-        document.querySelector("#priceMouthChibi").innerHTML = Round(Convert(mouthX)) + "+ USD ($" + mouthX + "+ CAD)";
-        document.querySelector("#priceTongueChibi").innerHTML = Round(Convert(tongueOutChibi)) + "+ USD ($" + tongueOutChibi + "+ CAD)";
-        document.querySelector("#priceShrugChibi").innerHTML = Round(Convert(shrug)) + "+ USD ($" + shrug + "+ CAD)";
-        document.querySelector("#pricePuckerWidenChibi").innerHTML = Round(Convert(puckerWiden)) + "+ USD ($" + puckerWiden + "+ CAD)";
-        document.querySelector("#pricePressLipOpenChibi").innerHTML = Round(Convert(pressLipOpen)) + "+ USD ($" + pressLipOpen + "+ CAD)";
-        document.querySelector("#priceFunnelChibi").innerHTML = Round(Convert(funnel)) + "+ USD ($" + funnel + "+ CAD)";
+        document.querySelector("#priceFull").innerHTML = Round(Convert(full)) + "+ USD";
+        var n = document.createElement("small");
+        n.innerText = "$" + full + "+ CAD";
+        document.querySelector("#priceFull").after(n);
+        document.querySelector("#priceHalf").innerHTML = Round(Convert(half)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = "$" + half + "+ CAD";
+        document.querySelector("#priceHalf").after(n);
+        document.querySelector("#priceToggle").innerHTML = Round(Convert(toggles)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + toggles + "+ CAD)";
+        document.querySelector("#priceToggle").after(n);
+        document.querySelector("#priceAnimated").innerHTML = Round(Convert(animated)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + animated + "+ CAD)";
+        document.querySelector("#priceAnimated").after(n);
+        document.querySelector("#priceArms").innerHTML = Round(Convert(arms)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + arms + "+ CAD)";
+        document.querySelector("#priceArms").after(n);
+        document.querySelector("#priceArmSingle").innerHTML = Round(Convert(armSingle)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + armSingle + "+ CAD)";
+        document.querySelector("#priceArmSingle").after(n);
+        document.querySelector("#priceOutfit").innerHTML = Round(Convert(outfit)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + outfit + "+ CAD)";
+        document.querySelector("#priceOutfit").after(n);
+        document.querySelector("#priceHair").innerHTML = Round(Convert(hair)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + hair + "+ CAD)";
+        document.querySelector("#priceHair").after(n);
+        document.querySelector("#priceCheek").innerHTML = Round(Convert(cheekPuff)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + cheekPuff + "+ CAD)";
+        document.querySelector("#priceCheek").after(n);
+        document.querySelector("#priceTongue").innerHTML = Round(Convert(tongueOut)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + tongueOut + "+ CAD)";
+        document.querySelector("#priceTongue").after(n);
+        document.querySelector("#priceBridger").innerHTML = Round(Convert(bridger)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + bridger + "+ CAD)";
+        document.querySelector("#priceBridger").after(n);
     }
     // Otherwise, display only the original CAD price.
     else
     {
         document.querySelector("#priceHalf").innerHTML = "$" + half + "+ CAD";
         document.querySelector("#priceFull").innerHTML = "$" + full + "+ CAD";
-        document.querySelector("#priceFull").innerHTML = "$" + chibi + "+ CAD";
-        document.querySelector("#priceExpression").innerHTML = "$" + expression + "+ CAD";
-        document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceToggle").innerHTML = "$" + toggles + " CAD";
+        document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceArms").innerHTML = "$" + arms + "+ CAD";
-        document.querySelector("#priceHeadPosZ").innerHTML = "$" + headPosZ + "+ CAD";
+        document.querySelector("#priceAlternate").innerHTML = "$" + alternate + "+ CAD";
         document.querySelector("#priceCheek").innerHTML = "$" + cheekPuff + "+ CAD";
-        document.querySelector("#priceMouth").innerHTML = "$" + mouthX + "+ CAD";
         document.querySelector("#priceTongue").innerHTML = "$" + tongueOut + "+ CAD";
-        document.querySelector("#priceShrug").innerHTML = "$" + shrug + "+ CAD";
-        document.querySelector("#pricePuckerWiden").innerHTML = "$" + puckerWiden + "+ CAD";
-        document.querySelector("#pricePressLipOpen").innerHTML = "$" + pressLipOpen + "+ CAD";
-        document.querySelector("#priceFunnel").innerHTML = "$" + funnel + "+ CAD";
-        document.querySelector("#priceAlternate").innerHTML = "$" + alternate + " CAD";
-        document.querySelector("#priceHeadChibi").innerHTML = "$" + headChibi + " CAD";
-        document.querySelector("#priceExpressionChibi").innerHTML = "$" + expressionChibi + "+ CAD";
-        document.querySelector("#priceAnimatedChibi").innerHTML = "$" + animatedChibi + "+ CAD"
-        document.querySelector("#priceToggleChibi").innerHTML = "$" + togglesChibi + "+ CAD";
-        document.querySelector("#priceArmsChibi").innerHTML = "$" + armsChibi + "+ CAD";
-        document.querySelector("#priceCheekChibi").innerHTML = "$" + cheekPuff + "+ CAD";
-        document.querySelector("#priceMouthChibi").innerHTML = "$" + mouthX + "+ CAD";
-        document.querySelector("#priceTongueChibi").innerHTML = "$" + tongueOutChibi + "+ CAD";
-        document.querySelector("#priceShrugChibi").innerHTML = "$" + shrug + "+ CAD";
-        document.querySelector("#pricePuckerWidenChibi").innerHTML = "$" + puckerWiden + "+ CAD";
-        document.querySelector("#pricePressLipOpenChibi").innerHTML = "$" + pressLipOpen + "+ CAD";
-        document.querySelector("#priceFunnelChibi").innerHTML = "$" + funnel + "+ CAD";
+        document.querySelector("#priceBridger").innerHTML = "$" + bridger + "+ CAD";
     }
+    connect();
 };
 // Open the request and send it.
 request.open("GET", "https://www.bankofcanada.ca/valet/observations/FXCADUSD/json?recent=1", true);
