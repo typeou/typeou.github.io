@@ -238,25 +238,25 @@ h1, h2, h3, .nomargin {
     background-repeat: repeat;
     background-position-x: center;
     background-size: calc(var(--headerHeight) * 1.33);
-    -webkit-mask-size: auto 400%;
-    mask-size: auto 400%;
-    -webkit-mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
-    mask-image: linear-gradient(165deg, transparent 40%, black 50%, transparent 60%);
+    -webkit-mask-size: auto 1500%;
+    mask-size: auto 15  00%;
+    -webkit-mask-image: linear-gradient(165deg, transparent 47.5%, black 50%, transparent 52.5%);
+    mask-image: linear-gradient(165deg, transparent 47.5%, black 50%, transparent 52.5%);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-animation: gloss 15s linear infinite;
     animation: gloss 15s linear infinite;
-    opacity: 0.5;
+    opacity: 0.25;
     pointer-events: none;
 }
 
 @-webkit-keyframes gloss {
     0% {
-        -webkit-mask-position: 0 -100%;
-        mask-position: 0 -100%;
-        opacity: 0.5;
+        -webkit-mask-position: 0 0%;
+        mask-position: 0 0%;
+        opacity: 0.25;
     }
-    50% {
+    75% {
         -webkit-mask-position: 0 100%;
         mask-position: 0 100%;
         opacity: 0;
@@ -270,11 +270,11 @@ h1, h2, h3, .nomargin {
 
 @keyframes gloss {
     0% {
-        -webkit-mask-position: 0 -100%;
-        mask-position: 0 -100%;
-        opacity: 0.5;
+        -webkit-mask-position: 0 0%;
+        mask-position: 0 0%;
+        opacity: 0.25;
     }
-    50% {
+    75% {
         -webkit-mask-position: 0 100%;
         mask-position: 0 100%;
         opacity: 0;
@@ -352,7 +352,13 @@ h1, h2, h3, .nomargin {
 }
 
 #body > .wide {
-    flex-basis: 100%;
+    flex-basis: 100% !important;
+}
+
+.links {
+    min-width: max-content !important;
+    padding: calc(var(--headerHeight) / 10);
+    text-align: center;
 }
 
 @-webkit-keyframes beat {
@@ -539,4 +545,23 @@ ul > ul > li::marker {
 
 img {
     max-width: 80vw;
+}
+
+#booLogo {
+    height: calc(var(--headerHeight) * 3.5);
+}
+
+#booSection {
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: var(--headerHeight);
+}
+
+#booSection > a {
+    grid-column: 1;
+    margin: auto;
+}
+
+#booSection > span {
+    grid-column: 2;
 }
