@@ -22,7 +22,7 @@ trelloRequest.onreadystatechange = function() {
         document.querySelector("#inQueue").innerHTML = queueHTML == "" ? "None" : queueHTML;
     }
     // Otherwise, display error.
-    else
+    else if (this.readyState == 4 && this.status >= 400)
     {
         document.querySelector("#inProgress").innerHTML = "Error retrieving data";
         document.querySelector("#inQueue").innerHTML = "Error retrieving data";
