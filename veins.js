@@ -4,7 +4,7 @@ var divs, vein, veins = [], page;
 
 function connect()
 {
-    if (divs.length > 0)
+    if (divs && divs.length > 0)
     {
         var rect = page.getBoundingClientRect();
         veins[0][0].setAttribute("x1", (rect.left + rect.right) / 2);
@@ -40,7 +40,8 @@ function connect()
         }
     }
 
-    vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
+    if (vein)
+        vein.setAttribute("height", vein.getBBox().y * 2 + vein.getBBox().height);
 }
 
 function bodyHovers()

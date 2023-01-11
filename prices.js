@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 1000, full = 1350, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 60, bridger = 240, outfit = 300, hair = 150;
+var half = 1100, full = 1350, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 300, hair = 150;
 // CAD-USD conversion rate
 var rate;
 
@@ -69,6 +69,10 @@ request.onreadystatechange = function() {
         n = document.createElement("small");
         n.innerText = " ($" + bridger + "+ CAD)";
         document.querySelector("#priceBridger").after(n);
+        document.querySelector("#priceBridgerPlus").innerHTML = Round(Convert(bridgerPlus)) + "+ USD";
+        n = document.createElement("small");
+        n.innerText = " ($" + bridgerPlus + "+ CAD)";
+        document.querySelector("#priceBridgerPlus").after(n);
     }
     // Otherwise, display only the original CAD price.
     else
@@ -78,10 +82,10 @@ request.onreadystatechange = function() {
         document.querySelector("#priceToggle").innerHTML = "$" + toggles + " CAD";
         document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceArms").innerHTML = "$" + arms + "+ CAD";
-        document.querySelector("#priceAlternate").innerHTML = "$" + alternate + "+ CAD";
         document.querySelector("#priceCheek").innerHTML = "$" + cheekPuff + "+ CAD";
         document.querySelector("#priceTongue").innerHTML = "$" + tongueOut + "+ CAD";
         document.querySelector("#priceBridger").innerHTML = "$" + bridger + "+ CAD";
+        document.querySelector("#priceBridgerPlus").innerHTML = "$" + bridgerPlus + "+ CAD";
     }
     connect();
 };
