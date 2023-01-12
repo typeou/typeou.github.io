@@ -8,35 +8,35 @@ function connect()
     {
         var rect = page.getBoundingClientRect();
         veins[0][0].setAttribute("x1", (rect.left + rect.right) / 2);
-        veins[0][0].setAttribute("y1", (rect.top + rect.bottom) / 2);
+        veins[0][0].setAttribute("y1", (rect.top + rect.bottom) / 2 + 2);
         veins[0][1].setAttribute("x1", (rect.left + rect.right) / 2);
-        veins[0][1].setAttribute("y1", (rect.top + rect.bottom) / 2);
+        veins[0][1].setAttribute("y1", (rect.top + rect.bottom) / 2 + 2);
         veins[0][2].setAttribute("x1", (rect.left + rect.right) / 2);
-        veins[0][2].setAttribute("y1", (rect.top + rect.bottom) / 2);
+        veins[0][2].setAttribute("y1", (rect.top + rect.bottom) / 2 + 2);
         rect = divs[0].getBoundingClientRect();
         veins[0][0].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][0].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+        veins[0][0].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
         veins[0][1].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][1].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+        veins[0][1].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
         veins[0][2].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-        veins[0][2].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+        veins[0][2].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
 
         for (var i = 1; i < divs.length; i++)
         {
             rect = divs[i-1].getBoundingClientRect();
             veins[i][0].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][0].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][0].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             veins[i][1].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][1].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][1].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             veins[i][2].setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][2].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][2].setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             rect = divs[i].getBoundingClientRect();
             veins[i][0].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][0].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][0].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             veins[i][1].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][1].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][1].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             veins[i][2].setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-            veins[i][2].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+            veins[i][2].setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
         }
     }
 
@@ -55,10 +55,10 @@ function bodyHovers()
     {
         var line1 = document.createElementNS("http://www.w3.org/2000/svg","line");
         line1.setAttribute("x1", (rect.left + rect.right) / 2);
-        line1.setAttribute("y1", (rect.top + rect.bottom) / 2);
+        line1.setAttribute("y1", (rect.top + rect.bottom) / 2 + 2);
         rect = divs[0].getBoundingClientRect();
         line1.setAttribute("x2", window.scrollX + (rect.left + rect.right) / 2);
-        line1.setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+        line1.setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
         var line2 = line1.cloneNode();
         var line3 = line1.cloneNode();
         line3.classList.add("pulseVein");
@@ -74,10 +74,10 @@ function bodyHovers()
             line1 = document.createElementNS("http://www.w3.org/2000/svg","line");
             rect = divs[i-1].getBoundingClientRect();
             line1.setAttribute("x1", window.scrollX + (rect.left + rect.right) / 2);
-            line1.setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2);
+            line1.setAttribute("y1", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             rect = divs[i].getBoundingClientRect();
             line1.setAttribute("x2",window.scrollX +  (rect.left + rect.right) / 2);
-            line1.setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2);
+            line1.setAttribute("y2", window.scrollY + (rect.top + rect.bottom) / 2 + 2);
             var line2 = line1.cloneNode();
             var line3 = line1.cloneNode();
             line3.classList.add("pulseVein");
