@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 1100, full = 1350, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 300, hair = 150;
+var half = 1200, full = 1500, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 30, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 300, hair = 150;
 // CAD-USD conversion rate
 var rate;
 
