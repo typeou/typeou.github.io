@@ -548,7 +548,8 @@ img {
 }
 
 #booLogo {
-    height: calc(var(--headerHeight) * 3.5);
+    max-height: calc(var(--headerHeight) * 3.5);
+    max-width: 30vw;
 }
 
 #booSection {
