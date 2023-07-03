@@ -487,10 +487,14 @@ h1, h2, h3, .nomargin {
     align-items: center;
 }
 
-.pricing {
+.flex, .pricing {
     display: flex;
-    gap: var(--headerHeight);
+    gap: calc(var(--fontSize) * 0.5);
     flex-wrap: wrap;
+}
+
+.pricing {
+    gap: var(--headerHeight) !important;
     text-align: center;
 }
 
@@ -499,7 +503,7 @@ h1, h2, h3, .nomargin {
     color: var(--brandPink);
 }
 
-.pricing > div {
+.flex > *, .pricing > * {
     flex-grow: 1;
 }
 
