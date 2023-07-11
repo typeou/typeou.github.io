@@ -344,6 +344,10 @@ h1, h2, h3, .nomargin {
     background-color: var(--blackBackground);
 }
 
+#body > .narrow {
+    min-width: min(60vw, 33vh) !important;
+}
+
 #body > * > div {
     position: relative;
     max-width: calc(100% - var(--headerHeight) * 2);
