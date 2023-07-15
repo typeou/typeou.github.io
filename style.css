@@ -337,7 +337,7 @@ h1, h2, h3, .nomargin {
 }
 
 #body > * {
-    min-width: min(90vw, 50vh);
+    min-width: min(90vw, 60vh);
     flex-basis: 0;
     flex-grow: 1;
     position: relative;
@@ -345,7 +345,7 @@ h1, h2, h3, .nomargin {
 }
 
 #body > .narrow {
-    min-width: min(60vw, 33vh) !important;
+    min-width: min(60vw, 40vh) !important;
 }
 
 #body > * > div {
