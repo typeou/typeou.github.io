@@ -12,10 +12,13 @@ trelloRequest.onreadystatechange = function() {
 
         for (var i = 0; cards[i] != null; i++)
         {
-            if (cards[i]["idList"] == queueId)
-                queueHTML = formatLink(queueHTML, cards[i]["name"]);
-            else if (cards[i]["idList"] == progressId)
-                progressHTML = formatLink(progressHTML, cards[i]["name"]);
+            if (!cards[i]["name"].includes("[Add-ons]"))
+            {
+                if (cards[i]["idList"] == queueId)
+                    queueHTML = formatLink(queueHTML, cards[i]["name"]);
+                else if (cards[i]["idList"] == progressId)
+                    progressHTML = formatLink(progressHTML, cards[i]["name"]);
+            }
         }
 
         document.querySelector("#inProgress").innerHTML = progressHTML == "" ? "None" : progressHTML;
