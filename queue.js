@@ -12,7 +12,7 @@ trelloRequest.onreadystatechange = function() {
 
         for (var i = 0; cards[i] != null; i++)
         {
-            if (!cards[i]["name"].includes("[Add-ons]") && cards[i]["idList"] == queueId)
+            if (!cards[i]["name"].includes("[Add-ons]") || cards[i]["idList"] == progressId)
             {
                 if (cards[i]["idList"] == queueId)
                     queueHTML = formatLink(queueHTML, cards[i]["name"]);
