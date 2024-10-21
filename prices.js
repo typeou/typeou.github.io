@@ -73,8 +73,7 @@ request.onreadystatechange = function() {
     // Otherwise, display only the original CAD price.
     else
     {
-        document.querySelector("#priceHalf").innerHTML = "$" + half + "+ CAD";
-        document.querySelector("#priceFull").innerHTML = "$" + full + "+ CAD";
+        document.querySelector("#priceBase").innerHTML = "$" + base + "+ CAD";
         document.querySelector("#priceToggle").innerHTML = "$" + toggles + " CAD";
         document.querySelector("#priceAnimated").innerHTML = "$" + animated + " CAD";
         document.querySelector("#priceArms").innerHTML = "$" + arms + "+ CAD";
