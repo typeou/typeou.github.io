@@ -1,5 +1,5 @@
 // Price data in CAD
-var half = 1650, full = 1950, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 15, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 180, hair = 300;
+var base = 2650, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 15, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 180, hair = 300;
 // CAD-USD conversion rate
 var rate;
 
@@ -25,14 +25,10 @@ request.onreadystatechange = function() {
         // Pull the CAD-USD conversion rate from the JSON response and store it.
         rate = JSON.parse(this.responseText).observations[0].FXCADUSD.v;
         // Fill in the price data on the page.
-        document.querySelector("#priceFull").innerHTML = Round(Convert(full)) + "+ USD";
+        document.querySelector("#priceBase").innerHTML = Round(Convert(base)) + "+ USD";
         var n = document.createElement("small");
-        n.innerText = "$" + full + "+ CAD";
-        document.querySelector("#priceFull").after(n);
-        document.querySelector("#priceHalf").innerHTML = Round(Convert(half)) + "+ USD";
-        n = document.createElement("small");
-        n.innerText = "$" + half + "+ CAD";
-        document.querySelector("#priceHalf").after(n);
+        n.innerText = "$" + base + "+ CAD";
+        document.querySelector("#priceBase").after(n);
         document.querySelector("#priceToggle").innerHTML = Round(Convert(toggles)) + "+ USD";
         n = document.createElement("small");
         n.innerText = " ($" + toggles + "+ CAD)";
