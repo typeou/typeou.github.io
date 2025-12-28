@@ -1,12 +1,19 @@
 :root {
-    --brandPink: #E10098;
+    --brandRed: #CE0058;
+    --brandRedGlow: #F60092;
     --brandBlack: #222223;
-    --brandGreen: #1DE000;
+    --brandBlackGlow: #3F3F41;
+    --brandBlue: #00B5E2;
+    --brandBlueGlow: #00EAFC;
     --brandWhite: #D7D7DE;
+    --brandWhiteGlow: #F9F9FB;
 
-    --brandPinkRGB: 225, 0, 152;
+    --brandRedRGB: 206, 0, 88;
+    --brandRedGlowRGB: 246, 0, 146;
     --brandBlackRGB: 34, 34, 35;
-    --brandGreenRGB: 29, 224, 0;
+    --brandBlackGlowRGB: 34, 34, 35;
+    --brandBlueRGB: 0, 181, 226;
+    --brandBlueGlowRGB: 0, 181, 226;
     --brandWhiteRGB: 215, 215, 222;
 
     --mainBackground: #171718;
@@ -24,6 +31,14 @@
     src: url('CascadiaMono.woff2') format('woff2');
 }
 
+.red {
+    color: var(--brandRed) !important;
+}
+
+.blue {
+    color: var(--brandBlue) !important;
+}
+
 body {
     background-color: var(--mainBackground);
     font-family: 'Noto Sans', Verdana, sans-serif;
@@ -34,7 +49,7 @@ body {
 }
 
 a {
-    color: var(--brandGreen);
+    color: var(--brandBlue);
     text-decoration: inherit;
 }
 
@@ -81,7 +96,7 @@ h1, h2, h3, .nomargin {
     height: var(--headerHeight);
     width: 100%;
     background-color: var(--brandBlack);
-    border-bottom: calc(var(--headerHeight) * 0.05) solid var(--brandPink);
+    border-bottom: calc(var(--headerHeight) * 0.05) solid var(--brandBlue);
     display: grid;
     grid-template-columns: max-content max-content max-content max-content auto max-content;
     z-index: 2;
@@ -110,20 +125,27 @@ h1, h2, h3, .nomargin {
 }
 
 .logoCenter {
-    clip-path: polygon(50% 88%, 50% 100%, 77% 85%, 77% 54%, 50% 0%, 23% 54%, 23% 85%, 50% 100%, 50% 88%, 33% 79%, 33% 60%, 50% 50%, 50% 38%, 39% 45%, 50% 23%, 61% 45%, 50% 38%, 50% 50%, 67% 60%, 67% 79%);
-    background: var(--brandPink);
-}
-
-.logoLeft, .logoRight {
-    background: var(--brandWhite);
+    font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--headerHeight) * 0.69);
+    color: var(--brandWhite);
+    background: linear-gradient(0deg, var(--brandWhiteGlow) 15%, var(--brandWhite) 85%);
+    background-clip: text;
 }
 
 .logoLeft {
-    clip-path: polygon(16% 80%, 16% 73%, 13% 71%, 13% 54%, 6% 50%, 13% 45%, 13% 28%, 35% 15%, 39% 6%, 7% 24%, 7% 42%, 0% 46%, 0% 53%, 7% 58%, 7% 75%);
+    clip-path: polygon(0% 46.5%, 6.3% 42.8%, 6.3% 25.5%, 32.8% 10.1%, 21.5% 23.8%, 12.5% 29%, 12.5% 46.3%, 6.2% 50%, 12.5% 53.6%, 12.5% 71%, 21.3% 76.1%, 32.9% 90%, 6.3% 74.5%, 6.3% 57.2%, 0% 52.3%);
+    background: var(--brandBlue);
+    background: linear-gradient(0deg, var(--brandBlueGlow) 10%, var(--brandBlue) 90%);
 }
 
 .logoRight {
-    clip-path: polygon(84% 80%, 84% 73%, 87% 71%, 87% 54%, 94% 50%, 87% 45%, 87% 28%, 65% 15%, 61% 6%, 93% 24%, 93% 42%, 100% 46%, 100% 53%, 93% 58%, 93% 75%);
+    clip-path: polygon(100% 54.5%, 93.7% 57.2%, 93.7% 74.5%, 67.2% 89.9%, 78.5% 76.2%, 87.5% 71%, 87.5% 53.7%, 93.8% 50%, 87.5% 46.4%, 87.5% 29%, 78.7% 23.9%, 67.1% 10%, 93.7% 25.5%, 93.7% 42.8%, 100% 47.7%);
+    background: var(--brandRed);
+    background: linear-gradient(0deg, var(--brandRedGlow) 10%, var(--brandRed) 90%);
 }
 
 #headerLogo:hover .logoCenter, #headerLogo:active .logoCenter {
@@ -149,19 +171,19 @@ h1, h2, h3, .nomargin {
 }
 
 #header > .divider {
-    height: 100%;
+    height: var(--headerHeight);
     width: calc(var(--headerHeight) * 0.577 + calc(var(--headerHeight) * 0.1));
     grid-column: 3;
     overflow: visible;
 }
 
 #header > .divider > line {
-    stroke: var(--brandPink);
+    stroke: var(--brandRed);
     stroke-width: calc(var(--headerHeight) * 0.1);
 }
 
 #currentPage {
-    background: var(--brandPink);
+    background: var(--brandRed);
     height: calc(var(--headerHeight) * 0.67);
     line-height: calc(var(--headerHeight) * 0.67);
     clip-path: polygon(0% 100%, calc(100% - var(--headerHeight) * 0.67 * 0.577) 100%, 100% 0%, calc(var(--headerHeight) * 0.67 * 0.577) 0%);
@@ -201,7 +223,7 @@ h1, h2, h3, .nomargin {
     position: fixed;
     height: 100vh;
     z-index: 20;
-    border-left: calc(var(--headerHeight) * 0.05) solid var(--brandPink);
+    border-left: calc(var(--headerHeight) * 0.05) solid var(--brandBlue);
     background: var(--menuBackground);
     top: 0;
     right: 0;
@@ -313,14 +335,14 @@ h1, h2, h3, .nomargin {
 
 #menuLinks > *:hover, #menuLinks > *:active {
     transform: translateX(calc(var(--headerHeight) * -0.5));
-    background-color: rgba(var(--brandPinkRGB), 0.5);
+    background-color: rgba(var(--brandRedRGB), 0.5);
 }
 
 .currentLink {
-    background: var(--brandPink);
+    background: var(--brandRed);
     font-weight: bold;
     transform: translateX(calc(var(--headerHeight) * -1)) !important;
-    background-color: var(--brandPink) !important;
+    background-color: var(--brandRed) !important;
 }
 
 #body {
@@ -368,28 +390,28 @@ h1, h2, h3, .nomargin {
 @-webkit-keyframes beat {
     0%
     {
-        box-shadow: 0 0 0 0 rgba(var(--brandPinkRGB), 0.5), 0 0 0 0 rgba(var(--brandPinkRGB), 0.5);
+        box-shadow: 0 0 0 0 rgba(var(--brandBlueRGB), 0.5), 0 0 0 0 rgba(var(--brandBlueRGB), 0.5);
     }
     33%
     {
-        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.167) rgba(var(--brandPinkRGB), 0.33), 0 0 0 0 rgba(var(--brandPinkRGB), 0.5);
+        box-shadow: 0 0 0 calc(var(--brandBlueRGB) * 0.167) rgba(var(--brandBlueRGB), 0.33), 0 0 0 0 rgba(var(--brandBlueRGB), 0.5);
     }
     100% {
-        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandPinkRGB), 0), 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandPinkRGB), 0);
+        box-shadow: 0 0 0 calc(var(--brandBlueRGB) * 0.5) rgba(var(--brandBlueRGB), 0), 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandBlueRGB), 0);
     }
 }
 
 @keyframes beat {
     0%
     {
-        box-shadow: 0 0 0 0 rgba(var(--brandPinkRGB), 0.5), 0 0 0 0 rgba(var(--brandPinkRGB), 0.5);
+        box-shadow: 0 0 0 0 rgba(var(--brandBlueRGB), 0.5), 0 0 0 0 rgba(var(--brandBlueRGB), 0.5);
     }
     33%
     {
-        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.167) rgba(var(--brandPinkRGB), 0.33), 0 0 0 0 rgba(var(--brandPinkRGB), 0.5);
+        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.167) rgba(var(--brandBlueRGB), 0.33), 0 0 0 0 rgba(var(--brandBlueRGB), 0.5);
     }
     100% {
-        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandPinkRGB), 0), 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandPinkRGB), 0);
+        box-shadow: 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandBlueRGB), 0), 0 0 0 calc(var(--headerHeight) * 0.5) rgba(var(--brandBlueRGB), 0);
     }
 }
 
@@ -426,18 +448,18 @@ h1, h2, h3, .nomargin {
 
 #veins > line {
     stroke-width: calc(var(--headerHeight) * 0.1);
-    stroke: var(--brandPink);
+    stroke: var(--brandRed);
 }
 
 @-webkit-keyframes veinBeat {
     from
     {
         stroke-width: calc(var(--headerHeight) * 0.1);
-        stroke: rgba(var(--brandPinkRGB), 0.5);
+        stroke: rgba(var(--brandRedRGB), 0.5);
     }
     to {
         stroke-width: calc(var(--headerHeight) * 0.5);
-        stroke: rgba(var(--brandPinkRGB), 0) ;
+        stroke: rgba(var(--brandRedRGB), 0) ;
     }
 }
 
@@ -445,11 +467,11 @@ h1, h2, h3, .nomargin {
     from
     {
         stroke-width: calc(var(--headerHeight) * 0.1);
-        stroke: rgba(var(--brandPinkRGB), 0.5);
+        stroke: rgba(var(--brandRedRGB), 0.5);
     }
     to {
         stroke-width: calc(var(--headerHeight) * 0.5);
-        stroke: rgba(var(--brandPinkRGB), 0) ;
+        stroke: rgba(var(--brandRedRGB), 0) ;
     }
 }
 
@@ -478,7 +500,7 @@ h1, h2, h3, .nomargin {
 }
 
 .commStatus {
-    color: var(--brandPink);
+    color: var(--brandRed);
     font-size: var(--fontSize);
     padding: 0;
     margin: 0;
@@ -504,7 +526,7 @@ h1, h2, h3, .nomargin {
 
 .prices {
     font-weight: bold;
-    color: var(--brandPink);
+    color: var(--brandRed);
 }
 
 .flex > *, .pricing > * {
@@ -514,7 +536,7 @@ h1, h2, h3, .nomargin {
 mark {
     background-color: transparent;
     font-weight: bold;
-    color: var(--brandPink);
+    color: var(--brandRed);
 }
 
 small {
@@ -530,7 +552,7 @@ small {
 
 ul.addons > li::marker {
     content: "+ ";
-    color: var(--brandPink);
+    color: var(--brandRed);
 }
 
 ul > li::marker {
