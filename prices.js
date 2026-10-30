@@ -1,5 +1,5 @@
 // Price data in CAD
-var base = 2650, toggles = 15, animated = 30, arms = 75, armSingle = 45, cheekPuff = 15, tongueOut = 60, bridger = 180, bridgerPlus = 90, outfit = 180, hair = 300;
+var base = 2650, toggles = 15, animated = 30, arms = 90, armSingle = 60, cheekPuff = 15, tongueOut = 60, bridger = 180, bridgerPlus = 90, hair = 300;
 // CAD-USD conversion rate
 var rate;
 
@@ -45,10 +45,6 @@ request.onreadystatechange = function() {
         n = document.createElement("small");
         n.innerText = " ($" + armSingle + "+ CAD)";
         document.querySelector("#priceArmSingle").after(n);
-        document.querySelector("#priceOutfit").innerHTML = Round(Convert(outfit)) + "+ USD";
-        n = document.createElement("small");
-        n.innerText = " ($" + outfit + "+ CAD)";
-        document.querySelector("#priceOutfit").after(n);
         document.querySelector("#priceHair").innerHTML = Round(Convert(hair)) + "+ USD";
         n = document.createElement("small");
         n.innerText = " ($" + hair + "+ CAD)";
