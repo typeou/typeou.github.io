@@ -512,6 +512,11 @@ mark {
     color: var(--brandPink);
 }
 
+a > mark {
+    font-weight: bold;
+    color: var(--brandBlue);
+}
+
 small {
     font-size: calc(var(--headerHeight) * 0.3);
     color: rgba(var(--brandWhiteRGB), 0.69);
